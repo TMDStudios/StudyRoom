@@ -12,6 +12,7 @@ function showOptions() {
 }
 
 function activitySelect(num) {
+    getJson("level1.json")
     switch(num) {
         case 1:
             document.getElementById("option1").className = "selected";
@@ -52,4 +53,10 @@ function activityOptions(num) {
 
 function reset() {
     window.location.replace("/");
+}
+
+function getJson (file) {
+    fetch('json/'+file)
+        .then((response) => response.json())
+        .then((json) => console.log(json));
 }

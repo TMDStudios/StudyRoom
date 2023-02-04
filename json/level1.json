@@ -1,0 +1,48 @@
+{
+    "Level 1": [
+        {
+            "word": "water",
+            "sentence": "Water is a drink for people and plants."
+        },
+        {
+            "word": "than",
+            "sentence": "The child is older than the baby."
+        },
+        {
+            "word": "call",
+            "sentence": "You can call me on the phone."
+        },
+        {
+            "word": "first",
+            "sentence": "I will go first in the game."
+        },
+        {
+            "word": "who",
+            "sentence": "Who is that man over there?"
+        },
+        {
+            "word": "may",
+            "sentence": "I may go to the store later."
+        },
+        {
+            "word": "down",
+            "sentence": "I will put it down on the table."
+        },
+        {
+            "word": "side",
+            "sentence": "The car has a flat tire on the left side."
+        },
+        {
+            "word": "been",
+            "sentence": "I have been there before."
+        },
+        {
+            "word": "now",
+            "sentence": "I will do it now"
+        },
+        {
+            "word": "find",
+            "sentence": "Can you help me find my keys?"
+        }
+    ]
+}
