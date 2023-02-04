@@ -95,3 +95,12 @@ select option {
 #activities, #activities div {
     display: none;
 }
+
+@media all and (max-width: 550px) {
+    #menu {
+        width: 90%;
+    }
+    #options, #options div {
+        width: 80%;
+    }
+}

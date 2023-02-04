@@ -12,7 +12,6 @@ function showOptions() {
 }
 
 function activitySelect(num) {
-    getJson("level1.json")
     switch(num) {
         case 1:
             document.getElementById("option1").className = "selected";
@@ -24,32 +23,63 @@ function activitySelect(num) {
             activityOptions(1);
             break;
         case 2:
+            console.log("Activity 2");
             break;
         case 3:
-            // code block
+            console.log("Activity 3");
             break;
         default:
-            // code block
+            console.log("Activity OTHER");
     }
 }
 
 function activityOptions(num) {
     switch(num) {
         case 1:
-            document.getElementById("option2").innerHTML = '<select id="level" onchange="activityOptions(2)"><option value="0">Select Level</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>';
+            document.getElementById("option2").innerHTML = '<select id="level" onchange="selectLevel()"><option value="0">Select Level</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>';
             break;
         case 2:
-            level = document.getElementById("level").value;
-            document.getElementById("option2").className = "selected";
-            document.getElementById("option2").innerHTML = '<p>Level '+level+'</p>';
+            console.log("Activity Option 2");
             break;
         case 3:
-            // code block
+            console.log("Activity Option 3");
+            break;
+        default:
+            console.log("Activity Option OTHER");
+    }
+}
+
+function selectLevel() {
+    level = parseInt(document.getElementById("level").value);
+    document.getElementById("option2").className = "selected";
+    document.getElementById("option2").innerHTML = '<p>Level '+level+'</p>';
+
+    switch(level) {
+        case 1:
+            startLevel();
+            break;
+        case 2:
+            console.log("Selected level 2");
+            break;
+        case 3:
+            console.log("Selected level 2");
+            break;
+        default:
+            console.log("Selected level OTHER"+level);
+    }
+}
+
+function startLevel() {
+    switch(level) {
+        case 1:
+            getJson("level1.json");
+            console.log("Starting level 1");
             break;
         default:
             // code block
     }
 }
+
 
 function reset() {
     window.location.replace("/");
