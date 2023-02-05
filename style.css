@@ -6,6 +6,10 @@ body {
     max-width: 1080px;
 	margin: auto;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .color1 {
     color: #FF6E31;
@@ -95,9 +99,16 @@ select option {
 #activities, #activities div {
     display: none;
 }
+#activity {
+    background-color: azure;
+    opacity: 0;
+    height: 33vh;
+    width: 80%;
+    transition: opacity 2s ease-out;
+}
 
 @media all and (max-width: 550px) {
-    #menu {
+    #menu, #activity {
         width: 90%;
     }
     #options, #options div {

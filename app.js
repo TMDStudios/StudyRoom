@@ -1,4 +1,5 @@
 var level = 0;
+var words = [];
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -74,6 +75,8 @@ function startLevel() {
         case 1:
             getJson("level1.json");
             console.log("Starting level 1");
+            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 1</h3>';
+            document.getElementById("activity").style.opacity = 1;          
             break;
         default:
             // code block
@@ -86,7 +89,14 @@ function reset() {
 }
 
 function getJson (file) {
-    fetch('json/'+file)
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+    let req = new XMLHttpRequest();
+    req.open("GET", 'json/'+file);
+    req.onload = function(){
+        var data = JSON.parse(this.responseText);
+        for(var i=0; i<5; i++){
+            words.push({"word":data.level_1[i].word,"sentence":data.level_1[i].sentence})
+        }
+        document.getElementById("activity").innerHTML = '<p>'+words[0].word+'</p>';      
+    }
+    req.send();
 }
