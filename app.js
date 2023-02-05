@@ -1,5 +1,7 @@
 var level = 0;
 var words = [];
+var correctWord = "";
+var wordIndex = -1;
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -73,30 +75,60 @@ function selectLevel() {
 function startLevel() {
     switch(level) {
         case 1:
-            getJson("level1.json");
+            getLocalJson("level1.json");
             console.log("Starting level 1");
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 1</h3>';
             document.getElementById("activity").style.opacity = 1;          
             break;
         default:
-            // code block
+            console.log("Coming soon");
     }
 }
-
 
 function reset() {
     window.location.replace("/");
 }
 
-function getJson (file) {
+function getLocalJson (file) {
     let req = new XMLHttpRequest();
     req.open("GET", 'json/'+file);
     req.onload = function(){
         var data = JSON.parse(this.responseText);
-        for(var i=0; i<5; i++){
+        var wordRow = '<p class="wordRow">';
+        for(var i=0; i<10; i++){
             words.push({"word":data.level_1[i].word,"sentence":data.level_1[i].sentence})
+            var word = data.level_1[i].word;
+            var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
+            wordRow += wordSpan;
+            if((i+1)%3==0){
+                wordRow += '</p><p class="wordRow">';
+            }
         }
-        document.getElementById("activity").innerHTML = '<p>'+words[0].word+'</p>';      
+        wordRow += '</p>';
+        document.getElementById("wordBank").innerHTML = wordRow;  
+        
+        getQuestion();
     }
     req.send();
+}
+
+function getQuestion() {
+    if(words.length>0){
+        wordIndex = Math.floor(Math.random() * words.length);
+        correctWord = words[wordIndex].word;
+        document.getElementById("question").innerHTML = words[wordIndex].sentence;
+    }else{
+        document.getElementById("question").innerHTML = "You have answered all the questions!";
+    }
+}
+
+function chooseWord(word) {
+    if(word==correctWord){
+        document.getElementById(word).style.textDecoration = "line-through";
+        document.getElementById(word).style.cursor = "auto";
+        document.getElementById(word).onclick = "";
+        words.splice(wordIndex, 1);
+        console.log("YOU GOT IT!!");
+    }
+    getQuestion();
 }
