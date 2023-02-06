@@ -116,7 +116,8 @@ function getQuestion() {
     if(words.length>0){
         wordIndex = Math.floor(Math.random() * words.length);
         correctWord = words[wordIndex].word;
-        document.getElementById("question").innerHTML = words[wordIndex].sentence;
+        var sentence = words[wordIndex].sentence.toLowerCase();
+        document.getElementById("question").innerHTML = sentence.replace(correctWord, "_____").replace(sentence[0], sentence[0].toUpperCase());
     }else{
         document.getElementById("question").innerHTML = "You have answered all the questions!";
     }
@@ -126,6 +127,7 @@ function chooseWord(word) {
     if(word==correctWord){
         document.getElementById(word).style.textDecoration = "line-through";
         document.getElementById(word).style.cursor = "auto";
+        document.getElementById(word).style.color = "green";
         document.getElementById(word).onclick = "";
         words.splice(wordIndex, 1);
         console.log("YOU GOT IT!!");
