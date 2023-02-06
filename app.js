@@ -2,6 +2,9 @@ var level = 0;
 var words = [];
 var correctWord = "";
 var wordIndex = -1;
+var minutes = 0;
+var seconds = 0;
+var timer = null;
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -78,7 +81,8 @@ function startLevel() {
             getLocalJson("level1.json");
             console.log("Starting level 1");
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 1</h3>';
-            document.getElementById("activity").style.opacity = 1;          
+            document.getElementById("activity").style.opacity = 1;    
+            startTimer();      
             break;
         default:
             console.log("Coming soon");
@@ -119,7 +123,8 @@ function getQuestion() {
         var sentence = words[wordIndex].sentence.toLowerCase();
         document.getElementById("question").innerHTML = sentence.replace(correctWord, "_____").replace(sentence[0], sentence[0].toUpperCase());
     }else{
-        document.getElementById("question").innerHTML = "You have answered all the questions!";
+        clearInterval(timer);
+        document.getElementById("question").innerHTML = "You have answered all the questions!\nYour total time was "+document.getElementById("totalTime").innerHTML;
     }
 }
 
@@ -133,4 +138,21 @@ function chooseWord(word) {
         console.log("YOU GOT IT!!");
     }
     getQuestion();
+}
+
+function startTimer() {
+    var start = new Date();
+
+    timer = setInterval(_ => {
+        var current = new Date();
+        let count = current - start;
+        let ms = count % 1000;
+        minutes = Math.floor((count / 60000)) % 60;
+        seconds = Math.floor((count /  1000)) % 60;
+        if(seconds<10){
+            document.getElementById("timer").innerHTML = '<p><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':'+ms+'</span></p>';
+        }else{
+            document.getElementById("timer").innerHTML = '<p><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':'+ms+'</span></p>';
+        }
+    }, 10);  
 }

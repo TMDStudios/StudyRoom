@@ -101,12 +101,18 @@ select option {
 }
 #activity {
     background-color: azure;
+    border-radius: 6px;
+    margin-top: 8px;
     opacity: 0;
     height: 33vh;
     width: 80%;
     transition: opacity 2s ease-out;
     padding: 8px;
     color: #243763;
+}
+#wordBank {
+    background-color: aqua;
+    color: black;
 }
 #wordBank {
     background-color: red;
