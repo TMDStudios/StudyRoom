@@ -5,6 +5,7 @@ var wordIndex = -1;
 var minutes = 0;
 var seconds = 0;
 var timer = null;
+var totalTime = 0;
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -124,8 +125,22 @@ function getQuestion() {
         document.getElementById("question").innerHTML = sentence.replace(correctWord, "_____").replace(sentence[0], sentence[0].toUpperCase());
     }else{
         clearInterval(timer);
+        saveScore();
         document.getElementById("question").innerHTML = "You have answered all the questions!\nYour total time was "+document.getElementById("totalTime").innerHTML;
     }
+}
+
+function saveScore(time) {
+    let name = "";
+    if(confirm("Upload time to leaderboard?")){
+        name = prompt("Enter Name:");
+    }else{
+        name = "Anonymous";
+    }
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://localhost:8000/leaderboard/add/");
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("name="+name+"&time="+totalTime+"&level="+1);
 }
 
 function chooseWord(word) {
@@ -146,6 +161,7 @@ function startTimer() {
     timer = setInterval(_ => {
         var current = new Date();
         let count = current - start;
+        totalTime = count;
         let ms = count % 1000;
         minutes = Math.floor((count / 60000)) % 60;
         seconds = Math.floor((count /  1000)) % 60;
