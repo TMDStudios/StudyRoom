@@ -139,6 +139,20 @@ select option {
 #question {
     background-color: yellow;
 }
+.credits {
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 8px;
+}
+.credits a {
+	color: #a6fff9;
+	text-decoration: none;
+}
+.credits a:hover {
+	color: white;
+    text-decoration: underline;
+}
 
 @media all and (max-width: 550px) {
     #menu, #activity {

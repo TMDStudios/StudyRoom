@@ -130,17 +130,28 @@ function getQuestion() {
     }
 }
 
-function saveScore(time) {
+function saveScore() {
     let name = "";
     if(confirm("Upload time to leaderboard?")){
         name = prompt("Enter Name:");
     }else{
         name = "Anonymous";
     }
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "http://localhost:8000/leaderboard/add/");
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("name="+name+"&time="+totalTime+"&level="+1);
+
+    let req = new XMLHttpRequest();
+    req.open('GET', "https://www.purgomalum.com/service/containsprofanity?text="+name);
+    req.onload = function() {
+        if(this.responseText.includes("true")){
+            name = "Anonymous";
+        }
+        console.log(name);
+
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "http://localhost:8000/leaderboard/add/");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("name="+name+"&time="+totalTime+"&level="+1);
+    }
+    req.send();
 }
 
 function chooseWord(word) {
@@ -152,6 +163,7 @@ function chooseWord(word) {
         words.splice(wordIndex, 1);
         console.log("YOU GOT IT!!");
     }
+    saveScore();
     getQuestion();
 }
 
