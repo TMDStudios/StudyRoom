@@ -168,7 +168,8 @@ function chooseWord(word) {
     if(word==correctWord){
         document.getElementById(word).style.textDecoration = "line-through";
         document.getElementById(word).style.cursor = "auto";
-        document.getElementById(word).style.color = "green";
+        document.getElementById(word).style.color = "#D61C4E";
+        document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
         document.getElementById(word).onclick = "";
         words.splice(wordIndex, 1);
         console.log("YOU GOT IT!!");
@@ -187,9 +188,21 @@ function startTimer() {
         minutes = Math.floor((count / 60000)) % 60;
         seconds = Math.floor((count /  1000)) % 60;
         if(seconds<10){
-            document.getElementById("timer").innerHTML = '<p><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':'+ms+'</span></p>';
+            if(ms<10){
+                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':00'+ms+'</span></p>';
+            }else if(ms<100){
+                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':0'+ms+'</span></p>';
+            }else{
+                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':'+ms+'</span></p>';
+            }
         }else{
-            document.getElementById("timer").innerHTML = '<p><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':'+ms+'</span></p>';
+            if(ms<10){
+                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':00'+ms+'</span></p>';
+            }else if(ms<100){
+                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':0'+ms+'</span></p>';
+            }else{
+                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':'+ms+'</span></p>';
+            }
         }
     }, 10);  
 }

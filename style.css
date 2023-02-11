@@ -104,40 +104,57 @@ select option {
     border-radius: 6px;
     margin-top: 8px;
     opacity: 0;
-    height: 33vh;
+    height: 50vh;
     width: 80%;
     transition: opacity 2s ease-out;
     padding: 8px;
     color: #243763;
 }
+#timer {
+    padding: 8px;
+}
+.timer {
+    text-align: center;
+    font-family: monospace, monospace;
+}
 #wordBank {
-    background-color: aqua;
     color: black;
 }
 #wordBank {
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .wordRow {
-    background-color: orange;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 .wordRow span {
     flex: 1;
     text-align: center;
+    background-color: #243763;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 4px;
+    border: solid 1px #D61C4E;
+    color: #FFEBB7;
+    max-width: 25%;
 }
 .wordRow span:hover {
     cursor: pointer;
 }
 #question {
-    background-color: yellow;
+    font-size: 1.1em;
+    padding: 16px;
+    margin: 32px;
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom right, #D61C4E, #243763);
+    color: #FFEBB7;
 }
 .credits {
     font-size: 0.8em;
@@ -160,5 +177,10 @@ select option {
     }
     #options, #options div {
         width: 80%;
+    }
+    #question {
+        padding: 8px;
+        margin: 4px;
+        margin-top: 32px;
     }
 }
