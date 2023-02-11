@@ -1,0 +1,44 @@
+{
+    "level_2": [
+        {
+            "word": "any",
+            "sentence": "I don't have any money left."
+        },
+        {
+            "word": "new",
+            "sentence": "Don't wear new shoes in the rain."
+        },
+        {
+            "word": "work",
+            "sentence": "Hard work makes you stronger."
+        },
+        {
+            "word": "part",
+            "sentence": "The last part of the story is funny."
+        },
+        {
+            "word": "take",
+            "sentence": "I will take you to school."
+        },
+        {
+            "word": "get",
+            "sentence": "Get ready to laugh."
+        },
+        {
+            "word": "place",
+            "sentence": "This is my favorite place in town."
+        },
+        {
+            "word": "made",
+            "sentence": "I made dinner last night."
+        },
+        {
+            "word": "live",
+            "sentence": "I live in a big city."
+        },
+        {
+            "word": "where",
+            "sentence": "Where would you like to go?"
+        }
+    ]
+}
