@@ -66,7 +66,7 @@ function selectLevel() {
             startLevel();
             break;
         case 2:
-            console.log("Selected level 2");
+            startLevel();
             break;
         case 3:
             console.log("Selected level 2");
@@ -82,6 +82,13 @@ function startLevel() {
             getLocalJson("level1.json");
             console.log("Starting level 1");
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 1</h3>';
+            document.getElementById("activity").style.opacity = 1;    
+            startTimer();      
+            break;
+        case 2:
+            getLocalJson("level2.json");
+            console.log("Starting level 2");
+            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 2</h3>';
             document.getElementById("activity").style.opacity = 1;    
             startTimer();      
             break;
@@ -101,8 +108,8 @@ function getLocalJson (file) {
         var data = JSON.parse(this.responseText);
         var wordRow = '<p class="wordRow">';
         for(var i=0; i<10; i++){
-            words.push({"word":data.level_1[i].word,"sentence":data.level_1[i].sentence})
-            var word = data.level_1[i].word;
+            words.push({"word":data.words[i].word,"sentence":data.words[i].sentence})
+            var word = data.words[i].word;
             var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
             wordRow += wordSpan;
             if((i+1)%3==0){
@@ -122,7 +129,10 @@ function getQuestion() {
         wordIndex = Math.floor(Math.random() * words.length);
         correctWord = words[wordIndex].word;
         var sentence = words[wordIndex].sentence.toLowerCase();
-        document.getElementById("question").innerHTML = sentence.replace(correctWord, "_____").replace(sentence[0], sentence[0].toUpperCase());
+        sentence = sentence.replace(correctWord, "_____");
+        var firstLetter = sentence[0].toUpperCase();
+        sentence = firstLetter + sentence.slice(1,sentence.length);
+        document.getElementById("question").innerHTML = sentence;
     }else{
         clearInterval(timer);
         saveScore();
@@ -149,7 +159,7 @@ function saveScore() {
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", "http://localhost:8000/leaderboard/add/");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("name="+name+"&time="+totalTime+"&level="+1);
+        xhttp.send("name="+name+"&time="+totalTime+"&level="+level);
     }
     req.send();
 }
@@ -163,7 +173,6 @@ function chooseWord(word) {
         words.splice(wordIndex, 1);
         console.log("YOU GOT IT!!");
     }
-    saveScore();
     getQuestion();
 }
 
