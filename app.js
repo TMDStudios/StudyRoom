@@ -154,14 +154,63 @@ function saveScore() {
         if(this.responseText.includes("true")){
             name = "Anonymous";
         }
-        console.log(name);
 
         let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "http://localhost:8000/leaderboard/add/");
+        xhttp.open("POST", "https://devroboto.pythonanywhere.com/leaderboard/add/");
+        xhttp.onload = function(){
+            showLeaderboard();
+        }
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("name="+name+"&time="+totalTime+"&level="+level);
     }
     req.send();
+}
+
+function showLeaderboard() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://devroboto.pythonanywhere.com/leaderboard/"+level);
+    xhttp.onload = function(){
+        console.log(this.responseText);
+        document.getElementById("activity").style.display = "none"; 
+        document.getElementById("leaderboard").style.height = "50vh";
+        document.getElementById("leaderboard").style.opacity = 1;
+        var data = JSON.parse(this.responseText);
+        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
+        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">RANK</span><span class="name">NAME</span><span class="time">TIME</span></p>';
+        for(var i=0; i<10; i++){
+            try{
+                var convertedTime = convertTime(data[i].time);
+                document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">'+(i+1)+'</span><span class="name">'
+                    +data[i].name+'</span><span class="time">'+convertedTime+'</span></p>';
+            }catch(e){
+
+            }
+        }
+    }
+    xhttp.send();
+}
+
+function convertTime(totalMs) {
+    let ms = totalMs % 1000;
+    let minutes = Math.floor((totalMs / 60000)) % 60;
+    let seconds = Math.floor((totalMs / 1000)) % 60;
+    if(seconds<10){
+        if(ms<10){
+            return ''+minutes+':0'+seconds+':00'+ms+'';
+        }else if(ms<100){
+            return ''+minutes+':0'+seconds+':0'+ms+'';
+        }else{
+            return ''+minutes+':0'+seconds+':'+ms+'';
+        }
+    }else{
+        if(ms<10){
+            return ''+minutes+':'+seconds+':00'+ms+'';
+        }else if(ms<100){
+            return ''+minutes+':'+seconds+':0'+ms+'';
+        }else{
+            return ''+minutes+':'+seconds+':'+ms+'';
+        }
+    }
 }
 
 function chooseWord(word) {
@@ -178,31 +227,14 @@ function chooseWord(word) {
 }
 
 function startTimer() {
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("menu").style.margin = "5vh";
     var start = new Date();
 
     timer = setInterval(_ => {
         var current = new Date();
         let count = current - start;
         totalTime = count;
-        let ms = count % 1000;
-        minutes = Math.floor((count / 60000)) % 60;
-        seconds = Math.floor((count /  1000)) % 60;
-        if(seconds<10){
-            if(ms<10){
-                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':00'+ms+'</span></p>';
-            }else if(ms<100){
-                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':0'+ms+'</span></p>';
-            }else{
-                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':0'+seconds+':'+ms+'</span></p>';
-            }
-        }else{
-            if(ms<10){
-                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':00'+ms+'</span></p>';
-            }else if(ms<100){
-                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':0'+ms+'</span></p>';
-            }else{
-                document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+minutes+':'+seconds+':'+ms+'</span></p>';
-            }
-        }
+        document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(count)+'</span></p>';
     }, 10);  
 }

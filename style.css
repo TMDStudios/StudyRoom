@@ -10,18 +10,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
 }
-.color1 {
-    color: #FF6E31;
-}
-.color2 {
-    color: #FFEBB7;
-}
-.color3 {
-    color: #AD8E70;
-}
-.color4 {
-    color: #D61C4E;
+#welcome {
+    border-radius: 6px;
+    margin-top: 8px;
+    height: 25vh;
+    width: 80%;
+    padding: 8px;
 }
 #menu {
     color: #D61C4E;
@@ -156,6 +152,46 @@ select option {
     background-image: linear-gradient(to bottom right, #D61C4E, #243763);
     color: #FFEBB7;
 }
+#leaderboard {
+    background-color: azure;
+    border-radius: 6px;
+    margin-top: 8px;
+    opacity: 0;
+    height: 0px;
+    width: 80%;
+    transition: opacity 2s ease-out;
+    padding: 8px;
+    color: #243763;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.leaderboardTitle {
+    color: #243763;
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+.leaderboardRow {
+    display: flex;
+    justify-content: center;
+    padding: 4px 16px 4px 16px;
+    margin: 2px;
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom right, #D61C4E, #243763);
+    color: #FFEBB7;
+    width: 50%;
+}
+.leaderboardRow span {
+    flex: 1;
+}
+.rank {
+    max-width: 20%;
+}
+.time {
+    text-align: right;
+}
 .credits {
     font-size: 0.8em;
     position: absolute;
@@ -172,7 +208,7 @@ select option {
 }
 
 @media all and (max-width: 550px) {
-    #menu, #activity {
+    #menu, #activity, #leaderboard {
         width: 90%;
     }
     #options, #options div {
