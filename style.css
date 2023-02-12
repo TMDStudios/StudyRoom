@@ -183,7 +183,17 @@ select option {
     color: #FFEBB7;
     width: 50%;
 }
-.leaderboardRow span {
+.currentTimeRow {
+    display: flex;
+    justify-content: center;
+    padding: 4px 16px 4px 16px;
+    margin: 2px;
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom right, #FF6E31, #243763);
+    color: #FFEBB7;
+    width: 50%;
+}
+.leaderboardRow span, .currentTimeRow span {
     flex: 1;
 }
 .rank {
@@ -218,5 +228,11 @@ select option {
         padding: 8px;
         margin: 4px;
         margin-top: 32px;
+    }
+    .leaderboardRow, .currentTimeRow {
+        width: 90%;
+    }
+    .rank {
+        max-width: 25%;
     }
 }

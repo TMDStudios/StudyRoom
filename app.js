@@ -6,6 +6,7 @@ var minutes = 0;
 var seconds = 0;
 var timer = null;
 var totalTime = 0;
+var username = "Anonymous";
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -141,18 +142,15 @@ function getQuestion() {
 }
 
 function saveScore() {
-    let name = "";
     if(confirm("Upload time to leaderboard?")){
-        name = prompt("Enter Name:");
-    }else{
-        name = "Anonymous";
+        username = prompt("Enter Name:");
     }
 
     let req = new XMLHttpRequest();
-    req.open('GET', "https://www.purgomalum.com/service/containsprofanity?text="+name);
+    req.open('GET', "https://www.purgomalum.com/service/containsprofanity?text="+username);
     req.onload = function() {
         if(this.responseText.includes("true")){
-            name = "Anonymous";
+            username = "Anonymous";
         }
 
         let xhttp = new XMLHttpRequest();
@@ -161,7 +159,7 @@ function saveScore() {
             showLeaderboard();
         }
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("name="+name+"&time="+totalTime+"&level="+level);
+        xhttp.send("name="+username+"&time="+totalTime+"&level="+level);
     }
     req.send();
 }
@@ -170,22 +168,35 @@ function showLeaderboard() {
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://devroboto.pythonanywhere.com/leaderboard/"+level);
     xhttp.onload = function(){
-        console.log(this.responseText);
         document.getElementById("activity").style.display = "none"; 
-        document.getElementById("leaderboard").style.height = "50vh";
+        document.getElementById("leaderboard").style.height = "66vh";
         document.getElementById("leaderboard").style.opacity = 1;
         var data = JSON.parse(this.responseText);
         document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
         document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">RANK</span><span class="name">NAME</span><span class="time">TIME</span></p>';
-        for(var i=0; i<10; i++){
-            try{
-                var convertedTime = convertTime(data[i].time);
-                document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">'+(i+1)+'</span><span class="name">'
-                    +data[i].name+'</span><span class="time">'+convertedTime+'</span></p>';
-            }catch(e){
-
+        for(var i=0; i<data.length; i++){
+            if(i<10){
+                try{
+                    var convertedTime = convertTime(data[i].time);
+                    if(data[i].time==totalTime){
+                        document.getElementById("leaderboard").innerHTML += '<p class="currentTimeRow"><span class="rank">'+(i+1)+'</span><span class="name">'
+                        +data[i].name+'</span><span class="time">'+convertedTime+'</span></p>';
+                    }else{
+                        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">'+(i+1)+'</span><span class="name">'
+                        +data[i].name+'</span><span class="time">'+convertedTime+'</span></p>';
+                    }
+                }catch(e){
+    
+                }
+            }else{
+                if(data[i].time==totalTime){
+                    document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">YOUR RANK</p>';
+                    document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">'+(i+1)+'</span><span class="name">'
+                            +username+'</span><span class="time">'+convertTime(totalTime)+'</span></p>';
+                }
             }
         }
+        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow" onClick="reset()">Try Again</p>';
     }
     xhttp.send();
 }
@@ -221,7 +232,6 @@ function chooseWord(word) {
         document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
         document.getElementById(word).onclick = "";
         words.splice(wordIndex, 1);
-        console.log("YOU GOT IT!!");
     }
     getQuestion();
 }
