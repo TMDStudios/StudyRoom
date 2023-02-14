@@ -145,7 +145,7 @@ function getQuestion() {
 
 function saveScore() {
     if(confirm("Upload time to leaderboard?")){
-        username = prompt("Enter Name:");
+        username = prompt("Enter Name:\n(Up to 9 characters)");
     }
 
     let req = new XMLHttpRequest();
@@ -153,6 +153,9 @@ function saveScore() {
     req.onload = function() {
         if(this.responseText.includes("true")){
             username = "Anonymous";
+        }
+        if(username.length>9){
+            username = username.slice(0,9);
         }
 
         let xhttp = new XMLHttpRequest();
@@ -176,7 +179,7 @@ function showLeaderboard() {
         document.getElementById("leaderboard").style.opacity = 1;
         var data = JSON.parse(this.responseText);
         document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
-        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">RANK</span><span class="name">NAME</span><span class="time">TIME</span></p>';
+        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">#</span><span class="name">NAME</span><span class="time">TIME</span></p>';
         for(var i=0; i<data.length; i++){
             if(i<10){
                 try{
