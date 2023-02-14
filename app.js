@@ -7,6 +7,7 @@ var seconds = 0;
 var timer = null;
 var totalTime = 0;
 var username = "Anonymous";
+var penalty = 0;
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -139,12 +140,13 @@ function getQuestion() {
     }else{
         clearInterval(timer);
         saveScore();
+        document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(totalTime+penalty*1000)+'</span></p>';
         document.getElementById("question").innerHTML = "You have answered all the questions!\nYour total time was "+document.getElementById("totalTime").innerHTML;
     }
 }
 
 function saveScore() {
-    if(confirm("Upload time to leaderboard?")){
+    if(confirm("Your total time: "+convertTime(totalTime+penalty*1000)+"\nUpload time to leaderboard?")){
         username = prompt("Enter Name:\n(Up to 9 characters)");
     }
 
@@ -164,7 +166,7 @@ function saveScore() {
             showLeaderboard();
         }
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("name="+username+"&time="+totalTime+"&level="+level);
+        xhttp.send("name="+username+"&time="+(totalTime+penalty*1000)+"&level="+level);
     }
     req.send();
 }
@@ -195,10 +197,10 @@ function showLeaderboard() {
     
                 }
             }else{
-                if(data[i].time==totalTime){
+                if(data[i].time==totalTime+penalty*1000){
                     document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">YOUR RANK</p>';
                     document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">'+(i+1)+'</span><span class="name">'
-                            +username+'</span><span class="time">'+convertTime(totalTime)+'</span></p>';
+                            +username+'</span><span class="time">'+convertTime(totalTime+penalty*1000)+'</span></p>';
                 }
             }
         }
@@ -238,6 +240,10 @@ function chooseWord(word) {
         document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
         document.getElementById(word).onclick = "";
         words.splice(wordIndex, 1);
+    }else{
+        penalty += 5;
+        document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+        document.getElementById("penalty").style.color = "red";
     }
     getQuestion();
 }
