@@ -100,9 +100,8 @@ select option {
     border-radius: 6px;
     margin-top: 8px;
     opacity: 0;
-    height: 50vh;
+    height: 66vh;
     width: 80%;
-    transition: opacity 2s ease-out;
     padding: 8px;
     color: #243763;
 }
@@ -159,7 +158,6 @@ select option {
     opacity: 0;
     height: 0px;
     width: 80%;
-    transition: opacity 2s ease-out;
     padding: 8px;
     color: #243763;
     display: flex;
@@ -234,5 +232,19 @@ select option {
     }
     .rank {
         max-width: 25%;
+    }
+}
+
+@media all and (max-width: 299px) {
+    body {
+        font-size: 0.9em;
+    }
+    #menu {
+        width: 90%;
+        background-color: rgba(0,0,0,.1);
+        padding: 2px;
+    }
+    #menu h3 {
+        font-size: 1em;
     }
 }

@@ -83,6 +83,7 @@ function startLevel() {
             getLocalJson("level1.json");
             console.log("Starting level 1");
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 1</h3>';
+            document.getElementById("activity").style.transition = "opacity 2s ease-out";
             document.getElementById("activity").style.opacity = 1;    
             startTimer();      
             break;
@@ -90,6 +91,7 @@ function startLevel() {
             getLocalJson("level2.json");
             console.log("Starting level 2");
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 2</h3>';
+            document.getElementById("activity").style.transition = "opacity 2s ease-out";
             document.getElementById("activity").style.opacity = 1;    
             startTimer();      
             break;
@@ -169,7 +171,8 @@ function showLeaderboard() {
     xhttp.open("GET", "https://devroboto.pythonanywhere.com/leaderboard/"+level);
     xhttp.onload = function(){
         document.getElementById("activity").style.display = "none"; 
-        document.getElementById("leaderboard").style.height = "66vh";
+        document.getElementById("leaderboard").style.transition = "opacity 2s ease-out";
+        document.getElementById("leaderboard").style.height = "72vh";
         document.getElementById("leaderboard").style.opacity = 1;
         var data = JSON.parse(this.responseText);
         document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
@@ -238,7 +241,7 @@ function chooseWord(word) {
 
 function startTimer() {
     document.getElementById("welcome").style.display = "none";
-    document.getElementById("menu").style.margin = "5vh";
+    document.getElementById("menu").style.margin = "2vh";
     var start = new Date();
 
     timer = setInterval(_ => {
