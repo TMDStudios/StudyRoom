@@ -20,7 +20,7 @@ body {
     padding: 8px;
 }
 #menu {
-    color: #D61C4E;
+    color: #a6fff9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +96,7 @@ select option {
     display: none;
 }
 #activity {
-    background-color: azure;
+    background-color: rgba(0,0,0,.1);
     border-radius: 6px;
     margin-top: 8px;
     opacity: 0;
@@ -106,6 +106,7 @@ select option {
     color: #243763;
 }
 #timer, #penalty {
+    color: #FF6E31;
     padding: 8px;
 }
 .timer, .penalty {
@@ -136,7 +137,7 @@ select option {
     padding: 8px;
     margin: 2px;
     border-radius: 4px;
-    border: solid 1px #D61C4E;
+    border: solid 1px #d61c4e;
     color: #FFEBB7;
     max-width: 25%;
 }
@@ -148,11 +149,11 @@ select option {
     padding: 16px;
     margin: 32px;
     border-radius: 6px;
-    background-image: linear-gradient(to bottom right, #D61C4E, #243763);
+    background-image: linear-gradient(to bottom right, #ff6f31, #D61C4E, #D61C4E, #D61C4E, #D61C4E, #ff6f31);
     color: #FFEBB7;
 }
 #leaderboard {
-    background-color: azure;
+    background-color: rgba(0,0,0,.1);
     border-radius: 6px;
     margin-top: 8px;
     opacity: 0;
@@ -166,7 +167,7 @@ select option {
     align-items: center;
 }
 .leaderboardTitle {
-    color: #243763;
+    color: #FFEBB7;
     padding: 16px;
     text-align: center;
     font-weight: bold;
@@ -177,7 +178,7 @@ select option {
     padding: 4px 16px 4px 16px;
     margin: 2px;
     border-radius: 6px;
-    background-image: linear-gradient(to bottom right, #D61C4E, #243763);
+    background-image: linear-gradient(to bottom, #a6fff9, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #a6fff9);
     color: #FFEBB7;
     width: 50%;
 }
@@ -187,9 +188,18 @@ select option {
     padding: 4px 16px 4px 16px;
     margin: 2px;
     border-radius: 6px;
-    background-image: linear-gradient(to bottom right, #FF6E31, #243763);
+    background-image: linear-gradient(to bottom, #a6fff9, #a6fff934, #a6fff934, #a6fff934, #a6fff934, #a6fff934, #a6fff934, #a6fff934, #a6fff934, #a6fff9);
     color: #FFEBB7;
     width: 50%;
+}
+#tryAgain {
+    color: #ff6f31;
+    background-image: linear-gradient(to bottom, #ff6f31, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #ff6f31);
+}
+#tryAgain:hover {
+    color: #a6fff9;
+    background-image: linear-gradient(to bottom, #a6fff9, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #a6fff9);
+    cursor: pointer;
 }
 .leaderboardRow span, .currentTimeRow span {
     flex: 1;

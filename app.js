@@ -186,7 +186,7 @@ function showLeaderboard() {
             if(i<10){
                 try{
                     var convertedTime = convertTime(data[i].time);
-                    if(data[i].time==totalTime){
+                    if(data[i].time==totalTime+penalty*1000){
                         document.getElementById("leaderboard").innerHTML += '<p class="currentTimeRow"><span class="rank">'+(i+1)+'</span><span class="name">'
                         +data[i].name+'</span><span class="time">'+convertedTime+'</span></p>';
                     }else{
@@ -199,12 +199,12 @@ function showLeaderboard() {
             }else{
                 if(data[i].time==totalTime+penalty*1000){
                     document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">YOUR RANK</p>';
-                    document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">'+(i+1)+'</span><span class="name">'
+                    document.getElementById("leaderboard").innerHTML += '<p class="currentTimeRow"><span class="rank">'+(i+1)+'</span><span class="name">'
                             +username+'</span><span class="time">'+convertTime(totalTime+penalty*1000)+'</span></p>';
                 }
             }
         }
-        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow" onClick="reset()">Try Again</p>';
+        document.getElementById("leaderboard").innerHTML += '<p id="tryAgain" class="leaderboardRow" onClick="reset()">Try Again</p>';
     }
     xhttp.send();
 }
@@ -237,6 +237,7 @@ function chooseWord(word) {
         document.getElementById(word).style.textDecoration = "line-through";
         document.getElementById(word).style.cursor = "auto";
         document.getElementById(word).style.color = "#D61C4E";
+        document.getElementById(word).style.borderColor = "#d61c4e4d";
         document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
         document.getElementById(word).onclick = "";
         words.splice(wordIndex, 1);
