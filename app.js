@@ -177,7 +177,7 @@ function showLeaderboard() {
     xhttp.onload = function(){
         document.getElementById("activity").style.display = "none"; 
         document.getElementById("leaderboard").style.transition = "opacity 2s ease-out";
-        document.getElementById("leaderboard").style.height = "72vh";
+        document.getElementById("leaderboard").style.height = "auto";
         document.getElementById("leaderboard").style.opacity = 1;
         var data = JSON.parse(this.responseText);
         document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
