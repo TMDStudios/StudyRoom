@@ -175,6 +175,7 @@ function showLeaderboard() {
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://devroboto.pythonanywhere.com/leaderboard/"+level);
     xhttp.onload = function(){
+        document.getElementById("overlay").style.display = "none";
         document.getElementById("activity").style.display = "none"; 
         document.getElementById("leaderboard").style.transition = "opacity 2s ease-out";
         document.getElementById("leaderboard").style.height = "auto";
@@ -207,6 +208,7 @@ function showLeaderboard() {
         document.getElementById("leaderboard").innerHTML += '<p id="tryAgain" class="leaderboardRow" onClick="reset()">Try Again</p>';
     }
     xhttp.send();
+    document.getElementById("overlay").style.display = "flex";
 }
 
 function convertTime(totalMs) {
