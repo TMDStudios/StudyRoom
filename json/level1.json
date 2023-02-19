@@ -1,6 +1,42 @@
 {
     "words": [
         {
+            "word": "did",
+            "sentence": "Did you eat lunch today?"
+        },
+        {
+            "word": "number",
+            "sentence": "Ten thousand is a large number."
+        },
+        {
+            "word": "sound",
+            "sentence": "I love the sound of music."
+        },
+        {
+            "word": "no",
+            "sentence": "We have to pay because there is no free parking."
+        },
+        {
+            "word": "most",
+            "sentence": "Most people like music."
+        },
+        {
+            "word": "people",
+            "sentence": "Most people like music."
+        },
+        {
+            "word": "my",
+            "sentence": "My house is close to the school."
+        },
+        {
+            "word": "over",
+            "sentence": "The plane will fly over the mountains."
+        },
+        {
+            "word": "know",
+            "sentence": "I know how to ride a bike."
+        },
+        {
             "word": "water",
             "sentence": "Water is a drink for people and plants."
         },
