@@ -39,6 +39,46 @@
         {
             "word": "where",
             "sentence": "Where would you like to go?"
+        },
+        {
+            "word": "after",
+            "sentence": "If you go first, I will go after you."
+        },
+        {
+            "word": "back",
+            "sentence": "Will you come back tomorrow?"
+        },
+        {
+            "word": "little",
+            "sentence": "The little house only has one room."
+        },
+        {
+            "word": "only",
+            "sentence": "I only have one dollar."
+        },
+        {
+            "word": "round",
+            "sentence": "The round spots look like polka dots."
+        },
+        {
+            "word": "man",
+            "sentence": "That man has a big beard."
+        },
+        {
+            "word": "year",
+            "sentence": "This year will be better than 2022."
+        },
+        {
+            "word": "came",
+            "sentence": "They came late to our party."
+        },
+        {
+            "word": "show",
+            "sentence": "I will show you the way."
+        },
+        {
+            "word": "every",
+            "sentence": "I wake up early every day."
         }
     ]
 }
