@@ -111,9 +111,16 @@ function getLocalJson (file) {
     req.onload = function(){
         var data = JSON.parse(this.responseText);
         var wordRow = '<p class="wordRow">';
+        var indexPositions = [];
+        while(indexPositions.length<10){
+            var randomNumber = Math.floor(Math.random() * data.words.length);
+            if(!indexPositions.includes(randomNumber)){
+                indexPositions.push(randomNumber);
+            }
+        }
         for(var i=0; i<10; i++){
-            words.push({"word":data.words[i].word,"sentence":data.words[i].sentence})
-            var word = data.words[i].word;
+            words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
+            var word = data.words[indexPositions[i]].word;
             var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
             wordRow += wordSpan;
             if((i+1)%3==0){
@@ -167,6 +174,7 @@ function saveScore() {
         }
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("name="+username+"&time="+(totalTime+penalty*1000)+"&level="+level);
+        document.getElementById("overlay").style.display = "flex";
     }
     req.send();
 }
@@ -208,7 +216,6 @@ function showLeaderboard() {
         document.getElementById("leaderboard").innerHTML += '<p id="tryAgain" class="leaderboardRow" onClick="reset()">Try Again</p>';
     }
     xhttp.send();
-    document.getElementById("overlay").style.display = "flex";
 }
 
 function convertTime(totalMs) {
