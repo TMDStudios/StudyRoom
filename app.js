@@ -139,11 +139,8 @@ function getQuestion() {
     if(words.length>0){
         wordIndex = Math.floor(Math.random() * words.length);
         correctWord = words[wordIndex].word;
-        var sentence = words[wordIndex].sentence.toLowerCase();
-        sentence = sentence.replace(correctWord, "_____");
-        var firstLetter = sentence[0].toUpperCase();
-        sentence = firstLetter + sentence.slice(1,sentence.length);
-        document.getElementById("question").innerHTML = sentence;
+        var sentence = words[wordIndex].sentence;
+        document.getElementById("question").innerHTML = sentence.replace(correctWord, "_____");
     }else{
         clearInterval(timer);
         saveScore();
