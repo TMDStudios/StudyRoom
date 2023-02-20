@@ -19,6 +19,12 @@ body {
     height: 25vh;
     width: 80%;
     padding: 8px;
+    text-align: center;
+}
+#welcome img {
+    opacity: .9;
+    border-radius: 6px;
+    max-width: 100%;
 }
 #menu {
     color: #a6fff9;
