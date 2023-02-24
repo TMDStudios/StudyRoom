@@ -71,7 +71,7 @@ function selectLevel() {
             startLevel();
             break;
         case 3:
-            console.log("Selected level 2");
+            startLevel();
             break;
         default:
             console.log("Selected level OTHER"+level);
@@ -92,6 +92,14 @@ function startLevel() {
             getLocalJson("level2.json");
             console.log("Starting level 2");
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 2</h3>';
+            document.getElementById("activity").style.transition = "opacity 2s ease-out";
+            document.getElementById("activity").style.opacity = 1;    
+            startTimer();      
+            break;
+        case 3:
+            getLocalJson("level3.json");
+            console.log("Starting level 3");
+            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 3</h3>';
             document.getElementById("activity").style.transition = "opacity 2s ease-out";
             document.getElementById("activity").style.opacity = 1;    
             startTimer();      
