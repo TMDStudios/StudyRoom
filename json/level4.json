@@ -6,7 +6,9 @@
         },
         {
             "word": "plain",
-            "sentence": "I will take the plain toast."
+            "sentence": "I will take the plain toast.",
+            "comparative": "plainer",
+            "superlative": "plainest"
         },
         {
             "word": "girl",
@@ -19,7 +21,9 @@
         },
         {
             "word": "young",
-            "sentence": "The young child loves his toys."
+            "sentence": "The young child loves his toys.",
+            "comparative": "younger",
+            "superlative": "youngest"
         },
         {
             "word": "ready",
@@ -35,7 +39,9 @@
         },
         {
             "word": "red",
-            "sentence": "Mars is know as the red planet."
+            "sentence": "Mars is know as the red planet.",
+            "comparative": "redder",
+            "superlative": "reddest"
         },
         {
             "word": "list",

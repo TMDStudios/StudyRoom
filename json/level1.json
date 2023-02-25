@@ -23,7 +23,8 @@
         {
             "word": "Most",
             "sentence": "Most people like music.",
-            "superlative": "many, more, most"
+            "comparative": "more",
+            "superlative": "most"
         },
         {
             "word": "people",

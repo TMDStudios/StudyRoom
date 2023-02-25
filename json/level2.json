@@ -71,7 +71,9 @@
         {
             "word": "round",
             "sentence": "The round spots look like polka dots.",
-            "regular": "true"
+            "regular": "true",
+            "comparative": "rounder",
+            "superlative": "roundest"
         },
         {
             "word": "man",

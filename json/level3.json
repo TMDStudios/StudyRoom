@@ -23,7 +23,9 @@
         },
         {
             "word": "near",
-            "sentence": "We live near a school."
+            "sentence": "We live near a school.",
+            "comparative": "nearer",
+            "superlative": "nearest"
         },
         {
             "word": "build",
