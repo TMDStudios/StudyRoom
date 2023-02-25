@@ -2,15 +2,19 @@
     "words": [
         {
             "word": "Did",
-            "sentence": "Did you eat lunch today?"
+            "sentence": "Did you eat lunch today?",
+            "regular": "false",
+            "conjugation" : "do, did, done"
         },
         {
             "word": "number",
-            "sentence": "Ten thousand is a large number."
+            "sentence": "Ten thousand is a large number.",
+            "count": "true"
         },
         {
             "word": "sound",
-            "sentence": "I love the sound of music."
+            "sentence": "I love the sound of music.",
+            "count": "true"
         },
         {
             "word": "no",
@@ -18,11 +22,13 @@
         },
         {
             "word": "Most",
-            "sentence": "Most people like music."
+            "sentence": "Most people like music.",
+            "superlative": "many, more, most"
         },
         {
             "word": "people",
-            "sentence": "Most people like music."
+            "sentence": "Most people like music.",
+            "count": "false"
         },
         {
             "word": "My",
@@ -34,11 +40,14 @@
         },
         {
             "word": "know",
-            "sentence": "I know how to ride a bike."
+            "sentence": "I know how to ride a bike.",
+            "regular": "false",
+            "conjugation" : "know, knew, known"
         },
         {
             "word": "Water",
-            "sentence": "Water is a drink for people and plants."
+            "sentence": "Water is a drink for people and plants.",
+            "count": "false"
         },
         {
             "word": "than",
@@ -46,7 +55,8 @@
         },
         {
             "word": "call",
-            "sentence": "You can call me on the phone."
+            "sentence": "You can call me on the phone.",
+            "regular": "true"
         },
         {
             "word": "first",
@@ -66,11 +76,14 @@
         },
         {
             "word": "side",
-            "sentence": "The car has a flat tire on the left side."
+            "sentence": "The car has a flat tire on the left side.",
+            "count": "true"
         },
         {
             "word": "been",
-            "sentence": "I have been there before."
+            "sentence": "I have been there before.",
+            "regular": "false",
+            "conjugation" : "am, was, been"
         },
         {
             "word": "now",
@@ -78,7 +91,9 @@
         },
         {
             "word": "find",
-            "sentence": "Can you help me find my keys?"
+            "sentence": "Can you help me find my keys?",
+            "regular": "false",
+            "conjugation" : "find, found, found"
         }
     ]
 }

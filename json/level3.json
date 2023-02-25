@@ -10,7 +10,8 @@
         },
         {
             "word": "point",
-            "sentence": "That is the first point of the game."
+            "sentence": "That is the first point of the game.",
+            "regular": "true"
         },
         {
             "word": "mother",
@@ -26,7 +27,9 @@
         },
         {
             "word": "build",
-            "sentence": "I will build a snowman tomorrow."
+            "sentence": "I will build a snowman tomorrow.",
+            "regular": "false",
+            "conjugation" : "build, built, built"
         },
         {
             "word": "self",

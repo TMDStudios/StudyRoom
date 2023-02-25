@@ -10,31 +10,43 @@
         },
         {
             "word": "work",
-            "sentence": "Hard work makes you stronger."
+            "sentence": "Hard work makes you stronger.",
+            "regular": "true"
         },
         {
             "word": "part",
-            "sentence": "The last part of the story is funny."
+            "sentence": "The last part of the story is funny.",
+            "regular": "true",
+            "count": "true"
         },
         {
             "word": "take",
-            "sentence": "I will take you to school."
+            "sentence": "I will take you to school.",
+            "regular": "false",
+            "conjugation" : "take, took, taken",
+            "count": "true"
         },
         {
             "word": "Get",
-            "sentence": "Get ready to laugh."
+            "sentence": "Get ready to laugh.",
+            "regular": "false",
+            "conjugation" : "get, got, gotten"
         },
         {
             "word": "place",
-            "sentence": "This is my favorite place in town."
+            "sentence": "This is my favorite place in town.",
+            "regular": "true"
         },
         {
             "word": "made",
-            "sentence": "I made dinner last night."
+            "sentence": "I made dinner last night.",
+            "regular": "false",
+            "conjugation" : "make, made, made"
         },
         {
             "word": "live",
-            "sentence": "I live in a big city."
+            "sentence": "I live in a big city.",
+            "regular": "true"
         },
         {
             "word": "Where",
@@ -58,7 +70,8 @@
         },
         {
             "word": "round",
-            "sentence": "The round spots look like polka dots."
+            "sentence": "The round spots look like polka dots.",
+            "regular": "true"
         },
         {
             "word": "man",
@@ -70,11 +83,15 @@
         },
         {
             "word": "came",
-            "sentence": "They came late to our party."
+            "sentence": "They came late to our party.",
+            "regular": "false",
+            "conjugation" : "come, came, come"
         },
         {
             "word": "show",
-            "sentence": "I will show you the way."
+            "sentence": "I will show you the way.",
+            "regular": "false",
+            "conjugation" : "show, shown, shown"
         },
         {
             "word": "every",
