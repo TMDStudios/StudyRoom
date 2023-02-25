@@ -1,0 +1,46 @@
+{
+    "words": [
+        {
+            "word": "enough",
+            "sentence": "There is enough food for everyone."
+        },
+        {
+            "word": "plain",
+            "sentence": "I will take the plain toast."
+        },
+        {
+            "word": "girl",
+            "sentence": "That girl is my sister.",
+            "count": "true"
+        },
+        {
+            "word": "usual",
+            "sentence": "This is the usual time for us."
+        },
+        {
+            "word": "young",
+            "sentence": "The young child loves his toys."
+        },
+        {
+            "word": "ready",
+            "sentence": "I am ready to go."
+        },
+        {
+            "word": "above",
+            "sentence": "The plane flies above the tall mountains."
+        },
+        {
+            "word": "ever",
+            "sentence": "Will humans ever make it to Mars?"
+        },
+        {
+            "word": "red",
+            "sentence": "Mars is know as the red planet."
+        },
+        {
+            "word": "list",
+            "sentence": "My shopping list is very long for this week.",
+            "count": "true"
+        }
+    ]
+}
