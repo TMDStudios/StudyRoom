@@ -1,0 +1,58 @@
+{
+    "words": [
+        {
+            "word": "unit",
+            "sentence": "A meter is a unit of length.",
+            "count": "true"
+        },
+        {
+            "word": "power",
+            "sentence": "The big storm caused a power outage."
+        },
+        {
+            "word": "town",
+            "sentence": "I live in a very small town.",
+            "count": "true"
+        },
+        {
+            "word": "fine",
+            "sentence": "You will get a fine if you drive too fast.",
+            "count": "true",
+            "regular": "true"
+        },
+        {
+            "word": "certain",
+            "sentence": "Does this meal contain nuts?"
+        },
+        {
+            "word": "fly",
+            "sentence": "I would like to fly in a private jet.",
+            "regular": "false",
+            "conjugation" : "fly, flew, flown"
+        },
+        {
+            "word": "fall",
+            "sentence": "Be careful not to fall off the ladder.",
+            "count": "true",
+            "regular": "false",
+            "conjugation" : "fall, fell, fallen"
+        },
+        {
+            "word": "lead",
+            "sentence": "I will lead the team to victory.",
+            "count": "true",
+            "regular": "false",
+            "conjugation" : "lead, led, led"
+        },
+        {
+            "word": "cry",
+            "sentence": "I will cry if my team loses again.",
+            "count": "true",
+            "regular": "true"
+        },
+        {
+            "word": "dark",
+            "sentence": "We can't see the dark side of the moon."
+        }
+    ]
+}

@@ -7,8 +7,7 @@
         {
             "word": "plain",
             "sentence": "I will take the plain toast.",
-            "comparative": "plainer",
-            "superlative": "plainest"
+            "count": "true"
         },
         {
             "word": "girl",
@@ -21,9 +20,7 @@
         },
         {
             "word": "young",
-            "sentence": "The young child loves his toys.",
-            "comparative": "younger",
-            "superlative": "youngest"
+            "sentence": "The young child loves his toys."
         },
         {
             "word": "ready",
@@ -39,9 +36,7 @@
         },
         {
             "word": "red",
-            "sentence": "Mars is know as the red planet.",
-            "comparative": "redder",
-            "superlative": "reddest"
+            "sentence": "Mars is know as the red planet."
         },
         {
             "word": "list",

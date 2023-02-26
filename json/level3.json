@@ -6,26 +6,28 @@
         },
         {
             "word": "animal",
-            "sentence": "This animal belongs in the zoo."
+            "sentence": "This animal belongs in the zoo.",
+            "count": "true"
         },
         {
             "word": "point",
             "sentence": "That is the first point of the game.",
-            "regular": "true"
+            "regular": "true",
+            "count": "true"
         },
         {
             "word": "mother",
-            "sentence": "My mother and father come from different countries."
+            "sentence": "My mother and father come from different countries.",
+            "count": "true"
         },
         {
             "word": "world",
-            "sentence": "That is the biggest mountain in the world."
+            "sentence": "That is the biggest mountain in the world.",
+            "count": "true"
         },
         {
             "word": "near",
-            "sentence": "We live near a school.",
-            "comparative": "nearer",
-            "superlative": "nearest"
+            "sentence": "We live near a school."
         },
         {
             "word": "build",
@@ -39,11 +41,13 @@
         },
         {
             "word": "earth",
-            "sentence": "The earth rotates once every day."
+            "sentence": "The earth rotates once every day.",
+            "count": "false"
         },
         {
             "word": "father",
-            "sentence": "My mother and father want grandchildren."
+            "sentence": "My mother and father want grandchildren.",
+            "count": "true"
         }
     ]
 }

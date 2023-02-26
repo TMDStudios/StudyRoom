@@ -35,7 +35,8 @@
         {
             "word": "place",
             "sentence": "This is my favorite place in town.",
-            "regular": "true"
+            "regular": "true",
+            "count": "true"
         },
         {
             "word": "made",
@@ -71,17 +72,17 @@
         {
             "word": "round",
             "sentence": "The round spots look like polka dots.",
-            "regular": "true",
-            "comparative": "rounder",
-            "superlative": "roundest"
+            "regular": "true"
         },
         {
             "word": "man",
-            "sentence": "That man has a big beard."
+            "sentence": "That man has a big beard.",
+            "count": "true"
         },
         {
             "word": "year",
-            "sentence": "This year will be better than 2022."
+            "sentence": "This year will be better than 2022.",
+            "count": "true"
         },
         {
             "word": "came",
@@ -93,7 +94,8 @@
             "word": "show",
             "sentence": "I will show you the way.",
             "regular": "false",
-            "conjugation" : "show, shown, shown"
+            "conjugation" : "show, shown, shown",
+            "count": "true"
         },
         {
             "word": "every",
