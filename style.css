@@ -34,6 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 80%;
+    min-width: 200px;
     background-color: rgba(0,0,0,.1);
     border-radius: 6px;
     padding: 8px;
@@ -54,8 +55,8 @@ body {
 }
 #options, #options div {
     border-radius: 4px;
-    width: 40%;
-    min-width: 128px;
+    width: 66%;
+    min-width: 196px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -123,6 +124,14 @@ select option {
     text-align: center;
     font-family: monospace, monospace;
 }
+#wordsRemaining {
+    color: #a6fff9;
+    padding: 8px;
+}
+#wordsRemaining p {
+    text-align: center;
+    font-family: monospace, monospace;
+}
 #wordBank {
     color: black;
 }
@@ -161,6 +170,35 @@ select option {
     border-radius: 6px;
     background-image: linear-gradient(to bottom right, #ff6f31, #D61C4E, #D61C4E, #D61C4E, #D61C4E, #ff6f31);
     color: #FFEBB7;
+}
+#regularIrregular {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+#regularIrregular span {
+    flex: 1;
+    text-align: center;
+    background-color: #243763;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 4px;
+    border: solid 1px #d61c4e;
+    color: #FFEBB7;
+    max-width: 25%;
+}
+#regularIrregular span:hover {
+    cursor: pointer;
+}
+.centerDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
 }
 #leaderboard {
     background-color: rgba(0,0,0,.1);
@@ -272,7 +310,7 @@ select option {
         margin: 2px;
     }
     #options, #options div {
-        width: 80%;
+        width: 90%;
     }
     #question {
         padding: 8px;
@@ -289,11 +327,17 @@ select option {
     .rank {
         max-width: 25%;
     }
+    #regularIrregular {
+        margin-top: 16px;
+    }
 }
 
-@media all and (max-width: 299px) {
+@media all and (max-width: 324px) {
     body {
         font-size: 0.9em;
+    }
+    #options, #options div {
+        min-width: 160px;
     }
     #menu {
         width: 90%;

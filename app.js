@@ -8,6 +8,9 @@ var timer = null;
 var totalTime = 0;
 var username = "Anonymous";
 var penalty = 0;
+var activityType = 1;
+var isRegular = false;
+// 1 - Fill in the blank, 2 - Regular/Irregular
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -32,7 +35,13 @@ function activitySelect(num) {
             activityOptions(1);
             break;
         case 2:
-            console.log("Activity 2");
+            document.getElementById("option1").className = "selected";
+            document.getElementById("option1").innerHTML = '<p>Regular & Irregular Verbs</p>';
+
+            document.getElementById("option2").innerHTML = '';
+            document.getElementById("option3").innerHTML = '<p onClick="reset()">Reset</p>';
+
+            activityOptions(2);
             break;
         case 3:
             console.log("Activity 3");
@@ -43,12 +52,13 @@ function activitySelect(num) {
 }
 
 function activityOptions(num) {
+    activityType = num;
     switch(num) {
         case 1:
-            document.getElementById("option2").innerHTML = levelSelection();
+            document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         case 2:
-            console.log("Activity Option 2");
+            document.getElementById("option2").innerHTML = levelSelection(1);
             break;
         case 3:
             console.log("Activity Option 3");
@@ -58,9 +68,9 @@ function activityOptions(num) {
     }
 }
 
-function levelSelection(){
+function levelSelection(numOfLevels){
     var selectionString = '<select id="level" onchange="selectLevel()"><option value="0">Select Level</option>';
-    for(var i=1; i<6; i++){
+    for(var i=1; i<numOfLevels+1; i++){
         selectionString+='<option value="'+i+'">'+i+'</option>'
     }
     return selectionString+'</select>';
@@ -95,8 +105,21 @@ function startLevel() {
             console.log("Coming soon");
     }
 
+    switch(activityType) {
+        case 1:
+            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level '+level+'</h3>';    
+            break;
+        case 2:
+            document.getElementById("menu").innerHTML = '<h3 id="start">Reg & Irregular Verbs - Lv '+level+'</h3>'; 
+            break;
+        case 3:
+            getLocalJson("level3.json");
+            break;
+        default:
+            console.log("Coming soon");
+    }
     console.log("Starting level "+level);
-    document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level '+level+'</h3>';
+    
     document.getElementById("activity").style.transition = "opacity 2s ease-out";
     document.getElementById("activity").style.opacity = 1;    
     startTimer(); 
@@ -111,32 +134,90 @@ function getLocalJson (file) {
     req.open("GET", 'json/'+file);
     req.onload = function(){
         var data = JSON.parse(this.responseText);
-        var wordRow = '<p class="wordRow">';
-        var indexPositions = [];
-        while(indexPositions.length<10){
-            var randomNumber = Math.floor(Math.random() * data.words.length);
-            if(!indexPositions.includes(randomNumber)){
-                indexPositions.push(randomNumber);
-            }
+        switch(activityType) {
+            case 1:
+                fillInTheBlanks(data)   
+                break;
+            case 2:
+                regularAndIrregularVerbs(data)
+                break;
+            default:
+                console.log("Coming soon");
         }
-        for(var i=0; i<10; i++){
-            words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
-            var word = data.words[indexPositions[i]].word;
-            var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
-            wordRow += wordSpan;
-            if((i+1)%3==0){
-                wordRow += '</p><p class="wordRow">';
-            }
-        }
-        wordRow += '</p>';
-        document.getElementById("wordBank").innerHTML = wordRow;  
-        
-        getQuestion();
     }
     req.send();
 }
 
-function getQuestion() {
+function fillInTheBlanks(data) {
+    var wordRow = '<p class="wordRow">';
+    var indexPositions = [];
+    while(indexPositions.length<10){
+        var randomNumber = Math.floor(Math.random() * data.words.length);
+        if(!indexPositions.includes(randomNumber)){
+            indexPositions.push(randomNumber);
+        }
+    }
+    for(var i=0; i<10; i++){
+        words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
+        var word = data.words[indexPositions[i]].word;
+        var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
+        wordRow += wordSpan;
+        if((i+1)%3==0){
+            wordRow += '</p><p class="wordRow">';
+        }
+    }
+    wordRow += '</p>';
+    document.getElementById("wordBank").innerHTML = wordRow;  
+    
+    getSentence();
+}
+
+function regularAndIrregularVerbs(data) {
+    var indexPositions = [];
+    while(indexPositions.length<10){
+        var randomNumber = Math.floor(Math.random() * data.words.length);
+        if(!indexPositions.includes(randomNumber) && data.words[randomNumber].regular!=undefined){
+            indexPositions.push(randomNumber);
+        }
+    }
+    for(var i=0; i<10; i++){
+        words.push({"word":data.words[indexPositions[i]].word,"regular":data.words[indexPositions[i]].regular})
+    }
+
+    document.getElementById("question").style.textAlign = 'center';
+    document.getElementById("activity").innerHTML += '<div id="regularIrregular"></div>';
+    document.getElementById("regularIrregular").innerHTML += '<span onclick="regOrNot(\'true\')">Regular</span><span onclick="regOrNot(\'false\')">Irregular</span>';
+    document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: 10/10</p>';
+    pickWord();
+}
+
+function pickWord() {
+    if(words.length>0){
+        wordIndex = Math.floor(Math.random() * words.length);
+        isRegular = words[wordIndex].regular;
+        document.getElementById("question").innerHTML = words[wordIndex].word;
+    }else{
+        clearInterval(timer);
+        saveScore();
+        document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(totalTime+penalty*1000)+'</span></p>';
+        document.getElementById("question").innerHTML = "You have answered all the questions!\nYour total time was "+document.getElementById("totalTime").innerHTML;
+        document.getElementById("activity").innerHTML += '<div class="centerDiv"><p id="tryAgain" class="leaderboardRow" onClick="reset()">Try Again</p></div>';
+    }
+}
+
+function regOrNot(selection) {
+    if(selection==isRegular){
+        words.splice(wordIndex, 1);
+        document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+    }else{
+        penalty += 5;
+        document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+        document.getElementById("penalty").style.color = "red";
+    }
+    pickWord();
+}
+
+function getSentence() {
     if(words.length>0){
         wordIndex = Math.floor(Math.random() * words.length);
         correctWord = words[wordIndex].word;
@@ -151,30 +232,32 @@ function getQuestion() {
 }
 
 function saveScore() {
-    if(confirm("Your total time: "+convertTime(totalTime+penalty*1000)+"\nUpload time to leaderboard?")){
-        username = prompt("Enter Name:\n(Up to 9 characters)");
+    if(activityType==1){
+        if(confirm("Your total time: "+convertTime(totalTime+penalty*1000)+"\nUpload time to leaderboard?")){
+            username = prompt("Enter Name:\n(Up to 9 characters)");
+        }
+    
+        let req = new XMLHttpRequest();
+        req.open('GET', "https://www.purgomalum.com/service/containsprofanity?text="+username);
+        req.onload = function() {
+            if(this.responseText.includes("true")){
+                username = "Anonymous";
+            }
+            if(username.length>9){
+                username = username.slice(0,9);
+            }
+    
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "https://devroboto.pythonanywhere.com/leaderboard/add/");
+            xhttp.onload = function(){
+                showLeaderboard();
+            }
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("name="+username+"&time="+(totalTime+penalty*1000)+"&level="+level);
+            document.getElementById("overlay").style.display = "flex";
+        }
+        req.send();
     }
-
-    let req = new XMLHttpRequest();
-    req.open('GET', "https://www.purgomalum.com/service/containsprofanity?text="+username);
-    req.onload = function() {
-        if(this.responseText.includes("true")){
-            username = "Anonymous";
-        }
-        if(username.length>9){
-            username = username.slice(0,9);
-        }
-
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "https://devroboto.pythonanywhere.com/leaderboard/add/");
-        xhttp.onload = function(){
-            showLeaderboard();
-        }
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("name="+username+"&time="+(totalTime+penalty*1000)+"&level="+level);
-        document.getElementById("overlay").style.display = "flex";
-    }
-    req.send();
 }
 
 function showLeaderboard() {
@@ -253,7 +336,7 @@ function chooseWord(word) {
         document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
         document.getElementById("penalty").style.color = "red";
     }
-    getQuestion();
+    getSentence();
 }
 
 function startTimer() {
