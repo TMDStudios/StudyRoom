@@ -1,8 +1,106 @@
 {
     "words": [
         {
-            "word": "Did",
-            "sentence": "Did you eat lunch today?",
+            "word": "them",
+            "sentence": "My friends are leaving. I will go with them."
+        },
+        {
+            "word": "write",
+            "sentence": "I can already read and write.",
+            "regular": "false",
+            "conjugation" : "write, wrote, written"
+        },
+        {
+            "word": "would",
+            "sentence": "I would like to have a big house."
+        },
+        {
+            "word": "like",
+            "sentence": "I like all types of ice cream.",
+            "regular": "true",
+            "count": "true"
+        },
+        {
+            "word": "so",
+            "sentence": "I love cake so much! I could eat it all day."
+        },
+        {
+            "word": "these",
+            "sentence": "Where should I put these tools?"
+        },
+        {
+            "word": "her",
+            "sentence": "Lana is hungry. Can you feed her?"
+        },
+        {
+            "word": "long",
+            "sentence": "It is a long movie. I will bring drinks."
+        },
+        {
+            "word": "make",
+            "sentence": "Can you make me a sandwich?",
+            "regular": "false",
+            "conjugation" : "make, made, made"
+        },
+        {
+            "word": "thing",
+            "sentence": "That was a good thing to do.",
+            "count": "true"
+        },
+        {
+            "word": "see",
+            "sentence": "I can see much better with my glasses.",
+            "regular": "false",
+            "conjugation" : "see, saw, seen"
+        },
+        {
+            "word": "him",
+            "sentence": "Tim is late. Tell him to hurry."
+        },
+        {
+            "word": "two",
+            "sentence": "We all have two ears."
+        },
+        {
+            "word": "has",
+            "sentence": "Jane has three brothers.",
+            "regular": "false",
+            "conjugation" : "has, had, had"
+        },
+        {
+            "word": "look",
+            "sentence": "I will look at the moon tonight.",
+            "regular": "true",
+            "count": "true"
+        },
+        {
+            "word": "more",
+            "sentence": "I will have more money when I get paid."
+        },
+        {
+            "word": "day",
+            "sentence": "Tomorrow is a new day.",
+            "count": "true"
+        },
+        {
+            "word": "could",
+            "sentence": "Sam is rich. She could buy anything."
+        },
+        {
+            "word": "go",
+            "sentence": "We should go to the movies.",
+            "regular": "false",
+            "conjugation" : "go, went, gone"
+        },
+        {
+            "word": "come",
+            "sentence": "I need your help. Can you come now?",
+            "regular": "false",
+            "conjugation" : "come, came, come"
+        },
+        {
+            "word": "did",
+            "sentence": "We did a good job.",
             "regular": "false",
             "conjugation" : "do, did, done"
         },
@@ -21,8 +119,8 @@
             "sentence": "We have to pay because there is no free parking."
         },
         {
-            "word": "Most",
-            "sentence": "Most people like music."
+            "word": "most",
+            "sentence": "I always get the most candy."
         },
         {
             "word": "people",
@@ -30,8 +128,8 @@
             "count": "false"
         },
         {
-            "word": "My",
-            "sentence": "My house is close to the school."
+            "word": "my",
+            "sentence": "Will you come to my house later?"
         },
         {
             "word": "over",
@@ -44,8 +142,8 @@
             "conjugation" : "know, knew, known"
         },
         {
-            "word": "Water",
-            "sentence": "Water is a drink for people and plants.",
+            "word": "water",
+            "sentence": "Make sure to drink water after you run.",
             "count": "false"
         },
         {
@@ -62,8 +160,8 @@
             "sentence": "I will go first in the game."
         },
         {
-            "word": "Who",
-            "sentence": "Who is that man over there?"
+            "word": "who",
+            "sentence": "You know who you are."
         },
         {
             "word": "may",

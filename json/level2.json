@@ -27,8 +27,8 @@
             "count": "true"
         },
         {
-            "word": "Get",
-            "sentence": "Get ready to laugh.",
+            "word": "get",
+            "sentence": "Can you get the mail for me?",
             "regular": "false",
             "conjugation" : "get, got, gotten"
         },
@@ -50,8 +50,8 @@
             "regular": "true"
         },
         {
-            "word": "Where",
-            "sentence": "Where would you like to go?"
+            "word": "where",
+            "sentence": "This is where I want to live."
         },
         {
             "word": "after",
