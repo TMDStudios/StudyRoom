@@ -22,7 +22,7 @@
         },
         {
             "word": "certain",
-            "sentence": "Does this meal contain nuts?"
+            "sentence": "I only like a certain type of candy."
         },
         {
             "word": "fly",
@@ -39,7 +39,7 @@
         },
         {
             "word": "lead",
-            "sentence": "I will lead the team to victory.",
+            "sentence": "I lead a team of five at work.",
             "count": "true",
             "regular": "false",
             "conjugation" : "lead, led, led"

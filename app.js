@@ -45,7 +45,7 @@ function activitySelect(num) {
 function activityOptions(num) {
     switch(num) {
         case 1:
-            document.getElementById("option2").innerHTML = '<select id="level" onchange="selectLevel()"><option value="0">Select Level</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>';
+            document.getElementById("option2").innerHTML = levelSelection();
             break;
         case 2:
             console.log("Activity Option 2");
@@ -58,55 +58,48 @@ function activityOptions(num) {
     }
 }
 
+function levelSelection(){
+    var selectionString = '<select id="level" onchange="selectLevel()"><option value="0">Select Level</option>';
+    for(var i=1; i<6; i++){
+        selectionString+='<option value="'+i+'">'+i+'</option>'
+    }
+    return selectionString+'</select>';
+}
+
 function selectLevel() {
     level = parseInt(document.getElementById("level").value);
     document.getElementById("option2").className = "selected";
     document.getElementById("option2").innerHTML = '<p>Level '+level+'</p>';
 
-    switch(level) {
-        case 1:
-            startLevel();
-            break;
-        case 2:
-            startLevel();
-            break;
-        case 3:
-            startLevel();
-            break;
-        default:
-            console.log("Selected level OTHER"+level);
-    }
+    startLevel();
 }
 
 function startLevel() {
     switch(level) {
         case 1:
-            getLocalJson("level1.json");
-            console.log("Starting level 1");
-            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 1</h3>';
-            document.getElementById("activity").style.transition = "opacity 2s ease-out";
-            document.getElementById("activity").style.opacity = 1;    
-            startTimer();      
+            getLocalJson("level1.json");     
             break;
         case 2:
-            getLocalJson("level2.json");
-            console.log("Starting level 2");
-            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 2</h3>';
-            document.getElementById("activity").style.transition = "opacity 2s ease-out";
-            document.getElementById("activity").style.opacity = 1;    
-            startTimer();      
+            getLocalJson("level2.json");   
             break;
         case 3:
             getLocalJson("level3.json");
-            console.log("Starting level 3");
-            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level 3</h3>';
-            document.getElementById("activity").style.transition = "opacity 2s ease-out";
-            document.getElementById("activity").style.opacity = 1;    
-            startTimer();      
+            break;
+        case 4:
+            getLocalJson("level4.json");
+            break;
+        case 5:
+            getLocalJson("level5.json");
             break;
         default:
             console.log("Coming soon");
     }
+
+    console.log("Starting level "+level);
+    document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level '+level+'</h3>';
+    document.getElementById("activity").style.transition = "opacity 2s ease-out";
+    document.getElementById("activity").style.opacity = 1;    
+    startTimer(); 
 }
 
 function reset() {
