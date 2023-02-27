@@ -10,7 +10,8 @@ var username = "Anonymous";
 var penalty = 0;
 var activityType = 1;
 var isRegular = false;
-// 1 - Fill in the blank, 2 - Regular/Irregular
+var isCount = false;
+// 1 - Fill in the blank, 2 - Regular/Irregular, 3 - count/noncount
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -44,7 +45,13 @@ function activitySelect(num) {
             activityOptions(2);
             break;
         case 3:
-            console.log("Activity 3");
+            document.getElementById("option1").className = "selected";
+            document.getElementById("option1").innerHTML = '<p>Count & Noncount Nouns</p>';
+
+            document.getElementById("option2").innerHTML = '';
+            document.getElementById("option3").innerHTML = '<p onClick="reset()">Reset</p>';
+
+            activityOptions(3);
             break;
         default:
             console.log("Activity OTHER");
@@ -61,7 +68,7 @@ function activityOptions(num) {
             document.getElementById("option2").innerHTML = levelSelection(1);
             break;
         case 3:
-            console.log("Activity Option 3");
+            document.getElementById("option2").innerHTML = levelSelection(1);
             break;
         default:
             console.log("Activity Option OTHER");
@@ -107,13 +114,13 @@ function startLevel() {
 
     switch(activityType) {
         case 1:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks - Level '+level+'</h3>';    
+            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks '+level+'</h3>';    
             break;
         case 2:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Reg & Irregular Verbs - Lv '+level+'</h3>'; 
+            document.getElementById("menu").innerHTML = '<h3 id="start">Reg & Irregular Verbs '+level+'</h3>'; 
             break;
         case 3:
-            getLocalJson("level3.json");
+            document.getElementById("menu").innerHTML = '<h3 id="start">Count/Noncount Nouns '+level+'</h3>'; 
             break;
         default:
             console.log("Coming soon");
@@ -136,10 +143,13 @@ function getLocalJson (file) {
         var data = JSON.parse(this.responseText);
         switch(activityType) {
             case 1:
-                fillInTheBlanks(data)   
+                fillInTheBlanks(data);   
                 break;
             case 2:
-                regularAndIrregularVerbs(data)
+                regularAndIrregularVerbs(data);
+                break;
+            case 3:
+                countAndNoncountNouns(data);
                 break;
             default:
                 console.log("Coming soon");
@@ -191,22 +201,58 @@ function regularAndIrregularVerbs(data) {
     pickWord();
 }
 
+function countAndNoncountNouns(data) {
+    var indexPositions = [];
+    while(indexPositions.length<10){
+        var randomNumber = Math.floor(Math.random() * data.words.length);
+        if(!indexPositions.includes(randomNumber) && data.words[randomNumber].count!=undefined){
+            indexPositions.push(randomNumber);
+        }
+    }
+    console.log(words);
+    for(var i=0; i<10; i++){
+        words.push({"word":data.words[indexPositions[i]].word,"count":data.words[indexPositions[i]].count})
+    }
+
+    document.getElementById("question").style.textAlign = 'center';
+    document.getElementById("activity").innerHTML += '<div id="countNoncount"></div>';
+    document.getElementById("countNoncount").innerHTML += '<span onclick="countOrNoncount(\'true\')">Count</span><span onclick="countOrNoncount(\'false\')">Noncount</span>';
+    document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: 10/10</p>';
+    pickWord();
+}
+
 function pickWord() {
     if(words.length>0){
         wordIndex = Math.floor(Math.random() * words.length);
-        isRegular = words[wordIndex].regular;
+        if(activityType==2){
+            isRegular = words[wordIndex].regular;
+        }else{
+            isCount = words[wordIndex].count;
+        }
         document.getElementById("question").innerHTML = words[wordIndex].word;
     }else{
         clearInterval(timer);
         saveScore();
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(totalTime+penalty*1000)+'</span></p>';
-        document.getElementById("question").innerHTML = "You have answered all the questions!\nYour total time was "+document.getElementById("totalTime").innerHTML;
+        document.getElementById("question").innerHTML = "Great job!\nYour total time was "+document.getElementById("totalTime").innerHTML;
         document.getElementById("activity").innerHTML += '<div class="centerDiv"><p id="tryAgain" class="leaderboardRow" onClick="reset()">Try Again</p></div>';
     }
 }
 
 function regOrNot(selection) {
     if(selection==isRegular){
+        words.splice(wordIndex, 1);
+        document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+    }else{
+        penalty += 5;
+        document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+        document.getElementById("penalty").style.color = "red";
+    }
+    pickWord();
+}
+
+function countOrNoncount(selection) {
+    if(selection==isCount){
         words.splice(wordIndex, 1);
         document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
     }else{
@@ -227,7 +273,7 @@ function getSentence() {
         clearInterval(timer);
         saveScore();
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(totalTime+penalty*1000)+'</span></p>';
-        document.getElementById("question").innerHTML = "You have answered all the questions!\nYour total time was "+document.getElementById("totalTime").innerHTML;
+        document.getElementById("question").innerHTML = "Great job!\nYour total time was "+document.getElementById("totalTime").innerHTML;
     }
 }
 

@@ -1,6 +1,50 @@
 {
     "words": [
         {
+            "word": "Which",
+            "sentence": "Which way should we go?"
+        },
+        {
+            "word": "do",
+            "sentence": "I failed, but I will do better next time.",
+            "regular": "false",
+            "conjugation" : "do, did, done"
+        },
+        {
+            "word": "their",
+            "sentence": "They love their jobs."
+        },
+        {
+            "word": "time",
+            "sentence": "How many times have you been here?",
+            "count": "true"
+        },
+        {
+            "word": "if",
+            "sentence": "I will eat if I'm hungry."
+        },
+        {
+            "word": "will",
+            "sentence": "How many games will you miss?"
+        },
+        {
+            "word": "way",
+            "sentence": "This is the right way to peel a banana.",
+            "count": "true"
+        },
+        {
+            "word": "about",
+            "sentence": "Can I ask you about last week?"
+        },
+        {
+            "word": "many",
+            "sentence": "How many games will you miss?"
+        },
+        {
+            "word": "then",
+            "sentence": "She said bye and then left."
+        },
+        {
             "word": "them",
             "sentence": "My friends are leaving. I will go with them."
         },
@@ -100,9 +144,7 @@
         },
         {
             "word": "did",
-            "sentence": "We did a good job.",
-            "regular": "false",
-            "conjugation" : "do, did, done"
+            "sentence": "We did a good job."
         },
         {
             "word": "number",
