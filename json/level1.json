@@ -1,8 +1,92 @@
 {
     "words": [
         {
-            "word": "Which",
-            "sentence": "Which way should we go?"
+            "word": "word",
+            "sentence": "I just learned my first Spanish word.",
+            "count": "true"
+        },
+        {
+            "word": "but",
+            "sentence": "I want to but I can't."
+        },
+        {
+            "word": "what",
+            "sentence": "This is what I wanted to show you."
+        },
+        {
+            "word": "some",
+            "sentence": "I'm sleepy. I will have some coffee."
+        },
+        {
+            "word": "we",
+            "sentence": "Where can we talk to each other?"
+        },
+        {
+            "word": "can",
+            "sentence": "I'm full! This is all I can eat."
+        },
+        {
+            "word": "out",
+            "sentence": "I will jump out of a plane tomorrow."
+        },
+        {
+            "word": "other",
+            "sentence": "This is one side and that is the other side."
+        },
+        {
+            "word": "were",
+            "sentence": "Were were you last night?"
+        },
+        {
+            "word": "all",
+            "sentence": "That is all I can say."
+        },
+        {
+            "word": "there",
+            "sentence": "Are there any candies left?"
+        },
+        {
+            "word": "when",
+            "sentence": "I will meet you at five. That is when I finish work."
+        },
+        {
+            "word": "up",
+            "sentence": "Look up at the sky."
+        },
+        {
+            "word": "use",
+            "sentence": "I will use a pencil to write.",
+            "regular": "true"
+        },
+        {
+            "word": "your",
+            "sentence": "You can have this. It is your share."
+        },
+        {
+            "word": "how",
+            "sentence": "I will show you how fast I can run."
+        },
+        {
+            "word": "said",
+            "sentence": "She said bye and then left.",
+            "regular": "false",
+            "conjugation" : "say, said, said"
+        },
+        {
+            "word": "an",
+            "sentence": "There is an open door."
+        },
+        {
+            "word": "each",
+            "sentence": "I like them all! I will take one of each."
+        },
+        {
+            "word": "she",
+            "sentence": "Who is she? Is that your sister?"
+        },
+        {
+            "word": "which",
+            "sentence": "Tell me which one you like."
         },
         {
             "word": "do",
