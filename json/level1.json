@@ -1,6 +1,130 @@
 {
     "words": [
         {
+            "word": "the",
+            "sentence": "This is the only one one left."
+        },
+        {
+            "word": "of",
+            "sentence": "I am tired of walking."
+        },
+        {
+            "word": "to",
+            "sentence": "I will come to your house after work."
+        },
+        {
+            "word": "and",
+            "sentence": "Sam and Jane are good friends."
+        },
+        {
+            "word": "a",
+            "sentence": "This is a very nice town."
+        },
+        {
+            "word": "in",
+            "sentence": "I'm cold. I will wait in the car."
+        },
+        {
+            "word": "is",
+            "sentence": "Where is your umbrella?"
+        },
+        {
+            "word": "it",
+            "sentence": "You said you would bring your book. Where is it?"
+        },
+        {
+            "word": "you",
+            "sentence": "Can I talk to you after your class ends?"
+        },
+        {
+            "word": "that",
+            "sentence": "I will take that car over there."
+        },
+        {
+            "word": "he",
+            "sentence": "I think we lost Bob. Where is he?"
+        },
+        {
+            "word": "was",
+            "sentence": "I was the only one there yesterday."
+        },
+        {
+            "word": "for",
+            "sentence": "I will pay for this meal."
+        },
+        {
+            "word": "on",
+            "sentence": "There is a cat on the roof of the car."
+        },
+        {
+            "word": "are",
+            "sentence": "We are very happy to be here."
+        },
+        {
+            "word": "with",
+            "sentence": "I will come with you."
+        },
+        {
+            "word": "as",
+            "sentence": "I am dressed as a superhero."
+        },
+        {
+            "word": "I",
+            "sentence": "I am very hungry."
+        },
+        {
+            "word": "his",
+            "sentence": "My brother will get mad if he loses his hat."
+        },
+        {
+            "word": "they",
+            "sentence": "Your parents are late. Are they still coming?"
+        },
+        {
+            "word": "be",
+            "sentence": "Call me after seven. I will be home then.",
+            "regular": "false",
+            "conjugation" : "be, was, been"
+        },
+        {
+            "word": "at",
+            "sentence": "I am at my friend's house."
+        },
+        {
+            "word": "one",
+            "sentence": "There is only one sun."
+        },
+        {
+            "word": "have",
+            "sentence": "I have one brother. His name is Tom.",
+            "regular": "false",
+            "conjugation" : "have, had, had"
+        },
+        {
+            "word": "this",
+            "sentence": "Where will this road take us?"
+        },
+        {
+            "word": "from",
+            "sentence": "I am from New York."
+        },
+        {
+            "word": "or",
+            "sentence": "It can only be day or night."
+        },
+        {
+            "word": "had",
+            "sentence": "We had a good time at the party last week."
+        },
+        {
+            "word": "by",
+            "sentence": "I am loved by my family."
+        },
+        {
+            "word": "not",
+            "sentence": "I will not go tomorrow because I am busy."
+        },
+        {
             "word": "word",
             "sentence": "I just learned my first Spanish word.",
             "count": "true"
@@ -191,9 +315,7 @@
         },
         {
             "word": "has",
-            "sentence": "Jane has three brothers.",
-            "regular": "false",
-            "conjugation" : "has, had, had"
+            "sentence": "Jane has three brothers."
         },
         {
             "word": "look",
@@ -304,9 +426,7 @@
         },
         {
             "word": "been",
-            "sentence": "I have been there before.",
-            "regular": "false",
-            "conjugation" : "am, was, been"
+            "sentence": "I have been there before."
         },
         {
             "word": "now",
