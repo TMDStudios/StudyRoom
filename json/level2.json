@@ -100,6 +100,244 @@
         {
             "word": "every",
             "sentence": "I wake up early every day."
+        },
+        {
+            "word": "good",
+            "sentence": "I am a good son. I always remember mother's day."
+        },
+        {
+            "word": "me",
+            "sentence": "Can you give me your book? I really need it."
+        },
+        {
+            "word": "give",
+            "sentence": "Can you give me some money for gas?",
+            "regular": "false",
+            "conjugation" : "give, gave, given"
+        },
+        {
+            "word": "our",
+            "sentence": "This is our favorite meeting place. We all come here often."
+        },
+        {
+            "word": "under",
+            "sentence": "The truck is too tall to pass under the bridge."
+        },
+        {
+            "word": "name",
+            "sentence": "I gave that dog a name. I call him Scruffy.",
+            "count": "true"
+        },
+        {
+            "word": "very",
+            "sentence": "He is very tall. Does he play basketball?"
+        },
+        {
+            "word": "through",
+            "sentence": "It is too wide to pass through the door."
+        },
+        {
+            "word": "just",
+            "sentence": "You just missed him. He left a few minutes ago."
+        },
+        {
+            "word": "form",
+            "sentence": "I need to fill out a form to get my license.",
+            "count": "true"
+        },
+        {
+            "word": "sentence",
+            "sentence": "Every sentence has a subject and a verb.",
+            "count": "true"
+        },
+        {
+            "word": "great",
+            "sentence": "Grate and great are pronounced the same way."
+        },
+        {
+            "word": "think",
+            "sentence": "I'm not sure. I will think about it.",
+            "regular": "false",
+            "conjugation" : "think, thought, thought"
+        },
+        {
+            "word": "say",
+            "sentence": "I just wanted to say hello.",
+            "regular": "false",
+            "conjugation" : "say, said, said"
+        },
+        {
+            "word": "help",
+            "sentence": "Can I help you with something?",
+            "regular": "true"
+        },
+        {
+            "word": "low",
+            "sentence": "The low temperature means it might snow."
+        },
+        {
+            "word": "line",
+            "sentence": "The line in the middle of the road separates the left and right lanes.",
+            "count": "true"
+        },
+        {
+            "word": "differ",
+            "sentence": "We can't agree. Our opinions differ greatly."
+        },
+        {
+            "word": "turn",
+            "sentence": "I will turn on the lights.",
+            "count": "true",
+            "regular": "true"
+        },
+        {
+            "word": "cause",
+            "sentence": "What was the cause of the accident?",
+            "regular": "true"
+        },
+        {
+            "word": "much",
+            "sentence": "How much will this cost?"
+        },
+        {
+            "word": "mean",
+            "sentence": "What do you mean by that?",
+            "regular": "false",
+            "conjugation" : "mean, meant, meant"
+        },
+        {
+            "word": "before",
+            "sentence": "Can I go before you? I am in a hurry."
+        },
+        {
+            "word": "move",
+            "sentence": "In chess, the white pieces move first.",
+            "regular": "true"
+        },
+        {
+            "word": "right",
+            "sentence": "Look left and right before you cross the street."
+        },
+        {
+            "word": "boy",
+            "sentence": "That boy is my little brother.",
+            "count": "true"
+        },
+        {
+            "word": "old",
+            "sentence": "Happy birthday! How old are you now?"
+        },
+        {
+            "word": "too",
+            "sentence": "Let me help. The bag is too heavy for you."
+        },
+        {
+            "word": "same",
+            "sentence": "Let's do this together. We can go at the same time."
+        },
+        {
+            "word": "tell",
+            "sentence": "I can tell when you are angry.",
+            "regular": "false",
+            "conjugation" : "tell, told, told"
+        },
+        {
+            "word": "does",
+            "sentence": "How does he always guess the answer?"
+        },
+        {
+            "word": "set",
+            "sentence": "I will set the temperature to 65 degrees.",
+            "regular": "false",
+            "conjugation" : "set, set, set",
+            "count": "true"
+        },
+        {
+            "word": "three",
+            "sentence": "There are three corners in a triangle."
+        },
+        {
+            "word": "want",
+            "sentence": "I want to go, but I can't.",
+            "regular": "true"
+        },
+        {
+            "word": "air",
+            "sentence": "There is too much air in that baloon.",
+            "count": "false"
+        },
+        {
+            "word": "well",
+            "sentence": "I am very rested. I slept well last night."
+        },
+        {
+            "word": "also",
+            "sentence": "I will also go to the park. Maybe we can walk together."
+        },
+        {
+            "word": "play",
+            "sentence": "I like to play basketball. It is great exercise.",
+            "regular": "true"
+        },
+        {
+            "word": "small",
+            "sentence": "That frame is too small for the large picture."
+        },
+        {
+            "word": "end",
+            "sentence": "This game is boring, but I will stay until the end.",
+            "regular": "true",
+            "count": "true"
+        },
+        {
+            "word": "put",
+            "sentence": "I will put the toys away. The house is too messy.",
+            "regular": "false",
+            "conjugation" : "put, put, put"
+        },
+        {
+            "word": "home",
+            "sentence": "I will go home after school to eat with my parents.",
+            "count": "true"
+        },
+        {
+            "word": "read",
+            "sentence": "I will read that book tomorrow.",
+            "regular": "false",
+            "conjugation" : "read, read, read"
+        },
+        {
+            "word": "hand",
+            "sentence": "There are five fingers on each hand.",
+            "count": "true"
+        },
+        {
+            "word": "port",
+            "sentence": "There are many ships in this port.",
+            "count": "true"
+        },
+        {
+            "word": "large",
+            "sentence": "That large toy will no fit in the car."
+        },
+        {
+            "word": "spell",
+            "sentence": "Writing words helps me spell them correctly.",
+            "regular": "true"
+        },
+        {
+            "word": "add",
+            "sentence": "If you add two and three, you get five.",
+            "regular": "true"
+        },
+        {
+            "word": "even",
+            "sentence": "Two, four, and six are even numbers."
+        },
+        {
+            "word": "land",
+            "sentence": "The plane will land at the airport.",
+            "regular": "true"
         }
     ]
 }
