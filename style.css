@@ -171,7 +171,7 @@ select option {
     background-image: linear-gradient(to bottom right, #ff6f31, #D61C4E, #D61C4E, #D61C4E, #D61C4E, #ff6f31);
     color: #FFEBB7;
 }
-#regularIrregular, #countNoncount {
+#regularIrregular, #conjugation {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -179,7 +179,7 @@ select option {
     margin-top: 4px;
     margin-bottom: 4px;
 }
-#regularIrregular span, #countNoncount span {
+#regularIrregular span, #conjugation span {
     flex: 1;
     text-align: center;
     background-color: #243763;
@@ -190,7 +190,7 @@ select option {
     color: #FFEBB7;
     max-width: 25%;
 }
-#regularIrregular span:hover, #countNoncount span:hover {
+#regularIrregular span:hover, #conjugation span:hover {
     cursor: pointer;
 }
 .centerDiv {
@@ -327,7 +327,7 @@ select option {
     .rank {
         max-width: 25%;
     }
-    #regularIrregular, #countNoncount {
+    #regularIrregular, #conjugation {
         margin-top: 16px;
     }
 }

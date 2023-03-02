@@ -10,8 +10,9 @@ var username = "Anonymous";
 var penalty = 0;
 var activityType = 1;
 var isRegular = false;
-var isCount = false;
-// 1 - Fill in the blank, 2 - Regular/Irregular, 3 - count/noncount
+var preterite = "";
+var pastParticiple = "";
+// 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
@@ -117,10 +118,10 @@ function startLevel() {
             document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks '+level+'</h3>';    
             break;
         case 2:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Reg & Irregular Verbs '+level+'</h3>'; 
+            document.getElementById("menu").innerHTML = '<h3 id="start">Regular or Irregular '+level+'</h3>'; 
             break;
         case 3:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Count/Noncount Nouns '+level+'</h3>'; 
+            document.getElementById("menu").innerHTML = '<h3 id="start">Conjugation '+level+'</h3>'; 
             break;
         default:
             console.log("Coming soon");
@@ -149,7 +150,7 @@ function getLocalJson (file) {
                 regularAndIrregularVerbs(data);
                 break;
             case 3:
-                countAndNoncountNouns(data);
+                conjugation(data);
                 break;
             default:
                 console.log("Coming soon");
@@ -201,22 +202,22 @@ function regularAndIrregularVerbs(data) {
     pickWord();
 }
 
-function countAndNoncountNouns(data) {
+function conjugation(data) {
     var indexPositions = [];
     while(indexPositions.length<10){
         var randomNumber = Math.floor(Math.random() * data.words.length);
-        if(!indexPositions.includes(randomNumber) && data.words[randomNumber].count!=undefined){
+        if(!indexPositions.includes(randomNumber) && data.words[randomNumber].conjugation!=undefined){
             indexPositions.push(randomNumber);
         }
     }
-    console.log(words);
+
     for(var i=0; i<10; i++){
-        words.push({"word":data.words[indexPositions[i]].word,"count":data.words[indexPositions[i]].count})
+        words.push({"word":data.words[indexPositions[i]].word,"conjugation":data.words[indexPositions[i]].conjugation})
     }
 
     document.getElementById("question").style.textAlign = 'center';
-    document.getElementById("activity").innerHTML += '<div id="countNoncount"></div>';
-    document.getElementById("countNoncount").innerHTML += '<span onclick="countOrNoncount(\'true\')">Count</span><span onclick="countOrNoncount(\'false\')">Noncount</span>';
+    document.getElementById("activity").innerHTML += '<div id="conjugation"></div>';
+    document.getElementById("conjugation").innerHTML += '<span><input type="text" id="preterite" placeholder="Simple Past"></span><span><input type="text" id="pastParticiple" placeholder="Past Participle"></span><span onclick="checkConjugation()">Submit</span>';
     document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: 10/10</p>';
     pickWord();
 }
@@ -227,7 +228,9 @@ function pickWord() {
         if(activityType==2){
             isRegular = words[wordIndex].regular;
         }else{
-            isCount = words[wordIndex].count;
+            var conjugationAnswer = words[wordIndex].conjugation.split(",");
+            preterite = conjugationAnswer[1].trim();
+            pastParticiple = conjugationAnswer[2].trim();
         }
         document.getElementById("question").innerHTML = words[wordIndex].word;
     }else{
@@ -251,8 +254,8 @@ function regOrNot(selection) {
     pickWord();
 }
 
-function countOrNoncount(selection) {
-    if(selection==isCount){
+function checkConjugation() {
+    if(preterite==document.getElementById("preterite").value && pastParticiple==document.getElementById("pastParticiple").value){
         words.splice(wordIndex, 1);
         document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
     }else{
@@ -260,6 +263,8 @@ function countOrNoncount(selection) {
         document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
         document.getElementById("penalty").style.color = "red";
     }
+    document.getElementById("preterite").value = "";
+    document.getElementById("pastParticiple").value = "";
     pickWord();
 }
 
