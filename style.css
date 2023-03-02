@@ -193,6 +193,10 @@ select option {
 #regularIrregular span:hover, #conjugation span:hover {
     cursor: pointer;
 }
+#preterite, #pastParticiple {
+    width: 90%;
+    padding-left: 6px;
+}
 .centerDiv {
     display: flex;
     flex-direction: column;
@@ -299,6 +303,16 @@ select option {
 #overlay p {
     flex: 1;
     text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    #regularIrregular, #conjugation {
+        flex-direction: column;
+    }
+    #regularIrregular span, #conjugation span {
+        max-width: 90%;
+        width: 90%;
+    }
 }
 
 @media all and (max-width: 550px) {
