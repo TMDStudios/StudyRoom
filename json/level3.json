@@ -1,53 +1,50 @@
 {
     "words": [
         {
-            "word": "us",
-            "sentence": "This house belongs to all of us."
+            "word": "head",
+            "sentence": "You have a good head on your shoulders."
         },
         {
-            "word": "animal",
-            "sentence": "This animal belongs in the zoo.",
-            "count": "true"
-        },
-        {
-            "word": "point",
-            "sentence": "That is the first point of the game.",
-            "regular": "true",
-            "count": "true"
-        },
-        {
-            "word": "mother",
-            "sentence": "My mother and father come from different countries.",
-            "count": "true"
-        },
-        {
-            "word": "world",
-            "sentence": "That is the biggest mountain in the world.",
-            "count": "true"
-        },
-        {
-            "word": "near",
-            "sentence": "We live near a school."
-        },
-        {
-            "word": "build",
-            "sentence": "I will build a snowman tomorrow.",
+            "word": "stand",
+            "sentence": "I need to stand up. This chair is uncomfortable.",
             "regular": "false",
-            "conjugation" : "build, built, built"
+            "conjugation" : "stand, stood, stood"
         },
         {
-            "word": "self",
-            "sentence": "She is self employed."
+            "word": "own",
+            "sentence": "Once I finish paying for this, I will own it.",
+            "regular": "true"
         },
         {
-            "word": "earth",
-            "sentence": "The earth rotates once every day.",
-            "count": "false"
+            "word": "page",
+            "sentence": "Turn to the next page in the book."
         },
         {
-            "word": "father",
-            "sentence": "My mother and father want grandchildren.",
-            "count": "true"
+            "word": "should",
+            "sentence": "It is getting cold. We should go inside."
+        },
+        {
+            "word": "country",
+            "sentence": "China is a very large country."
+        },
+        {
+            "word": "found",
+            "sentence": "I have found my calling in life."
+        },
+        {
+            "word": "answer",
+            "sentence": "Can you answer my question?",
+            "regular": "true"
+        },
+        {
+            "word": "school",
+            "sentence": "Our school has great teachers."
+        },
+        {
+            "word": "grow",
+            "sentence": "Many plants grow in my garden.",
+            "regular": "false",
+            "conjugation" : "grow, grew, grown"
         }
     ]
 }

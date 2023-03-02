@@ -338,6 +338,146 @@
             "word": "land",
             "sentence": "The plane will land at the airport.",
             "regular": "true"
+        },
+        {
+            "word": "here",
+            "sentence": "You're too far from me. Can you come over here?"
+        },
+        {
+            "word": "must",
+            "sentence": "We all must eat to survive."
+        },
+        {
+            "word": "big",
+            "sentence": "The big dog is chasing the small dog."
+        },
+        {
+            "word": "high",
+            "sentence": "A hot air baloon can fly very high."
+        },
+        {
+            "word": "such",
+            "sentence": "I love that band! I am such a big fan."
+        },
+        {
+            "word": "follow",
+            "sentence": "You go first and I will follow.",
+            "regular": "true"
+        },
+        {
+            "word": "act",
+            "sentence": "Does't he know how to act in public? This is embarrassing.",
+            "regular": "true",
+            "count": "true"
+        },
+        {
+            "word": "why",
+            "sentence": "They got sick from the sushi. That is why I never eat raw fish."
+        },
+        {
+            "word": "ask",
+            "sentence": "Can I ask you a question?",
+            "regular": "true"
+        },
+        {
+            "word": "men",
+            "sentence": "Those men work in construction."
+        },
+        {
+            "word": "change",
+            "sentence": "I will change into something more comfortable before the game.",
+            "regular": "true"
+        },
+        {
+            "word": "went",
+            "sentence": "We went to college together."
+        },
+        {
+            "word": "light",
+            "sentence": "Fireworks light up the sky.",
+            "regular": "false",
+            "conjugation" : "light, lit, lit"
+        },
+        {
+            "word": "kind",
+            "sentence": "That kind of attitude will get you far."
+        },
+        {
+            "word": "off",
+            "sentence": "It is too dark. Who turned off the lights?"
+        },
+        {
+            "word": "need",
+            "sentence": "We all need food and water to live.",
+            "regular": "true"
+        },
+        {
+            "word": "house",
+            "sentence": "My apartment is too small. I want to buy a house.",
+            "count": "true"
+        },
+        {
+            "word": "picture",
+            "sentence": "I took this picture with my new camera.",
+            "count": "true"
+        },
+        {
+            "word": "try",
+            "sentence": "I always try to be on time.",
+            "regular": "true"
+        },
+        {
+            "word": "us",
+            "sentence": "This park belogs to all of us. We can all enjoy it."
+        },
+        {
+            "word": "again",
+            "sentence": "I hate losing. Can we play again?"
+        },
+        {
+            "word": "animal",
+            "sentence": "This animal belongs in the zoo.",
+            "count": "true"
+        },
+        {
+            "word": "point",
+            "sentence": "That is the first point of the game.",
+            "regular": "true",
+            "count": "true"
+        },
+        {
+            "word": "mother",
+            "sentence": "My mother and father come from different countries.",
+            "count": "true"
+        },
+        {
+            "word": "world",
+            "sentence": "That is the biggest mountain in the world.",
+            "count": "true"
+        },
+        {
+            "word": "near",
+            "sentence": "We live near a school."
+        },
+        {
+            "word": "build",
+            "sentence": "I will build a snowman tomorrow.",
+            "regular": "false",
+            "conjugation" : "build, built, built"
+        },
+        {
+            "word": "self",
+            "sentence": "She is self employed."
+        },
+        {
+            "word": "earth",
+            "sentence": "The earth rotates once every day.",
+            "count": "false"
+        },
+        {
+            "word": "father",
+            "sentence": "My mother and father want grandchildren.",
+            "count": "true"
         }
     ]
 }
