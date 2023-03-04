@@ -217,7 +217,7 @@ function conjugation(data) {
 
     document.getElementById("question").style.textAlign = 'center';
     document.getElementById("activity").innerHTML += '<div id="conjugation"></div>';
-    document.getElementById("conjugation").innerHTML += '<span><input type="text" id="preterite" placeholder="Simple Past"></span><span><input type="text" id="pastParticiple" placeholder="Past Participle"></span><span onclick="checkConjugation()">Submit</span>';
+    document.getElementById("conjugation").innerHTML += '<span><input type="text" id="preterite" placeholder="Simple Past"></span><span><input type="text" id="pastParticiple" placeholder="Past Participle"></span><span id="submitBtn" onclick="checkConjugation()">Submit</span>';
     document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: 10/10</p>';
     pickWord();
 }
@@ -265,7 +265,7 @@ function regOrNot(selection) {
 }
 
 function checkConjugation() {
-    if(preterite==document.getElementById("preterite").value && pastParticiple==document.getElementById("pastParticiple").value){
+    if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
         words.splice(wordIndex, 1);
         document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
     }else{

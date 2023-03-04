@@ -193,9 +193,24 @@ select option {
 #regularIrregular span:hover, #conjugation span:hover {
     cursor: pointer;
 }
+#conjugation span {
+    padding: 4px;
+}
 #preterite, #pastParticiple {
     width: 90%;
-    padding-left: 6px;
+    padding: 4px 0px 4px 6px;
+    background-color: rgba(0,0,0,0);
+    border: solid 1px rgba(0,0,0,0);
+    color: #FFEBB7;
+    border-radius: 4px;
+}
+#preterite:focus, #pastParticiple:focus {
+    outline: none !important;
+    color: #FFEBB7;
+    background-color: rgba(0,0,0,.25);
+}
+#submitBtn {
+    padding: 8px 6px 7px 6px !important;
 }
 .centerDiv {
     display: flex;
