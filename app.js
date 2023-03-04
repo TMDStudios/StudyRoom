@@ -222,6 +222,16 @@ function conjugation(data) {
     pickWord();
 }
 
+document.addEventListener('keydown', (event) => {
+    if(event.key.match("Enter")){
+        if(document.getElementById("preterite")==document.activeElement){
+            document.getElementById("pastParticiple").focus();
+        }else{
+            checkConjugation()
+        } 
+    }
+}, false);
+
 function pickWord() {
     if(words.length>0){
         wordIndex = Math.floor(Math.random() * words.length);
@@ -266,6 +276,7 @@ function checkConjugation() {
     document.getElementById("preterite").value = "";
     document.getElementById("pastParticiple").value = "";
     pickWord();
+    document.getElementById("preterite").focus();
 }
 
 function getSentence() {
