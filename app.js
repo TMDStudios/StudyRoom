@@ -15,6 +15,19 @@ var pastParticiple = "";
 var activityOver = false;
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
+// Banners
+var banners = [
+    "media/plcLogo.png",
+    "media/bitcoinbanner.png",
+    "media/shirtsEtc.png"
+]
+
+var links = [
+    "https://play.google.com/store/apps/details?id=com.tmdstudios.python",
+	"https://freebitco.in/?r=15749838",
+	"https://www.redbubble.com/people/shirtsetcetera/shop"
+]
+
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
     document.getElementById("options").style.display = "flex";
@@ -24,6 +37,16 @@ function showOptions() {
     document.getElementById("option1").style.display = "flex";
     document.getElementById("option2").style.display = "flex";
     document.getElementById("option3").style.display = "flex";
+    showBanner();
+}
+
+function showBanner(){
+    var randomBannerIndex = Math.floor(Math.random() * banners.length);
+    document.getElementById("banner").innerHTML = '<a href="'+links[randomBannerIndex]+'"><img src="'+banners[randomBannerIndex]+'"/></a>';
+}
+
+function hideBanner(){
+    document.getElementById("banner").innerHTML = "";
 }
 
 function activitySelect(num) {
@@ -319,6 +342,7 @@ function getSentence() {
 
 function saveScore() {
     activityOver=true;
+    hideBanner();
     if(activityType==1){
         if(confirm("Your total time: "+convertTime(totalTime+penalty*1000)+"\nUpload time to leaderboard?")){
             username = prompt("Enter Name:\n(Up to 9 characters)");
