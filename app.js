@@ -12,6 +12,7 @@ var activityType = 1;
 var isRegular = false;
 var preterite = "";
 var pastParticiple = "";
+var activityOver = false;
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 function showOptions() {
@@ -253,30 +254,53 @@ function pickWord() {
 }
 
 function regOrNot(selection) {
-    if(selection==isRegular){
-        words.splice(wordIndex, 1);
-        document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
-    }else{
-        penalty += 5;
-        document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
-        document.getElementById("penalty").style.color = "red";
+    if(!activityOver){
+        if(selection==isRegular){
+            words.splice(wordIndex, 1);
+            document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+        }else{
+            penalty += 5;
+            document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+            document.getElementById("penalty").style.color = "red";
+        }
+        pickWord();
     }
-    pickWord();
 }
 
 function checkConjugation() {
-    if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
-        words.splice(wordIndex, 1);
-        document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
-    }else{
-        penalty += 5;
-        document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
-        document.getElementById("penalty").style.color = "red";
+    if(!activityOver){
+        if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
+            words.splice(wordIndex, 1);
+            document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+        }else{
+            penalty += 5;
+            document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+            document.getElementById("penalty").style.color = "red";
+        }
+        document.getElementById("preterite").value = "";
+        document.getElementById("pastParticiple").value = "";
+        pickWord();
+        document.getElementById("preterite").focus();
     }
-    document.getElementById("preterite").value = "";
-    document.getElementById("pastParticiple").value = "";
-    pickWord();
-    document.getElementById("preterite").focus();
+}
+
+function chooseWord(word) {
+    if(!activityOver){
+        if(word==correctWord){
+            document.getElementById(word).style.textDecoration = "line-through";
+            document.getElementById(word).style.cursor = "auto";
+            document.getElementById(word).style.color = "#D61C4E";
+            document.getElementById(word).style.borderColor = "#d61c4e4d";
+            document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
+            document.getElementById(word).onclick = "";
+            words.splice(wordIndex, 1);
+        }else{
+            penalty += 5;
+            document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+            document.getElementById("penalty").style.color = "red";
+        }
+        getSentence();
+    }
 }
 
 function getSentence() {
@@ -294,6 +318,7 @@ function getSentence() {
 }
 
 function saveScore() {
+    activityOver=true;
     if(activityType==1){
         if(confirm("Your total time: "+convertTime(totalTime+penalty*1000)+"\nUpload time to leaderboard?")){
             username = prompt("Enter Name:\n(Up to 9 characters)");
@@ -382,23 +407,6 @@ function convertTime(totalMs) {
             return ''+minutes+':'+seconds+':'+ms+'';
         }
     }
-}
-
-function chooseWord(word) {
-    if(word==correctWord){
-        document.getElementById(word).style.textDecoration = "line-through";
-        document.getElementById(word).style.cursor = "auto";
-        document.getElementById(word).style.color = "#D61C4E";
-        document.getElementById(word).style.borderColor = "#d61c4e4d";
-        document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
-        document.getElementById(word).onclick = "";
-        words.splice(wordIndex, 1);
-    }else{
-        penalty += 5;
-        document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
-        document.getElementById("penalty").style.color = "red";
-    }
-    getSentence();
 }
 
 function startTimer() {
