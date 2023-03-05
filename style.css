@@ -194,23 +194,25 @@ select option {
     cursor: pointer;
 }
 #conjugation span {
-    padding: 4px;
+    display: block;
+    padding: 0px;
+    margin: 0px;
 }
 #preterite, #pastParticiple {
-    width: 90%;
-    padding: 4px 0px 4px 6px;
+    width: 100%;
+    padding: 8px 0px 8px 0px;
     background-color: rgba(0,0,0,0);
-    border: solid 1px rgba(0,0,0,0);
+    border: solid 0px rgba(0,0,0,0);
     color: #FFEBB7;
     border-radius: 4px;
+    text-align: center;
 }
 #preterite:focus, #pastParticiple:focus {
     outline: none !important;
-    color: #FFEBB7;
-    background-color: rgba(0,0,0,.25);
+    background-image: linear-gradient(to bottom, #d61c4e, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #d61c4e);
 }
 #submitBtn {
-    padding: 8px 6px 7px 6px !important;
+    padding: 8px 0px 7px 0px !important;
 }
 .centerDiv {
     display: flex;
@@ -325,6 +327,7 @@ select option {
         flex-direction: column;
     }
     #regularIrregular span, #conjugation span {
+        margin-top: 16px;
         max-width: 90%;
         width: 90%;
     }
@@ -355,9 +358,6 @@ select option {
     }
     .rank {
         max-width: 25%;
-    }
-    #regularIrregular, #conjugation {
-        margin-top: 16px;
     }
 }
 
