@@ -112,7 +112,9 @@ select option {
     margin-top: 8px;
     margin-bottom: 100px;
     opacity: 0;
-    height: 66vh;
+    height: 60vh;
+    /* min-height: calc(100vh - 200px);
+    height: calc(100vh - 200px); */
     width: 80%;
     padding: 8px;
     color: #243763;
@@ -283,17 +285,17 @@ select option {
 .time {
     text-align: right;
 }
-.credits {
+#credits {
     font-size: 0.8em;
     position: absolute;
     bottom: 0;
     padding-bottom: 8px;
 }
-.credits a {
+#credits a {
 	color: #a6fff9;
 	text-decoration: none;
 }
-.credits a:hover {
+#credits a:hover {
 	color: white;
     text-decoration: underline;
 }
@@ -342,21 +344,19 @@ select option {
 
 @media all and (max-height: 799px) and (min-width: 1000px) {
     #banner {
-        display: none;
+        width: 50%;
+    }
+    #activity {
+        max-height: calc(100vh - 200px);
     }
 }
 
-@media all and (max-width: 600px) {
-    #regularIrregular, #conjugation {
-        flex-direction: column;
-    }
-    #regularIrregular span, #conjugation span {
-        margin-top: 16px;
-        max-width: 90%;
-        width: 90%;
-    }
+@media all and (max-width: 820px) {
     #banner {
         width: 66%;
+    }
+    #activity {
+        max-height: calc(100vh - 200px);
     }
 }
 

@@ -117,6 +117,8 @@ function selectLevel() {
 }
 
 function startLevel() {
+    document.getElementById("credits").style.display = "none";
+    document.getElementById("banner").style.marginBottom = "0px";
     switch(level) {
         case 1:
             getLocalJson("level1.json");     
