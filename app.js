@@ -438,6 +438,7 @@ function convertTime(totalMs) {
 function startTimer() {
     document.getElementById("welcome").style.display = "none";
     document.getElementById("menu").style.margin = "2vh";
+    document.getElementById("reset").style.display = "block";
     var start = new Date();
 
     timer = setInterval(_ => {
@@ -462,5 +463,11 @@ function showInfo(){
         }
     }else{
         alert("Choose an activity to get started.");
+    }
+}
+
+function resetAlert(){
+    if(confirm("Quit activity and return to main menu?")){
+        reset();
     }
 }

@@ -342,7 +342,7 @@ select option {
 #banner img:hover {
     box-shadow: 0 0 12px 0 rgb(137, 181, 248);
 }
-#info {
+#info, #reset {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -353,18 +353,25 @@ select option {
     border: 2px solid #a6fff9;
     align-items: center;
 }
-#info:hover {
+#reset {
+    margin-bottom: 64px;
+    display: none;
+}
+#info:hover, #reset:hover {
     cursor: pointer;
     border: 2px solid white;
     background-color: #a6fff93b;
 }
-#info  p {
+#info p, #reset p {
     color: #a6fff9;
     font-size: 1.6em;
     padding-top: 1px;
     text-align: center;   
 }
-#info p:hover {
+#reset p {
+    font-size: 1.75em; 
+}
+#info p:hover, #reset p:hover {
     color: white;
 }
 
@@ -398,8 +405,11 @@ select option {
     #banner {
         width: 66%;
     }
-    #info {
+    #info, #reset {
         margin: 8px;
+    }
+    #reset {
+        margin-bottom: 64px;
     }
 }
 
