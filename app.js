@@ -447,3 +447,20 @@ function startTimer() {
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(count)+'</span></p>';
     }, 10);  
 }
+
+function showInfo(){
+    if(totalTime>0){
+        switch(activityType) {
+            case 1:
+                alert("Click on a word to complete the sentece.");
+                break;
+            case 2:
+                alert("Identify the word as a regular or irregular verb.");
+                break;
+            default:
+                alert("Conjugate the verb. You only need to provide the siple past and past participle form.");
+        }
+    }else{
+        alert("Choose an activity to get started.");
+    }
+}
