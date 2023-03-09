@@ -45,6 +45,142 @@
             "sentence": "Many plants grow in my garden.",
             "regular": "false",
             "conjugation" : "grow, grew, grown"
+        },
+        {
+            "word": "study",
+            "sentence": "I have to study for the test.",
+            "regular": "true"
+        },
+        {
+            "word": "still",
+            "sentence": "I am still waiting for my turn."
+        },
+        {
+            "word": "learn",
+            "sentence": "It is important to learn from your mistakes.",
+            "regular": "true"
+        },
+        {
+            "word": "plant",
+            "sentence": "We should plant a tree for every tree we cut down.",
+            "regular": "true"
+        },
+        {
+            "word": "cover",
+            "sentence": "Please cover the food. There are many flies here.",
+            "regular": "true"
+        },
+        {
+            "word": "food",
+            "sentence": "The food in that restaurant is amazing."
+        },
+        {
+            "word": "sun",
+            "sentence": "The earth revolves around the sun."
+        },
+        {
+            "word": "four",
+            "sentence": "Two and two makes four."
+        },
+        {
+            "word": "between",
+            "sentence": "There is an ocean between America and Europe."
+        },
+        {
+            "word": "state",
+            "sentence": "New York is a city and a state.",
+            "regular": "true"
+        },
+        {
+            "word": "keep",
+            "sentence": "",
+            "regular": "false",
+            "conjugation" : "keep, kept, kept"
+        },
+        {
+            "word": "eye",
+            "sentence": "I can see better through my left eye than my right.",
+            "regular": "true"
+        },
+        {
+            "word": "never",
+            "sentence": "I will fight on and never give up!"
+        },
+        {
+            "word": "last",
+            "sentence": "We had a great time last week.",
+            "regular": "true"
+        },
+        {
+            "word": "let",
+            "sentence": "I will let you borrow my car.",
+            "regular": "false",
+            "conjugation" : "let, let, let"
+        },
+        {
+            "word": "thought",
+            "sentence": "I thought very hard before I made my decision."
+        },
+        {
+            "word": "city",
+            "sentence": "What is the capital city of Germany?"
+        },
+        {
+            "word": "tree",
+            "sentence": "I can't wait to decorate our christmas tree."
+        },
+        {
+            "word": "cross",
+            "sentence": "Look both ways before you cross the street.",
+            "regular": "true"
+        },
+        {
+            "word": "farm",
+            "sentence": "There are many sheep and horses on the farm.",
+            "regular": "true"
+        },
+        {
+            "word": "hard",
+            "sentence": "You should wear a hard hat on the construction site."
+        },
+        {
+            "word": "start",
+            "sentence": "The race will start on Cherry Street and end on Main Street.",
+            "regular": "true"
+        },
+        {
+            "word": "might",
+            "sentence": "I might come with you tomorrow. It depends on my homework."
+        },
+        {
+            "word": "story",
+            "sentence": "My grandfather always tells me a great story about his life when I visit."
+        },
+        {
+            "word": "saw",
+            "sentence": "I saw that movie last night. I don't want to watch it again."
+        },
+        {
+            "word": "far",
+            "sentence": "How far can you drive without stopping for gas?"
+        },
+        {
+            "word": "sea",
+            "sentence": "Every ship captain respects the open sea."
+        },
+        {
+            "word": "draw",
+            "sentence": "I like to draw pictures on the blackboard.",
+            "regular": "false",
+            "conjugation" : "draw, drew, drawn"
+        },
+        {
+            "word": "left",
+            "sentence": "Look left and right before you cross the street."
+        },
+        {
+            "word": "late",
+            "sentence": "It is getting late. I have to go now."
         }
     ]
 }
