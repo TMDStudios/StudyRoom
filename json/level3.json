@@ -181,6 +181,275 @@
         {
             "word": "late",
             "sentence": "It is getting late. I have to go now."
+        },
+        {
+            "word": "run",
+            "sentence": "I would like to run a marathon someday.",
+            "regular": "false",
+            "conjugation" : "run, ran, run"
+        },
+        {
+            "word": "don't",
+            "sentence": "That sounds crazy! I don't believe you."
+        },
+        {
+            "word": "while",
+            "sentence": "I'm running late. Can you wait a while longer?"
+        },
+        {
+            "word": "press",
+            "sentence": "You have to press the button to call the elevator.",
+            "regular": "true"
+        },
+        {
+            "word": "close",
+            "sentence": "Please close the door on your way out.",
+            "regular": "true"
+        },
+        {
+            "word": "night",
+            "sentence": "I always sleep with the lights on at night."
+        },
+        {
+            "word": "real",
+            "sentence": "Can you tell me if this is real leather? It feels genuine."
+        },
+        {
+            "word": "life",
+            "sentence": "I have waited for this all my life."
+        },
+        {
+            "word": "few",
+            "sentence": "Can I have a few apples?"
+        },
+        {
+            "word": "north",
+            "sentence": "Is that the north star up there?"
+        },
+        {
+            "word": "open",
+            "sentence": "Your hands a full, let me open the door.",
+            "regular": "true"
+        },
+        {
+            "word": "seem",
+            "sentence": "Does he seem odd to you? He has been acting strange lately.",
+            "regular": "true"
+        },
+        {
+            "word": "together",
+            "sentence": "They live next to each other, so they like to walk home together."
+        },
+        {
+            "word": "next",
+            "sentence": "I am already helping someone. Can you take the next customer?"
+        },
+        {
+            "word": "white",
+            "sentence": "Are zebra stripes black or white?"
+        },
+        {
+            "word": "children",
+            "sentence": "The children love their elementary school."
+        },
+        {
+            "word": "begin",
+            "sentence": "He was never funny to begin with.",
+            "regular": "false",
+            "conjugation" : "begin, began, begun"
+        },
+        {
+            "word": "got",
+            "sentence": "I got a new toy for my birthday!"
+        },
+        {
+            "word": "walk",
+            "sentence": "I don't like to run. I take my time and walk.",
+            "regular": "true"
+        },
+        {
+            "word": "example",
+            "sentence": "I'm having trouble understanding. Can you give me an example?"
+        },
+        {
+            "word": "ease",
+            "sentence": "When I learn something new, I like to ease into it.",
+            "regular": "true"
+        },
+        {
+            "word": "paper",
+            "sentence": "Please get your pen and paper ready. The class is about to start.",
+            "regular": "true"
+        },
+        {
+            "word": "group",
+            "sentence": "That small group of people is very loud.",
+            "regular": "true"
+        },
+        {
+            "word": "always",
+            "sentence": "I always brush my teeth in the morning. I like having fresh breath."
+        },
+        {
+            "word": "music",
+            "sentence": "Her music is wonderful. I will buy the whole album."
+        },
+        {
+            "word": "those",
+            "sentence": "Who are those people over there?"
+        },
+        {
+            "word": "both",
+            "sentence": "We both love to run. We jog every morning."
+        },
+        {
+            "word": "mark",
+            "sentence": "Some countries say mark instead of grade.",
+            "regular": "true"
+        },
+        {
+            "word": "often",
+            "sentence": "How often do you go snowboarding?"
+        },
+        {
+            "word": "letter",
+            "sentence": "I will write a stronly worded letter to complain."
+        },
+        {
+            "word": "until",
+            "sentence": "Can you wait until I finish?"
+        },
+        {
+            "word": "mile",
+            "sentence": "This is the first mile of 26.2 in the marathon."
+        },
+        {
+            "word": "river",
+            "sentence": "This river flows into a lake in the next state."
+        },
+        {
+            "word": "car",
+            "sentence": "I would love to buy a classic car that I can just drive for fun."
+        },
+        {
+            "word": "feet",
+            "sentence": "My feet are very hot. I can't wait to take my shoes off."
+        },
+        {
+            "word": "care",
+            "sentence": "I'm an animal lover. I really care about them.",
+            "regular": "true"
+        },
+        {
+            "word": "second",
+            "sentence": "Bob will go first and Sam can go second."
+        },
+        {
+            "word": "book",
+            "sentence": "I love relaxing and reading a nice book.",
+            "regular": "true"
+        },
+        {
+            "word": "carry",
+            "sentence": "Don't carry too much at the same time. You might get hurt.",
+            "regular": "true"
+        },
+        {
+            "word": "took",
+            "sentence": "I took a long break after work."
+        },
+        {
+            "word": "science",
+            "sentence": "I love science fiction movies. Expecially if they focus on robots."
+        },
+        {
+            "word": "eat",
+            "sentence": "I will eat a whole cake later!",
+            "regular": "false",
+            "conjugation" : "eat, ate, eaten"
+        },
+        {
+            "word": "room",
+            "sentence": "My room is right next to the kitchen.",
+            "regular": "true"
+        },
+        {
+            "word": "friend",
+            "sentence": "My best friend always knows how to cheer me up."
+        },
+        {
+            "word": "began",
+            "sentence": "I began my journey last year."
+        },
+        {
+            "word": "idea",
+            "sentence": "That is a great idea! I can't believe I couldn't think of it."
+        },
+        {
+            "word": "fish",
+            "sentence": "I hope to catch some fish with my new rod.",
+            "regular": "true"
+        },
+        {
+            "word": "mountain",
+            "sentence": "Everest is the tallest mountain in the world."
+        },
+        {
+            "word": "stop",
+            "sentence": "You always have to stop at a red light.",
+            "regular": "true"
+        },
+        {
+            "word": "once",
+            "sentence": "I will only tell you this once. I will never repeat it again."
+        },
+        {
+            "word": "base",
+            "sentence": "I will base my story on true events.",
+            "regular": "true"
+        },
+        {
+            "word": "hear",
+            "sentence": "Can you hear that faint noise?",
+            "regular": "false",
+            "conjugation" : "hear, heard, heard"
+        },
+        {
+            "word": "horse",
+            "sentence": "I would like to ride a horse someday."
+        },
+        {
+            "word": "cut",
+            "sentence": "Can you cut that bread in half?",
+            "regular": "false",
+            "conjugation" : "cut, cut, cut"
+        },
+        {
+            "word": "sure",
+            "sentence": "I am sure of it. That is what I saw."
+        },
+        {
+            "word": "watch",
+            "sentence": "We will watch a movie on my big TV tonight.",
+            "regular": "true"
+        },
+        {
+            "word": "color",
+            "sentence": "Purple is my favorite color.",
+            "regular": "true"
+        },
+        {
+            "word": "face",
+            "sentence": "You face turned red when he told that joke.",
+            "regular": "true"
+        },
+        {
+            "word": "wood",
+            "sentence": "Which type of wood did you use for your treehouse?"
+        },
+        {
+            "word": "main",
+            "sentence": "Can you go back to the main menu again?"
         }
     ]
 }
