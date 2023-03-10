@@ -41,7 +41,146 @@
         {
             "word": "list",
             "sentence": "My shopping list is very long for this week.",
-            "count": "true"
+            "count": "true",
+            "regular": "true"
+        },
+        {
+            "word": "though",
+            "sentence": "I will come with you, even though I am tired."
+        },
+        {
+            "word": "feel",
+            "sentence": "I feel happy when I hear this song.",
+            "regular": "false",
+            "conjugation" : "feel, felt, felt"
+        },
+        {
+            "word": "talk",
+            "sentence": "Can we talk in private? I have something important to tell you.",
+            "regular": "true"
+        },
+        {
+            "word": "bird",
+            "sentence": "A bird learns how to fly after it leaves the nest."
+        },
+        {
+            "word": "soon",
+            "sentence": "I hope to see you again soon."
+        },
+        {
+            "word": "body",
+            "sentence": "My whole body is sore after yesterday's workout."
+        },
+        {
+            "word": "dog",
+            "sentence": "Can a dog get along with cats?"
+        },
+        {
+            "word": "family",
+            "sentence": "I have a large family. My parents always wanted lots of kids."
+        },
+        {
+            "word": "direct",
+            "sentence": "Is this a direct quote or are you paraphrasing?",
+            "regular": "true"
+        },
+        {
+            "word": "pose",
+            "sentence": "She always strikes a pose when we take pictures.",
+            "regular": "true"
+        },
+        {
+            "word": "leave",
+            "sentence": "I will leave the house at 5. I should arrive by 5:15.",
+            "regular": "false",
+            "conjugation" : "leave, left, left"
+        },
+        {
+            "word": "song",
+            "sentence": "This is my favorite song from her latest album."
+        },
+        {
+            "word": "measure",
+            "sentence": "Remember to measure twice and cut once.",
+            "regular": "true"
+        },
+        {
+            "word": "door",
+            "sentence": "Please close the door on your way out."
+        },
+        {
+            "word": "product",
+            "sentence": "The company will introduce their newest product at the show tomorrow."
+        },
+        {
+            "word": "black",
+            "sentence": "Are zebra stripes black or white?"
+        },
+        {
+            "word": "short",
+            "sentence": "I am too short to play professional basketball. All those guys are so tall."
+        },
+        {
+            "word": "numeral",
+            "sentence": "What is the Roman numeral for 5?"
+        },
+        {
+            "word": "class",
+            "sentence": "I can't be late for class, my teacher will be mad."
+        },
+        {
+            "word": "wind",
+            "sentence": "How much electricity can wind turbines produce?",
+            "regular": "false",
+            "conjugation" : "wind, wound, wound"
+        },
+        {
+            "word": "question",
+            "sentence": "Can I ask you a question?",
+            "regular": "true"
+        },
+        {
+            "word": "happen",
+            "sentence": "Did it happen the way he described it?",
+            "regular": "true"
+        },
+        {
+            "word": "complete",
+            "sentence": "I will complete my collection with this last piece.",
+            "regular": "true"
+        },
+        {
+            "word": "ship",
+            "sentence": "The Titanic was a large ship.",
+            "regular": "true"
+        },
+        {
+            "word": "area",
+            "sentence": "305 is a Miami area code. Go ahead and answer the call."
+        },
+        {
+            "word": "half",
+            "sentence": "Cut the piece in half. That way we can each get the same amount.",
+            "regular": "true"
+        },
+        {
+            "word": "rock",
+            "sentence": "My favorite music genre is rock and roll.",
+            "regular": "true"
+        },
+        {
+            "word": "order",
+            "sentence": "I have placed the order. We can pick it up in 15 minutes.",
+            "regular": "true"
+        },
+        {
+            "word": "fire",
+            "sentence": "Never use water to put out a grease fire.",
+            "regular": "true"
+        },
+        {
+            "word": "south",
+            "sentence": "The US borders Canada in the north and Mexico in the south."
         }
     ]
 }
