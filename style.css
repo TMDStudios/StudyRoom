@@ -354,7 +354,8 @@ select option {
     align-items: center;
 }
 #reset {
-    margin-bottom: 64px;
+    left: 0;
+    border: 2px solid red;
     display: none;
 }
 #info:hover, #reset:hover {
@@ -369,7 +370,8 @@ select option {
     text-align: center;   
 }
 #reset p {
-    font-size: 1.75em; 
+    font-size: 1.5em; 
+    color: red;
 }
 #info p:hover, #reset p:hover {
     color: white;
@@ -407,9 +409,6 @@ select option {
     }
     #info, #reset {
         margin: 8px;
-    }
-    #reset {
-        margin-bottom: 64px;
     }
 }
 
