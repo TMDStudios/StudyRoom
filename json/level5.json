@@ -53,6 +53,187 @@
         {
             "word": "dark",
             "sentence": "We can't see the dark side of the moon."
+        },
+        {
+            "word": "machine",
+            "sentence": "I can't do laundry. My washing machine is broken."
+        },
+        {
+            "word": "note",
+            "sentence": "She has an amazing singing voice. She never has trouble hitting a high note.",
+            "regular": "true"
+        },
+        {
+            "word": "wait",
+            "sentence": "Could you wait for me? I forgot my bag.",
+            "regular": "true"
+        },
+        {
+            "word": "plan",
+            "sentence": "Do we have a plan of attack?",
+            "regular": "true"
+        },
+        {
+            "word": "figure",
+            "sentence": "We need to figure out a solution before we leave.",
+            "regular": "true"
+        },
+        {
+            "word": "star",
+            "sentence": "The north star has guided people for a very long time.",
+            "regular": "true"
+        },
+        {
+            "word": "box",
+            "sentence": "Could you bring me a cardboard box? I need to pack some books.",
+            "regular": "true"
+        },
+        {
+            "word": "noun",
+            "sentence": "A noun is a person, place, or thing."
+        },
+        {
+            "word": "field",
+            "sentence": "My class is going on a field trip today. We are visiting a museum.",
+            "regular": "true"
+        },
+        {
+            "word": "rest",
+            "sentence": "Make sure to rest between workouts to give your muscles a break.",
+            "regular": "true"
+        },
+        {
+            "word": "correct",
+            "sentence": "Correct me if I'm wrong, but isn't that against the rules?",
+            "regular": "true"
+        },
+        {
+            "word": "able",
+            "sentence": "I am not able to attend the event. I have to work."
+        },
+        {
+            "word": "pound",
+            "sentence": "Losing weight takes time. Take it one pound or kilo at a time.",
+            "regular": "true"
+        },
+        {
+            "word": "done",
+            "sentence": "I am done with this book. It is just too boring."
+        },
+        {
+            "word": "beauty",
+            "sentence": "There is so much beauty in nature. Just think of all the amazing plants."
+        },
+        {
+            "word": "drive",
+            "sentence": "Can you drive me to work tomorrow? My car is in the shop.",
+            "regular": "false",
+            "conjugation" : "drive, drove, driven"
+        },
+        {
+            "word": "stood",
+            "sentence": "He just stood there for a long time. I thought he would never move."
+        },
+        {
+            "word": "contain",
+            "sentence": "Does this food contain peanuts?",
+            "regular": "true"
+        },
+        {
+            "word": "front",
+            "sentence": "I saved you a seat in the front row. You'll be very close to the stage."
+        },
+        {
+            "word": "teach",
+            "sentence": "Can you teach me how to play basketball?",
+            "regular": "false",
+            "conjugation" : "teach, taught, taught"
+        },
+        {
+            "word": "week",
+            "sentence": "Is it Friday yet? I can't wait for this week to end."
+        },
+        {
+            "word": "final",
+            "sentence": "This is your final warning. One more mistake and you are out."
+        },
+        {
+            "word": "gave",
+            "sentence": "He gave me a few dollars to buy him lunch."
+        },
+        {
+            "word": "green",
+            "sentence": "When the light turns green, you can go."
+        },
+        {
+            "word": "oh",
+            "sentence": "She came oh so close to winning the whole thing."
+        },
+        {
+            "word": "quick",
+            "sentence": "You have very quick reflexes."
+        },
+        {
+            "word": "develop",
+            "sentence": "Did you develop this game yourself?",
+            "regular": "true"
+        },
+        {
+            "word": "ocean",
+            "sentence": "There is a big ocean between the US and Europe."
+        },
+        {
+            "word": "warm",
+            "sentence": "Make sure to keep your hands warm when you go skiing.",
+            "regular": "true"
+        },
+        {
+            "word": "free",
+            "sentence": "If you buy two, you get one for free.",
+            "regular": "true"
+        },
+        {
+            "word": "minute",
+            "sentence": "There are sixy seconds in a minute."
+        },
+        {
+            "word": "strong",
+            "sentence": "He is very strong. I have seen him lift some really heavy weights."
+        },
+        {
+            "word": "special",
+            "sentence": "What is so special about this car? It seems pretty normal to me."
+        },
+        {
+            "word": "mind",
+            "sentence": "Don't mind me. I'm just reading my book."
+        },
+        {
+            "word": "behind",
+            "sentence": "Get behind me! This could get ugly."
+        },
+        {
+            "word": "clear",
+            "sentence": "Is the coast clear? We have to move.",
+            "regular": "true"
+        },
+        {
+            "word": "tail",
+            "sentence": "That dog is always chasing his own tail.",
+            "regular": "true"
+        },
+        {
+            "word": "produce",
+            "sentence": "Does that country produce enough food to feed its people?",
+            "regular": "true"
+        },
+        {
+            "word": "fact",
+            "sentence": "It is hard to tell fact from fiction."
+        },
+        {
+            "word": "street",
+            "sentence": "We grew up on the same street. His house was right next to mine."
         }
     ]
 }
