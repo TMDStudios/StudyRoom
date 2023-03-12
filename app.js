@@ -13,6 +13,7 @@ var isRegular = false;
 var preterite = "";
 var pastParticiple = "";
 var activityOver = false;
+var wordMax = 10;
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 // Banners
@@ -90,10 +91,10 @@ function activityOptions(num) {
             document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         case 2:
-            document.getElementById("option2").innerHTML = levelSelection(3);
+            document.getElementById("option2").innerHTML = levelSelection(4);
             break;
         case 3:
-            document.getElementById("option2").innerHTML = levelSelection(3);
+            document.getElementById("option2").innerHTML = levelSelection(4);
             break;
         default:
             console.log("Activity Option OTHER");
@@ -230,21 +231,28 @@ function regularAndIrregularVerbs(data) {
 
 function conjugation(data) {
     var indexPositions = [];
-    while(indexPositions.length<10){
+    var count = 0;
+    for(var i=0; i<data.words.length; i++){
+        if(data.words[i].conjugation!=undefined){
+            count++;
+        }
+    }
+    wordMax = count;
+    while(indexPositions.length<wordMax){
         var randomNumber = Math.floor(Math.random() * data.words.length);
         if(!indexPositions.includes(randomNumber) && data.words[randomNumber].conjugation!=undefined){
             indexPositions.push(randomNumber);
         }
     }
 
-    for(var i=0; i<10; i++){
+    for(var i=0; i<wordMax; i++){
         words.push({"word":data.words[indexPositions[i]].word,"conjugation":data.words[indexPositions[i]].conjugation})
     }
 
     document.getElementById("question").style.textAlign = 'center';
     document.getElementById("activity").innerHTML += '<div id="conjugation"></div>';
     document.getElementById("conjugation").innerHTML += '<span><input type="text" id="preterite" placeholder="Simple Past"></span><span><input type="text" id="pastParticiple" placeholder="Past Participle"></span><span id="submitBtn" onclick="checkConjugation()">Submit</span>';
-    document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: 10/10</p>';
+    document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: '+wordMax+'/'+wordMax+'</p>';
     pickWord();
 }
 
@@ -296,7 +304,7 @@ function checkConjugation() {
     if(!activityOver){
         if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
             words.splice(wordIndex, 1);
-            document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+            document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/'+wordMax+'</p>';
         }else{
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';

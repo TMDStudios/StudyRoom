@@ -355,7 +355,6 @@ select option {
 }
 #reset {
     left: 0;
-    border: 2px solid red;
     display: none;
 }
 #info:hover, #reset:hover {
@@ -371,7 +370,6 @@ select option {
 }
 #reset p {
     font-size: 1.5em; 
-    color: red;
 }
 #info p:hover, #reset p:hover {
     color: white;
