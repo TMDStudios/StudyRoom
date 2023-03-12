@@ -181,6 +181,268 @@
         {
             "word": "south",
             "sentence": "The US borders Canada in the north and Mexico in the south."
+        },
+        {
+            "word": "problem",
+            "sentence": "I am a good problem solver."
+        },
+        {
+            "word": "piece",
+            "sentence": "This is a piece of cake! I can finish it in 5 minutes."
+        },
+        {
+            "word": "told",
+            "sentence": "I told you many times that I don't like to surf."
+        },
+        {
+            "word": "knew",
+            "sentence": "I knew something was going to go wrong."
+        },
+        {
+            "word": "pass",
+            "sentence": "Could you pass me the ketchup, please?",
+            "regular": "true"
+        },
+        {
+            "word": "since",
+            "sentence": "I have been living here since 2007."
+        },
+        {
+            "word": "top",
+            "sentence": "Everything is going well for him. He is on top of the world right now."
+        },
+        {
+            "word": "whole",
+            "sentence": "I will eat that whole cake if you let me."
+        },
+        {
+            "word": "king",
+            "sentence": "The king and queen live there."
+        },
+        {
+            "word": "space",
+            "sentence": "My son loves space. He wants to be an astronaut."
+        },
+        {
+            "word": "heard",
+            "sentence": "I heard that song yesterday."
+        },
+        {
+            "word": "best",
+            "sentence": "That is the best possible outcome. I am very happy!"
+        },
+        {
+            "word": "hour",
+            "sentence": "It is after 11. It will be midnight in less than an hour."
+        },
+        {
+            "word": "better",
+            "sentence": "I can do better than this. Let me try again."
+        },
+        {
+            "word": "true",
+            "sentence": "The easiest question type is true or false."
+        },
+        {
+            "word": "during",
+            "sentence": "I may have to go to the bathroom during the movie. I hope I don't miss anything important."
+        },
+        {
+            "word": "hundred",
+            "sentence": "There are one hundred centimeters in a meter."
+        },
+        {
+            "word": "five",
+            "sentence": "Ten divided by two is five."
+        },
+        {
+            "word": "remember",
+            "sentence": "Can you remember the last time we did this?",
+            "regular": "true"
+        },
+        {
+            "word": "step",
+            "sentence": "Don't rush. Take it one step at a time.",
+            "regular": "true"
+        },
+        {
+            "word": "early",
+            "sentence": "It is too early. I am going back to sleep."
+        },
+        {
+            "word": "hold",
+            "sentence": "Could you hold this for me while I tie my shoes?",
+            "regular": "false",
+            "conjugation" : "hold, held, held"
+        },
+        {
+            "word": "west",
+            "sentence": "The W on your compass stands for west."
+        },
+        {
+            "word": "ground",
+            "sentence": "I wouldn't want to fall to the ground from this height."
+        },
+        {
+            "word": "interest",
+            "sentence": "They are showing interest in the subject. We should teach them more."
+        },
+        {
+            "word": "reach",
+            "sentence": "I can't reach the ceiling. It is too high.",
+            "regular": "true"
+        },
+        {
+            "word": "fast",
+            "sentence": "That was fast! I thought you would take longer."
+        },
+        {
+            "word": "verb",
+            "sentence": "Every sentence must have a subject and a verb."
+        },
+        {
+            "word": "sing",
+            "sentence": "Let's sing that song again.",
+            "regular": "false",
+            "conjugation" : "sing, sang, sung"
+        },
+        {
+            "word": "listen",
+            "sentence": "You really have to listen carefully to understand the meaning of that song.",
+            "regular": "true"
+        },
+        {
+            "word": "six",
+            "sentence": "Three plus three makes six."
+        },
+        {
+            "word": "table",
+            "sentence": "I am so happy to sit at the same table as you."
+        },
+        {
+            "word": "travel",
+            "sentence": "I love to travel. I visited three countries last year.",
+            "regular": "true"
+        },
+        {
+            "word": "less",
+            "sentence": "There is less water in that cup now. It must have evaporated."
+        },
+        {
+            "word": "morning",
+            "sentence": "I like to go running every morning. I usually have breakfast right after."
+        },
+        {
+            "word": "ten",
+            "sentence": "There are ten millimeters in a centimeter."
+        },
+        {
+            "word": "simple",
+            "sentence": "This is a simple problem. You should be able to solve it quickly."
+        },
+        {
+            "word": "several",
+            "sentence": "There are several planets in our solar system."
+        },
+        {
+            "word": "vowel",
+            "sentence": "Is the letter y a vowel or a consonant?"
+        },
+        {
+            "word": "toward",
+            "sentence": "Run toward the finish line."
+        },
+        {
+            "word": "war",
+            "sentence": "The second world war was in the 1940s."
+        },
+        {
+            "word": "lay",
+            "sentence": "I am so tired. I just want to lay down for a bit.",
+            "regular": "false",
+            "conjugation" : "lay, laid, laid"
+        },
+        {
+            "word": "against",
+            "sentence": "Please don't lean against the wall. The paint is still fresh."
+        },
+        {
+            "word": "pattern",
+            "sentence": "Can you see the pattern in those numbers?"
+        },
+        {
+            "word": "slow",
+            "sentence": "I am a slow driver. I never get a speeding ticket."
+        },
+        {
+            "word": "center",
+            "sentence": "If you hit the center, it is called a bullseye.",
+            "regular": "true"
+        },
+        {
+            "word": "love",
+            "sentence": "They are getting married? They must really love each other.",
+            "regular": "true"
+        },
+        {
+            "word": "person",
+            "sentence": "Who is that person standing next to the pool?"
+        },
+        {
+            "word": "money",
+            "sentence": "I don't play the lottery for money. I just think it's fun."
+        },
+        {
+            "word": "serve",
+            "sentence": "Did he serve in the army?",
+            "regular": "true"
+        },
+        {
+            "word": "appear",
+            "sentence": "Where did he come from? Did he just appear out of thin air?",
+            "regular": "true"
+        },
+        {
+            "word": "road",
+            "sentence": "You can take this road all the way to Boston."
+        },
+        {
+            "word": "map",
+            "sentence": "Can you find Memphis on a map?"
+        },
+        {
+            "word": "rain",
+            "sentence": "Will it rain later? I didn't bring an umbrella.",
+            "regular": "true"
+        },
+        {
+            "word": "rule",
+            "sentence": "The first rule of this club is that you are not allowed to talk about it.",
+            "regular": "true"
+        },
+        {
+            "word": "govern",
+            "sentence": "The president will govern fairly.",
+            "regular": "true"
+        },
+        {
+            "word": "pull",
+            "sentence": "And now I will pull a rabbit out of a hat!",
+            "regular": "true"
+        },
+        {
+            "word": "cold",
+            "sentence": "How cold is it out there? I don't have a warm jacket."
+        },
+        {
+            "word": "notice",
+            "sentence": "Did you notice anything unusual?",
+            "regular": "true"
+        },
+        {
+            "word": "voice",
+            "sentence": "She has a great voice. I could listen to her all day.",
+            "regular": "true"
         }
     ]
 }
