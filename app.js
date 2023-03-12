@@ -91,10 +91,10 @@ function activityOptions(num) {
             document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         case 2:
-            document.getElementById("option2").innerHTML = levelSelection(4);
+            document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         case 3:
-            document.getElementById("option2").innerHTML = levelSelection(4);
+            document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         default:
             console.log("Activity Option OTHER");

@@ -234,6 +234,232 @@
         {
             "word": "street",
             "sentence": "We grew up on the same street. His house was right next to mine."
+        },
+        {
+            "word": "inch",
+            "sentence": "Don't move an inch. There is a spider on your head.",
+            "regular": "true"
+        },
+        {
+            "word": "multiply",
+            "sentence": "If you multiply two by five, you get ten.",
+            "regular": "true"
+        },
+        {
+            "word": "nothing",
+            "sentence": "Of course I will join you! There is nothing I would rather do."
+        },
+        {
+            "word": "course",
+            "sentence": "Of course you will have to wake up early to make it there in time.",
+            "regular": "true"
+        },
+        {
+            "word": "stay",
+            "sentence": "Can I stay over for the night? I don't like driving in the dark.",
+            "regular": "true"
+        },
+        {
+            "word": "wheel",
+            "sentence": "Make sure to keep both hands on the steering wheel.",
+            "regular": "true"
+        },
+        {
+            "word": "full",
+            "sentence": "I am full of ideas. I have trouble focusing on just one."
+        },
+        {
+            "word": "force",
+            "sentence": "If you apply enough force to the object, it will move.",
+            "regular": "true"
+        },
+        {
+            "word": "blue",
+            "sentence": "Is the ocean blue because of the sky?"
+        },
+        {
+            "word": "object",
+            "sentence": "I object to all this questioning. I have done nothing wrong.",
+            "regular": "true"
+        },
+        {
+            "word": "decide",
+            "sentence": "I can't decide between the two. They are both great!",
+            "regular": "true"
+        },
+        {
+            "word": "surface",
+            "sentence": "On the surface things seem calm. But if you look deeper there is trouble.",
+            "regular": "true"
+        },
+        {
+            "word": "deep",
+            "sentence": "I can't dive very deep. My ears hurt after only a few feet."
+        },
+        {
+            "word": "moon",
+            "sentence": "We can never see the dark side of the moon from Earth."
+        },
+        {
+            "word": "island",
+            "sentence": "Hawaii consists of more than just one island."
+        },
+        {
+            "word": "foot",
+            "sentence": "I always jump off my left foot, even though I am right handed."
+        },
+        {
+            "word": "system",
+            "sentence": "The penal system is a hot topic in the US."
+        },
+        {
+            "word": "busy",
+            "sentence": "I am very busy with work. Can we do this later?"
+        },
+        {
+            "word": "test",
+            "sentence": "Please test your theory before submitting a paper.",
+            "regular": "true"
+        },
+        {
+            "word": "record",
+            "sentence": "I will record the show. We can watch it together later.",
+            "regular": "true"
+        },
+        {
+            "word": "boat",
+            "sentence": "Please help me row the boat."
+        },
+        {
+            "word": "common",
+            "sentence": "Our tastes are very similar. We have many things in common."
+        },
+        {
+            "word": "gold",
+            "sentence": "If you place first, you will win a gold medal."
+        },
+        {
+            "word": "possible",
+            "sentence": "Is it possible that I'm wrong? I was very careful."
+        },
+        {
+            "word": "plane",
+            "sentence": "The plane will land at the nearest airport."
+        },
+        {
+            "word": "stead",
+            "sentence": "I will go in his stead."
+        },
+        {
+            "word": "dry",
+            "sentence": "Try to stay dry out there. The rain is really coming down.",
+            "regular": "true"
+        },
+        {
+            "word": "wonder",
+            "sentence": "I wonder if she will ever call me back.",
+            "regular": "true"
+        },
+        {
+            "word": "laugh",
+            "sentence": "I can't help but laugh. That is a great joke!",
+            "regular": "true"
+        },
+        {
+            "word": "thousand",
+            "sentence": "A millenium is one thousand years."
+        },
+        {
+            "word": "ago",
+            "sentence": "I was there five hours ago."
+        },
+        {
+            "word": "ran",
+            "sentence": "I ran as fast as I could. She still caught me."
+        },
+        {
+            "word": "check",
+            "sentence": "Please check your mirrors before your driving test.",
+            "regular": "true"
+        },
+        {
+            "word": "game",
+            "sentence": "The game over screen is very frustrating.",
+            "regular": "true"
+        },
+        {
+            "word": "shape",
+            "sentence": "She is in good shape. She runs every morning.",
+            "regular": "true"
+        },
+        {
+            "word": "equate",
+            "sentence": "You can't equate intelligence with good grades. Some students just don't work hard.",
+            "regular": "true"
+        },
+        {
+            "word": "hot",
+            "sentence": "It is too hot in here. Please turn on the air conditioner."
+        },
+        {
+            "word": "miss",
+            "sentence": "I miss the good old days. We had so much fun.",
+            "regular": "true"
+        },
+        {
+            "word": "brought",
+            "sentence": "He brought more chips, even after we told him that we had enough."
+        },
+        {
+            "word": "heat",
+            "sentence": "The heat is unbearable. Please turn on the air conditioner.",
+            "regular": "true"
+        },
+        {
+            "word": "snow",
+            "sentence": "The snow is really coming down. We can go sledding later.",
+            "regular": "true"
+        },
+        {
+            "word": "tire",
+            "sentence": "The front tire on your bike looks flat. Let's get your pump.",
+            "regular": "true"
+        },
+        {
+            "word": "bring",
+            "sentence": "I will bring some snacks to the party.",
+            "regular": "false",
+            "conjugation" : "bring, brought, brought"
+        },
+        {
+            "word": "yes",
+            "sentence": "He said yes when I asked. I expect him to come."
+        },
+        {
+            "word": "distant",
+            "sentence": "That is a distant memory. It happened so long ago."
+        },
+        {
+            "word": "fill",
+            "sentence": "Can you fill the bag with some clothes? I don't have time to pack.",
+            "regular": "true"
+        },
+        {
+            "word": "east",
+            "sentence": "If you travel east from Texas, you will eventually make it to Florida."
+        },
+        {
+            "word": "paint",
+            "sentence": "Let's take the elevator. There is a fresh coat of paint on the stairs.",
+            "regular": "true"
+        },
+        {
+            "word": "language",
+            "sentence": "English is the most commonly used language in the world."
+        },
+        {
+            "word": "among",
+            "sentence": "There are many among us who prefer burgers to hot dogs."
         }
     ]
 }
