@@ -446,7 +446,6 @@ function convertTime(totalMs) {
 function startTimer() {
     document.getElementById("welcome").style.display = "none";
     document.getElementById("menu").style.margin = "2vh";
-    document.getElementById("reset").style.display = "block";
     var start = new Date();
 
     timer = setInterval(_ => {
@@ -458,24 +457,55 @@ function startTimer() {
 }
 
 function showInfo(){
+    var infoWindow = '<div><span onclick="hideInfo()">x</span></div>';
     if(totalTime>0){
         switch(activityType) {
             case 1:
-                alert("Click on a word to complete the sentece.");
+                infoWindow+='<h3>Fill in the Blanks</h3>';
+                infoWindow+='<p>Click on a word to complete the sentece.</p>';
                 break;
             case 2:
-                alert("Identify the word as a regular or irregular verb.");
+                infoWindow+='<h3>Regular & Irregular Verbs</h3>';
+                infoWindow+='<p>Identify the word as a regular or irregular verb.</p>';
                 break;
             default:
-                alert("Conjugate the verb. You only need to provide the siple past and past participle form.");
+                infoWindow+='<h3>Conjugation</h3>';
+                infoWindow+='<p>Conjugate the verb. You only need to provide the siple past and past participle form.</p>';
         }
+        infoWindow+='<hr>';
+        infoWindow+='<span id="resetLink" onclick="resetAlert()">Click here to go back to the main menu.</span>';
+        infoWindow+='<span id="mistakeLink" onclick="reportMistake()">Click here to report a mistake.</span>';
+        document.getElementById("activity").style.opacity = ".1";
     }else{
-        alert("Choose an activity to get started.");
+        document.getElementById("welcome").style.opacity = ".1";
+        document.getElementById("menu").style.display = "none";
+        infoWindow+='<p>Choose an activity to get started.</p>';
     }
+    document.getElementById("menu").style.opacity = ".1";  
+    document.getElementById("info").style.display = "none";
+    document.getElementById("infoBox").innerHTML = infoWindow;
+    document.getElementById("infoBox").style.display = "flex";
+}
+
+function hideInfo(){
+    if(totalTime>0){
+        document.getElementById("activity").style.opacity = "1";
+    }else{
+        document.getElementById("menu").style.display = "flex";
+        document.getElementById("welcome").style.opacity = "1";
+    }
+    document.getElementById("info").style.display = "block";
+    document.getElementById("menu").style.opacity = "1";
+    document.getElementById("infoBox").innerHTML = '';
+    document.getElementById("infoBox").style.display = "none";
 }
 
 function resetAlert(){
     if(confirm("Quit activity and return to main menu?")){
         reset();
     }
+}
+
+function reportMistake(){
+    alert("Coming soon");
 }
