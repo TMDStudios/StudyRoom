@@ -479,7 +479,7 @@ function showInfo(){
     }else{
         document.getElementById("welcome").style.opacity = ".1";
         document.getElementById("menu").style.display = "none";
-        infoWindow+='<p>Choose an activity to get started.</p>';
+        infoWindow+='<p style="padding-top: 100px;">Choose an activity to get started.</p>';
     }
     document.getElementById("menu").style.opacity = ".1";  
     document.getElementById("info").style.display = "none";
