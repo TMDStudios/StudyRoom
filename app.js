@@ -479,7 +479,7 @@ function showInfo(){
     }else{
         document.getElementById("welcome").style.opacity = ".1";
         document.getElementById("menu").style.display = "none";
-        infoWindow+='<p style="padding-top: 100px;">Choose an activity to get started.</p>';
+        infoWindow+='<p style="padding-top: 100px; font-size: 1.2em;">Choose an activity to get started.</p>';
     }
     document.getElementById("menu").style.opacity = ".1";  
     document.getElementById("info").style.display = "none";
@@ -488,16 +488,18 @@ function showInfo(){
 }
 
 function hideInfo(){
-    if(totalTime>0){
-        document.getElementById("activity").style.opacity = "1";
-    }else{
-        document.getElementById("menu").style.display = "flex";
-        document.getElementById("welcome").style.opacity = "1";
+    if(document.getElementById("mistakeForm").style.display != "flex"){
+        if(totalTime>0){
+            document.getElementById("activity").style.opacity = "1";
+        }else{
+            document.getElementById("menu").style.display = "flex";
+            document.getElementById("welcome").style.opacity = "1";
+        }
+        document.getElementById("info").style.display = "block";
+        document.getElementById("menu").style.opacity = "1";
+        document.getElementById("infoBox").innerHTML = '';
+        document.getElementById("infoBox").style.display = "none";
     }
-    document.getElementById("info").style.display = "block";
-    document.getElementById("menu").style.opacity = "1";
-    document.getElementById("infoBox").innerHTML = '';
-    document.getElementById("infoBox").style.display = "none";
 }
 
 function resetAlert(){
@@ -507,5 +509,12 @@ function resetAlert(){
 }
 
 function reportMistake(){
-    alert("Coming soon");
+    document.getElementById("infoBox").style.display = "none";
+    document.getElementById("mistakeForm").style.display = "flex";
+}
+
+function submitMistake(){
+    document.getElementById("mistakeForm").style.display = "none";
+    alert("Thank you! Your mistake has been reported.")
+    hideInfo();
 }

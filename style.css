@@ -436,6 +436,49 @@ select option {
     cursor: pointer;
     color: #a6fff9;
 }
+#mistakeForm {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px #a6fff9 inset;
+    border-radius: 6px;
+    width: 33%;
+    height: auto;
+    background-color: #243763;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.4em;
+    color: #d61c4e;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    padding: 24px;
+}
+#mistakeForm p {
+    padding-bottom: 16px;
+}
+#mistakeForm input, #mistakeForm textarea, #mistakeForm button {
+    flex: 1;
+    text-align: center;
+    border: 2px solid #243763;
+    width: 100%;
+    margin: 4px;
+    border-radius: 4px;
+    background-color: #10192e;
+    color: #a6fff9;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+#mistakeForm button {
+    background-color: #a6fff9;
+    color: #10192e;
+}
+#mistakeForm button:hover {
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
 
 @media all and (max-height: 799px) and (min-width: 1000px) {
     #banner {
@@ -476,6 +519,9 @@ select option {
         min-width: 0;
         font-size: .9em;
         padding: 8px;
+    }
+    #mistakeForm {
+        width: 80%;
     }
 }
 
