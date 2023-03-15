@@ -343,7 +343,7 @@ select option {
 #banner img:hover {
     box-shadow: 0 0 12px 0 rgb(137, 181, 248);
 }
-#info, #reset {
+#info {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -354,25 +354,20 @@ select option {
     border: 2px solid #a6fff9;
     align-items: center;
 }
-#reset {
-    left: 0;
-    display: none;
-}
-#info:hover, #reset:hover {
+#info:hover {
     cursor: pointer;
     border: 2px solid white;
     background-color: #a6fff93b;
 }
-#info p, #reset p {
+#info p {
     color: #a6fff9;
-    font-size: 1.6em;
-    padding-top: 1px;
-    text-align: center;   
+    font-size: 1.5em;
+    padding-top: 2px;
+    text-align: center;  
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-weight: bold;
 }
-#reset p {
-    font-size: 1.5em; 
-}
-#info p:hover, #reset p:hover {
+#info p:hover {
     color: white;
 }
 #infoBox {
@@ -472,7 +467,7 @@ select option {
     #banner {
         width: 66%;
     }
-    #info, #reset {
+    #info {
         margin: 8px;
     }
     #infoBox {
