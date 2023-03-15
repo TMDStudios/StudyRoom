@@ -515,6 +515,20 @@ function reportMistake(){
 
 function submitMistake(){
     document.getElementById("mistakeForm").style.display = "none";
-    alert("Thank you! Your mistake has been reported.")
-    hideInfo();
+
+    console.log("word="+document.getElementById("mistakeWord").value+"&issue="+document.getElementById("mistakeIssue").value+"&author="+document.getElementById("mistakeAuthor").value)
+
+    if(document.getElementById("mistakeWord").value.length>0 && document.getElementById("mistakeIssue").value.length>0){
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "https://devroboto.pythonanywhere.com/mistakes/add/");
+        xhttp.onload = function(){
+            alert("Thank you! Your mistake has been reported.")
+            hideInfo();
+        }
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("word="+document.getElementById('mistakeWord').value+"&issue="+document.getElementById('mistakeIssue').value+"&author="+document.getElementById('mistakeAuthor').value);
+    }else{
+        alert("The 'word' and 'issue' fields are required. Please resubmit the form.")
+        hideInfo();
+    }
 }
