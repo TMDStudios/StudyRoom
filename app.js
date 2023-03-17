@@ -43,7 +43,7 @@ function showOptions() {
 
 function showBanner(){
     var randomBannerIndex = Math.floor(Math.random() * banners.length);
-    document.getElementById("banner").innerHTML = '<a href="'+links[randomBannerIndex]+'"><img src="'+banners[randomBannerIndex]+'"/></a>';
+    document.getElementById("banner").innerHTML = '<a href="'+links[randomBannerIndex]+'" target="_blank"><img src="'+banners[randomBannerIndex]+'"/></a>';
 }
 
 function hideBanner(){
