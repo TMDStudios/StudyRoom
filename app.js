@@ -137,7 +137,7 @@ function startLevel() {
             getLocalJson("level5.json");
             break;
         default:
-            console.log("Coming soon");
+            getJsonApi();
     }
 
     switch(activityType) {
@@ -186,22 +186,61 @@ function getLocalJson (file) {
     req.send();
 }
 
-function fillInTheBlanks(data) {
-    var wordRow = '<p class="wordRow">';
-    var indexPositions = [];
-    while(indexPositions.length<10){
-        var randomNumber = Math.floor(Math.random() * data.words.length);
-        if(!indexPositions.includes(randomNumber)){
-            indexPositions.push(randomNumber);
+function getJsonApi() {
+    document.getElementById("overlay").style.display = "flex";
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://devroboto.pythonanywhere.com/level/"+level+"/"+activityType);
+    xhttp.onload = function(){
+        document.getElementById("overlay").style.display = "none";
+        var data = JSON.parse(this.responseText);
+        console.log(data)
+        switch(activityType) {
+            case 1:
+                fillInTheBlanks(data);   
+                break;
+            case 2:
+                regularAndIrregularVerbs(data);
+                break;
+            case 3:
+                conjugation(data);
+                break;
+            default:
+                console.log("Coming soon");
         }
     }
-    for(var i=0; i<10; i++){
-        words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
-        var word = data.words[indexPositions[i]].word;
-        var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
-        wordRow += wordSpan;
-        if((i+1)%3==0){
-            wordRow += '</p><p class="wordRow">';
+    xhttp.send();
+}
+
+function fillInTheBlanks(data) {
+    var wordRow = '<p class="wordRow">';
+    console.log(data)
+    var indexPositions = [];
+    if(level<6){
+        while(indexPositions.length<10){
+            var randomNumber = Math.floor(Math.random() * data.words.length);
+            if(!indexPositions.includes(randomNumber)){
+                indexPositions.push(randomNumber);
+            }
+        }
+        for(var i=0; i<10; i++){
+            words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
+            var word = data.words[indexPositions[i]].word;
+            var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
+            wordRow += wordSpan;
+            if((i+1)%3==0){
+                wordRow += '</p><p class="wordRow">';
+            }
+        }
+    }else{
+        indexPositions = [0,1,2,3,4,5,6,7,8,9];
+        for(var i=0; i<10; i++){
+            words.push({"word":data[indexPositions[i]].word,"sentence":data[indexPositions[i]].sentence})
+            var word = data[indexPositions[i]].word;
+            var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
+            wordRow += wordSpan;
+            if((i+1)%3==0){
+                wordRow += '</p><p class="wordRow">';
+            }
         }
     }
     wordRow += '</p>';
@@ -212,14 +251,21 @@ function fillInTheBlanks(data) {
 
 function regularAndIrregularVerbs(data) {
     var indexPositions = [];
-    while(indexPositions.length<10){
-        var randomNumber = Math.floor(Math.random() * data.words.length);
-        if(!indexPositions.includes(randomNumber) && data.words[randomNumber].regular!=undefined){
-            indexPositions.push(randomNumber);
+    if(level<6){
+        while(indexPositions.length<10){
+            var randomNumber = Math.floor(Math.random() * data.words.length);
+            if(!indexPositions.includes(randomNumber) && data.words[randomNumber].regular!=undefined){
+                indexPositions.push(randomNumber);
+            }
         }
-    }
-    for(var i=0; i<10; i++){
-        words.push({"word":data.words[indexPositions[i]].word,"regular":data.words[indexPositions[i]].regular})
+        for(var i=0; i<10; i++){
+            words.push({"word":data.words[indexPositions[i]].word,"regular":data.words[indexPositions[i]].regular})
+        }
+    }else{
+        indexPositions = [0,1,2,3,4,5,6,7,8,9];
+        for(var i=0; i<10; i++){
+            words.push({"word":data[indexPositions[i]].word,"regular":data[indexPositions[i]].regular})
+        }
     }
 
     document.getElementById("question").style.textAlign = 'center';
@@ -232,21 +278,39 @@ function regularAndIrregularVerbs(data) {
 function conjugation(data) {
     var indexPositions = [];
     var count = 0;
-    for(var i=0; i<data.words.length; i++){
-        if(data.words[i].conjugation!=undefined){
-            count++;
+    if(level<6){
+        for(var i=0; i<data.words.length; i++){
+            if(data.words[i].conjugation!=undefined){
+                count++;
+            }
         }
-    }
-    wordMax = count;
-    while(indexPositions.length<wordMax){
-        var randomNumber = Math.floor(Math.random() * data.words.length);
-        if(!indexPositions.includes(randomNumber) && data.words[randomNumber].conjugation!=undefined){
-            indexPositions.push(randomNumber);
+        wordMax = count;
+        while(indexPositions.length<wordMax){
+            var randomNumber = Math.floor(Math.random() * data.words.length);
+            if(!indexPositions.includes(randomNumber) && data.words[randomNumber].conjugation!=undefined){
+                indexPositions.push(randomNumber);
+            }
         }
-    }
-
-    for(var i=0; i<wordMax; i++){
-        words.push({"word":data.words[indexPositions[i]].word,"conjugation":data.words[indexPositions[i]].conjugation})
+    
+        for(var i=0; i<wordMax; i++){
+            words.push({"word":data.words[indexPositions[i]].word,"conjugation":data.words[indexPositions[i]].conjugation})
+        }
+    }else{
+        for(var i=0; i<data.length; i++){
+            if(data[i].conjugation!=undefined){
+                count++;
+            }
+        }
+        wordMax = count;
+        var wordCount = 0;
+        while(indexPositions.length<wordMax){
+            indexPositions.push(wordCount);
+            wordCount++;
+        }
+    
+        for(var i=0; i<wordMax; i++){
+            words.push({"word":data[indexPositions[i]].word,"conjugation":data[indexPositions[i]].conjugation})
+        }
     }
 
     document.getElementById("question").style.textAlign = 'center';
