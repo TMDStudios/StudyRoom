@@ -605,7 +605,11 @@ function submitMistake(){
             hideInfo();
         }
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("word="+document.getElementById('mistakeWord').value+"&issue="+document.getElementById('mistakeIssue').value+"&author="+document.getElementById('mistakeAuthor').value);
+        if(document.getElementById('mistakeAuthor').value.length<1){
+            xhttp.send("word="+document.getElementById('mistakeWord').value+"&issue="+document.getElementById('mistakeIssue').value+"&author=Anonymous");
+        }else{
+            xhttp.send("word="+document.getElementById('mistakeWord').value+"&issue="+document.getElementById('mistakeIssue').value+"&author="+document.getElementById('mistakeAuthor').value);
+        }
     }else{
         alert("The 'word' and 'issue' fields are required. Please resubmit the form.")
         hideInfo();
