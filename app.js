@@ -386,8 +386,8 @@ function chooseWord(word) {
         if(word==correctWord){
             document.getElementById(word).style.textDecoration = "line-through";
             document.getElementById(word).style.cursor = "auto";
-            document.getElementById(word).style.color = "#D61C4E";
-            document.getElementById(word).style.borderColor = "#d61c4e4d";
+            document.getElementById(word).style.color = "#AD8E70";
+            document.getElementById(word).style.borderColor = "#AD8E70";
             document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
             document.getElementById(word).onclick = "";
             words.splice(wordIndex, 1);
