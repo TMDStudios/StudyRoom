@@ -14,6 +14,7 @@ var preterite = "";
 var pastParticiple = "";
 var activityOver = false;
 var wordMax = 10;
+var checkTimer = 0;
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 // Banners
@@ -384,6 +385,9 @@ function checkConjugation() {
 function chooseWord(word) {
     if(!activityOver){
         if(word==correctWord){
+            document.getElementById("correct").innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
+            document.getElementById("correct").style.display = "flex";
+            checkTimer=totalTime;
             document.getElementById(word).style.textDecoration = "line-through";
             document.getElementById(word).style.cursor = "auto";
             document.getElementById(word).style.color = "#AD8E70";
@@ -391,6 +395,9 @@ function chooseWord(word) {
             document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
             document.getElementById(word).onclick = "";
             words.splice(wordIndex, 1);
+            var rect = document.getElementById(word).getBoundingClientRect();
+            document.getElementById("correct").style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
+            document.getElementById("correct").style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
         }else{
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
@@ -517,6 +524,14 @@ function startTimer() {
         let count = current - start;
         totalTime = count;
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(count)+'</span></p>';
+        if(checkTimer>0){
+            console.log("CHECKTIMER: "+(count-checkTimer))
+            if(count-checkTimer>1500){
+                document.getElementById("correct").innerHTML = '';
+                document.getElementById("correct").style.display = "none";
+                checkTimer=0;
+            }
+        }
     }, 10);  
 }
 
