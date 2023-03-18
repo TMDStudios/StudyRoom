@@ -190,7 +190,7 @@ select option {
     padding: 8px;
     margin: 2px;
     border-radius: 4px;
-    border: solid 1px #d61c4e;
+    border: solid 1px #FFEBB7;
     color: #FFEBB7;
     max-width: 25%;
 }
@@ -213,7 +213,7 @@ select option {
 }
 #preterite:focus, #pastParticiple:focus {
     outline: none !important;
-    background-image: linear-gradient(to bottom, #d61c4e, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #d61c4e);
+    background-image: linear-gradient(to bottom, #FFEBB7, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #FFEBB7);
 }
 #submitBtn {
     padding: 8px 0px 7px 0px !important;
