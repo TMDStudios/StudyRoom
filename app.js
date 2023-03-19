@@ -356,6 +356,7 @@ function regOrNot(selection) {
         if(selection==isRegular){
             words.splice(wordIndex, 1);
             document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+            handleConfetti(document.getElementById("wordsRemaining"));
         }else{
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
@@ -370,6 +371,7 @@ function checkConjugation() {
         if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
             words.splice(wordIndex, 1);
             document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/'+wordMax+'</p>';
+            handleConfetti(document.getElementById("wordsRemaining"));
         }else{
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
@@ -386,10 +388,6 @@ function chooseWord(word) {
     if(!activityOver){
         if(word==correctWord){
             var wordElement = document.getElementById(word);
-            var correctElement = document.getElementById("correct");
-            correctElement.innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
-            correctElement.style.display = "flex";
-            checkTimer=totalTime;
             wordElement.style.textDecoration = "line-through";
             wordElement.style.cursor = "auto";
             wordElement.style.color = "#AD8E70";
@@ -397,9 +395,7 @@ function chooseWord(word) {
             wordElement.style.backgroundColor = "rgba(0,0,0,.25)";
             wordElement.onclick = "";
             words.splice(wordIndex, 1);
-            var rect = wordElement.getBoundingClientRect();
-            correctElement.style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
-            correctElement.style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
+            handleConfetti(wordElement);
         }else{
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
@@ -407,6 +403,16 @@ function chooseWord(word) {
         }
         getSentence();
     }
+}
+
+function handleConfetti(wordElement){
+    var correctElement = document.getElementById("correct");
+            correctElement.innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
+            correctElement.style.display = "flex";
+            checkTimer=totalTime;
+            var rect = wordElement.getBoundingClientRect();
+            correctElement.style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
+            correctElement.style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
 }
 
 function getSentence() {
