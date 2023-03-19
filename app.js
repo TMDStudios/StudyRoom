@@ -385,19 +385,21 @@ function checkConjugation() {
 function chooseWord(word) {
     if(!activityOver){
         if(word==correctWord){
-            document.getElementById("correct").innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
-            document.getElementById("correct").style.display = "flex";
+            var wordElement = document.getElementById(word);
+            var correctElement = document.getElementById("correct");
+            correctElement.innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
+            correctElement.style.display = "flex";
             checkTimer=totalTime;
-            document.getElementById(word).style.textDecoration = "line-through";
-            document.getElementById(word).style.cursor = "auto";
-            document.getElementById(word).style.color = "#AD8E70";
-            document.getElementById(word).style.borderColor = "#AD8E70";
-            document.getElementById(word).style.backgroundColor = "rgba(0,0,0,.25)";
-            document.getElementById(word).onclick = "";
+            wordElement.style.textDecoration = "line-through";
+            wordElement.style.cursor = "auto";
+            wordElement.style.color = "#AD8E70";
+            wordElement.style.borderColor = "#AD8E70";
+            wordElement.style.backgroundColor = "rgba(0,0,0,.25)";
+            wordElement.onclick = "";
             words.splice(wordIndex, 1);
-            var rect = document.getElementById(word).getBoundingClientRect();
-            document.getElementById("correct").style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
-            document.getElementById("correct").style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
+            var rect = wordElement.getBoundingClientRect();
+            correctElement.style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
+            correctElement.style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
         }else{
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
@@ -526,7 +528,7 @@ function startTimer() {
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(count)+'</span></p>';
         if(checkTimer>0){
             console.log("CHECKTIMER: "+(count-checkTimer))
-            if(count-checkTimer>1500){
+            if(count-checkTimer>1100){
                 document.getElementById("correct").innerHTML = '';
                 document.getElementById("correct").style.display = "none";
                 checkTimer=0;
