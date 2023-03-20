@@ -15,6 +15,8 @@ var pastParticiple = "";
 var activityOver = false;
 var wordMax = 10;
 var checkTimer = 0;
+var screenSize = [0, 0];
+var resized = false;
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 // Banners
@@ -29,6 +31,24 @@ var links = [
 	"https://freebitco.in/?r=15749838",
 	"https://www.redbubble.com/people/shirtsetcetera/shop"
 ]
+
+// Detect virtual keyboard
+window.onload = getWindowSize;
+window.onresize = checkWindowSize;
+
+function getWindowSize(){
+    screenSize = [window.innerWidth, window.innerHeight];
+    console.log("get size "+screenSize);
+}
+
+function checkWindowSize(){
+    if(screenSize[0]>0 && !resized && activityType==3 && totalTime>0){ //make sure the screen size has been detected and conjugation activity is active
+        if(window.innerWidth==screenSize[0] && (screenSize[1]-window.innerHeight)>50){
+            resized = true;
+            hideBanner();
+        }
+    }
+}
 
 function showOptions() {
     document.getElementById("start").innerHTML = "Select Activity";
