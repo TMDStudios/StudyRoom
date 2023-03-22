@@ -17,6 +17,7 @@ var wordMax = 10;
 var checkTimer = 0;
 var screenSize = [0, 0];
 var resized = false;
+var currentBanner = "";
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 // Banners
@@ -64,7 +65,8 @@ function showOptions() {
 
 function showBanner(){
     var randomBannerIndex = Math.floor(Math.random() * banners.length);
-    document.getElementById("banner").innerHTML = '<a href="'+links[randomBannerIndex]+'" target="_blank"><img src="'+banners[randomBannerIndex]+'"/></a>';
+    currentBanner = banners[randomBannerIndex];
+    document.getElementById("banner").innerHTML = '<a onclick="bannerClick()" href="'+links[randomBannerIndex]+'" target="_blank"><img src="'+banners[randomBannerIndex]+'"/></a>';
 }
 
 function hideBanner(){
@@ -553,7 +555,6 @@ function startTimer() {
         totalTime = count;
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(count)+'</span></p>';
         if(checkTimer>0){
-            console.log("CHECKTIMER: "+(count-checkTimer))
             if(count-checkTimer>1100){
                 document.getElementById("correct").innerHTML = '';
                 document.getElementById("correct").style.display = "none";
@@ -623,8 +624,6 @@ function reportMistake(){
 function submitMistake(){
     document.getElementById("mistakeForm").style.display = "none";
 
-    console.log("word="+document.getElementById("mistakeWord").value+"&issue="+document.getElementById("mistakeIssue").value+"&author="+document.getElementById("mistakeAuthor").value)
-
     if(document.getElementById("mistakeWord").value.length>0 && document.getElementById("mistakeIssue").value.length>0){
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", "https://devroboto.pythonanywhere.com/mistakes/add/");
@@ -642,4 +641,14 @@ function submitMistake(){
         alert("The 'word' and 'issue' fields are required. Please resubmit the form.")
         hideInfo();
     }
+}
+
+function bannerClick(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://devroboto.pythonanywhere.com/bannerclicks/add/");
+    xhttp.onload = function(){
+        console.log("Banner Click Submitted");
+    }
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("banner="+currentBanner+"&time="+new Date());
 }
