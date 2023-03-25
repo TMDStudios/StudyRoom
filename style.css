@@ -12,6 +12,10 @@ body {
     justify-content: center;
     align-items: center;
     overflow-y: hidden;
+    /* Disable text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 #welcome {
     border-radius: 6px;
