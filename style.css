@@ -49,7 +49,7 @@ body {
     font-weight: lighter;
     padding: 8px;
 }
-#start:hover {
+#openMenu:hover {
     cursor: pointer;
 }
 #options {

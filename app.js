@@ -52,7 +52,7 @@ function checkWindowSize(){
 }
 
 function showOptions() {
-    document.getElementById("start").innerHTML = "Select Activity";
+    document.getElementById("openMenu").innerHTML = "Select Activity";
     document.getElementById("options").style.display = "flex";
     document.getElementById("options").style.height = "auto";
     document.getElementById("options").style.overflow = "auto";
@@ -165,13 +165,13 @@ function startLevel() {
 
     switch(activityType) {
         case 1:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Fill in the Blanks '+level+'</h3>';    
+            document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks '+level+'</h3>';    
             break;
         case 2:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Regular or Irregular '+level+'</h3>'; 
+            document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular '+level+'</h3>'; 
             break;
         case 3:
-            document.getElementById("menu").innerHTML = '<h3 id="start">Conjugation '+level+'</h3>'; 
+            document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation '+level+'</h3>'; 
             break;
         default:
             console.log("Coming soon");
