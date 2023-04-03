@@ -192,9 +192,7 @@
         },
         {
             "word": "said",
-            "sentence": "She said bye and then left.",
-            "regular": "false",
-            "conjugation" : "say, said, said"
+            "sentence": "She said bye and then left."
         },
         {
             "word": "an",

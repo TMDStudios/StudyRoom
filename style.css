@@ -374,7 +374,7 @@ select option {
 #info p:hover {
     color: white;
 }
-#infoBox {
+#infoBox, #recapBox {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -393,18 +393,18 @@ select option {
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
 }
-#infoBox div {
+#infoBox div, #recapBox div {
     text-align: right;
     width: 100%;
     color: red;
 }
-#infoBox div span {
+#infoBox div span, #recapBox div span {
     margin: 8px;
     padding-right: 4px;
     font-family: monospace;
     font-size: 2.5em;
 }
-#infoBox div span:hover {
+#infoBox div span:hover, #recapBox div span:hover {
     cursor: pointer;
     color: #a6fff9;
 }
@@ -414,17 +414,22 @@ select option {
     padding-bottom: 32px;
     color: #a6fff9;
 }
-#infoBox h3 {
+#infoBox h3, #recapBox h3 {
     flex: 1;
     text-align: center;
     color: #a6fff9;
 }
-#infoBox hr {
+#infoBox hr, #recapBox hr {
     flex: 1;
     width: 100%;
     height: 1px;
     border: 0;
     border-top: 1px solid #a6fff9;
+}
+#recapBox p {
+    flex: 1;
+    text-align: center;
+    color: #FFEBB7;
 }
 #resetLink {
     flex: 1;
@@ -540,7 +545,7 @@ select option {
     #info {
         margin: 8px;
     }
-    #infoBox {
+    #infoBox, #recapBox {
         width: 90%;
         height: auto;
         min-width: 0;

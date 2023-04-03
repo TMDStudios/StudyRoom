@@ -1,5 +1,7 @@
 var level = 0;
 var words = [];
+var mistakes = [];
+var currentMistake = 0;
 var correctWord = "";
 var wordIndex = -1;
 var minutes = 0;
@@ -125,9 +127,11 @@ function activityOptions(num) {
 }
 
 function levelSelection(numOfLevels){
-    var selectionString = '<select id="level" onchange="selectLevel()"><option value="0">Select Level</option>';
+    var selectionString = '<select id="level" onchange="selectLevel()"><option value="0">Select Word Set</option>';
+    var wordSet = 1;
     for(var i=1; i<numOfLevels+1; i++){
-        selectionString+='<option value="'+i+'">'+i+'</option>'
+        selectionString+='<option value="'+i+'">Words '+wordSet+' to '+(i*100)+'</option>'
+        wordSet+=100;
     }
     return selectionString+'</select>';
 }
@@ -380,6 +384,7 @@ function regOrNot(selection) {
             document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
             handleConfetti(document.getElementById("wordsRemaining"));
         }else{
+            mistakes.push({"word":words[wordIndex].word,"guess":selection,"correct":words[wordIndex].regular});
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
@@ -395,6 +400,8 @@ function checkConjugation() {
             document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/'+wordMax+'</p>';
             handleConfetti(document.getElementById("wordsRemaining"));
         }else{
+            var guess = document.getElementById("preterite").value.trim().toLowerCase() + " - " + document.getElementById("pastParticiple").value.trim().toLowerCase()
+            mistakes.push({"word":words[wordIndex].word,"guess":guess,"correct":words[wordIndex].conjugation});
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
@@ -419,6 +426,8 @@ function chooseWord(word) {
             words.splice(wordIndex, 1);
             handleConfetti(wordElement);
         }else{
+            mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":word,"correct":correctWord});
+            console.log(mistakes)
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
@@ -473,12 +482,15 @@ function saveScore() {
             xhttp.open("POST", "https://devroboto.pythonanywhere.com/leaderboard/add/");
             xhttp.onload = function(){
                 showLeaderboard();
+                nextMistake();
             }
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("name="+username+"&time="+(totalTime+penalty*1000)+"&level="+level);
             document.getElementById("overlay").style.display = "flex";
         }
         req.send();
+    }else{
+        nextMistake();
     }
 }
 
@@ -608,6 +620,54 @@ function hideInfo(){
         document.getElementById("infoBox").innerHTML = '';
         document.getElementById("infoBox").style.display = "none";
     }
+}
+
+function nextMistake(){
+    if(mistakes.length>0){
+        if(currentMistake>=mistakes.length){
+            currentMistake=0;
+        }
+        var recapWindow = '<div><span onclick="clearMistakes()">x</span></div>';
+        recapWindow+='<h3>Review</h3>';
+        switch(activityType) {
+            case 1:
+                recapWindow+='<p style="color: #D61C4E;">Mistake '+(currentMistake+1)+' of '+mistakes.length+'</p>';
+                recapWindow+='<p>'+mistakes[currentMistake].sentence+'</p><hr>';
+                recapWindow+='<p style="color: #D61C4E;">Your answer: '+mistakes[currentMistake].guess+'</p>';
+                recapWindow+='<p>Correct answer: '+mistakes[currentMistake].correct+'</p>';
+                break;
+            case 2:
+                recapWindow+='<p style="color: #D61C4E;">Mistake '+(currentMistake+1)+' of '+mistakes.length+'</p>';
+                recapWindow+='<p>'+mistakes[currentMistake].word+'</p><hr>';
+                if(mistakes[currentMistake].guess=='true'){
+                    recapWindow+='<p style="color: #D61C4E;">Your answer: Regular</p>';
+                    recapWindow+='<p>Correct answer: Irregular</p>';
+                }else{
+                    recapWindow+='<p style="color: #D61C4E;">Your answer: Irregular</p>';
+                    recapWindow+='<p>Correct answer: Regular</p>';
+                }
+                break;
+            default:
+                recapWindow+='<p style="color: #D61C4E;">Mistake '+(currentMistake+1)+' of '+mistakes.length+'</p>';
+                recapWindow+='<p>'+mistakes[currentMistake].word+'</p><hr>';
+                recapWindow+='<p style="color: #D61C4E;">Your answer: '+mistakes[currentMistake].guess+'</p>';
+                recapWindow+='<p>Correct conjugation: '+mistakes[currentMistake].correct+'</p>';
+        }
+        document.getElementById("recapBox").innerHTML = recapWindow;
+        document.getElementById("recapBox").style.display = "flex";
+        currentMistake++;
+    }else{
+        hideRecap();
+    }
+}
+
+function hideRecap(){
+    document.getElementById("recapBox").innerHTML = '';
+    document.getElementById("recapBox").style.display = "none";
+}
+
+function clearMistakes(){
+    mistakes = [];
 }
 
 function resetAlert(){
