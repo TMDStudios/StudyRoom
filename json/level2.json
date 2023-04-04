@@ -126,7 +126,7 @@
         {
             "word": "name",
             "sentence": "I gave that dog a name. I call him Scruffy.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "very",
@@ -143,7 +143,7 @@
         {
             "word": "form",
             "sentence": "I need to fill out a form to get my license.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "sentence",
@@ -178,7 +178,7 @@
         {
             "word": "line",
             "sentence": "The line in the middle of the road separates the left and right lanes.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "differ",
@@ -264,7 +264,7 @@
         {
             "word": "air",
             "sentence": "There is too much air in that baloon.",
-            "count": "false"
+            "regular": "false"
         },
         {
             "word": "well",
@@ -309,7 +309,7 @@
         {
             "word": "hand",
             "sentence": "There are five fingers on each hand.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "port",
@@ -414,12 +414,12 @@
         {
             "word": "house",
             "sentence": "My apartment is too small. I want to buy a house.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "picture",
             "sentence": "I took this picture with my new camera.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "try",
@@ -448,7 +448,7 @@
         {
             "word": "mother",
             "sentence": "My mother and father come from different countries.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "world",
@@ -477,7 +477,7 @@
         {
             "word": "father",
             "sentence": "My mother and father want grandchildren.",
-            "count": "true"
+            "regular": "true"
         }
     ]
 }

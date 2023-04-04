@@ -396,16 +396,18 @@ function regOrNot(selection) {
 function checkConjugation() {
     if(!activityOver){
         if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
-            words.splice(wordIndex, 1);
-            document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/'+wordMax+'</p>';
             handleConfetti(document.getElementById("wordsRemaining"));
         }else{
             var guess = document.getElementById("preterite").value.trim().toLowerCase() + " - " + document.getElementById("pastParticiple").value.trim().toLowerCase()
             mistakes.push({"word":words[wordIndex].word,"guess":guess,"correct":words[wordIndex].conjugation});
-            penalty += 5;
+            penalty += 10;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
         }
+
+        words.splice(wordIndex, 1);
+        document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/'+wordMax+'</p>';
+
         document.getElementById("preterite").value = "";
         document.getElementById("pastParticiple").value = "";
         pickWord();

@@ -127,7 +127,7 @@
         {
             "word": "word",
             "sentence": "I just learned my first Spanish word.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "but",
@@ -223,7 +223,7 @@
         {
             "word": "time",
             "sentence": "How many times have you been here?",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "if",
@@ -353,12 +353,12 @@
         {
             "word": "number",
             "sentence": "Ten thousand is a large number.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "sound",
             "sentence": "I love the sound of music.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "no",
@@ -390,7 +390,7 @@
         {
             "word": "water",
             "sentence": "Make sure to drink water after you run.",
-            "count": "false"
+            "regular": "false"
         },
         {
             "word": "than",
@@ -420,7 +420,7 @@
         {
             "word": "side",
             "sentence": "The car has a flat tire on the left side.",
-            "count": "true"
+            "regular": "true"
         },
         {
             "word": "been",
