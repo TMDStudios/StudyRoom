@@ -20,6 +20,7 @@ var checkTimer = 0;
 var screenSize = [0, 0];
 var resized = false;
 var currentBanner = "";
+var conjugationsCompleted = 0;
 // 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
 
 // Banners
@@ -415,12 +416,18 @@ function checkConjugation() {
         if(preterite==document.getElementById("preterite").value.trim().toLowerCase() && pastParticiple==document.getElementById("pastParticiple").value.trim().toLowerCase()){
             handleConfetti(document.getElementById("wordsRemaining"));
         }else{
+            if(document.getElementById("preterite").value.trim().length==0&&document.getElementById("pastParticiple").value.trim().length==0){
+                alert("The Simple Past and Past Participle forms must be typed.");
+            }
+
             var guess = document.getElementById("preterite").value.trim().toLowerCase() + " - " + document.getElementById("pastParticiple").value.trim().toLowerCase()
             mistakes.push({"word":words[wordIndex].word,"guess":guess,"correct":words[wordIndex].conjugation});
             penalty += 10;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
         }
+
+        conjugationsCompleted++;
 
         words.splice(wordIndex, 1);
         document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/'+wordMax+'</p>';
@@ -594,6 +601,13 @@ function startTimer() {
                 document.getElementById("correct").innerHTML = '';
                 document.getElementById("correct").style.display = "none";
                 checkTimer=0;
+            }
+        }
+        if(activityType==3&&conjugationsCompleted==0){
+            if(totalTime>10000){
+                alert("Are you still there?\nThe Simple Past and Past Participle forms must be typed.");
+                conjugationsCompleted++;
+                start = new Date() - 10000;
             }
         }
     }, 10);  
