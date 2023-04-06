@@ -133,6 +133,7 @@ function levelSelection(numOfLevels){
         selectionString+='<option value="'+i+'">Words '+wordSet+' to '+(i*100)+'</option>'
         wordSet+=100;
     }
+    selectionString+='<option value="0">Random (Advanced)</option>'
     return selectionString+'</select>';
 }
 
@@ -148,6 +149,9 @@ function startLevel() {
     document.getElementById("credits").style.display = "none";
     document.getElementById("banner").style.marginBottom = "0px";
     switch(level) {
+        case 0:
+            getJsonApi(0);    
+            break;
         case 1:
             getLocalJson("level1.json");     
             break;
@@ -169,13 +173,26 @@ function startLevel() {
 
     switch(activityType) {
         case 1:
-            document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks '+level+'</h3>';    
+            if(level==0){
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks</h3>';  
+            }else{
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks '+level+'</h3>';  
+            }  
             break;
         case 2:
-            document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular '+level+'</h3>'; 
+            if(level==0){
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular</h3>';  
+            }else{
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular '+level+'</h3>'; 
+            }
+            
             break;
         case 3:
-            document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation '+level+'</h3>'; 
+            if(level==0){
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation</h3>';  
+            }else{
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation '+level+'</h3>'; 
+            }
             break;
         default:
             console.log("Coming soon");
@@ -242,7 +259,7 @@ function fillInTheBlanks(data) {
     var wordRow = '<p class="wordRow">';
     console.log(data)
     var indexPositions = [];
-    if(level<6){
+    if(level<6 && level!=0){
         while(indexPositions.length<10){
             var randomNumber = Math.floor(Math.random() * data.words.length);
             if(!indexPositions.includes(randomNumber)){
@@ -278,7 +295,7 @@ function fillInTheBlanks(data) {
 
 function regularAndIrregularVerbs(data) {
     var indexPositions = [];
-    if(level<6){
+    if(level<6 && level!=0){
         while(indexPositions.length<10){
             var randomNumber = Math.floor(Math.random() * data.words.length);
             if(!indexPositions.includes(randomNumber) && data.words[randomNumber].regular!=undefined){
@@ -305,7 +322,7 @@ function regularAndIrregularVerbs(data) {
 function conjugation(data) {
     var indexPositions = [];
     var count = 0;
-    if(level<6){
+    if(level<6 && level!=0){
         for(var i=0; i<data.words.length; i++){
             if(data.words[i].conjugation!=undefined){
                 count++;
@@ -506,7 +523,11 @@ function showLeaderboard() {
         document.getElementById("leaderboard").style.height = "auto";
         document.getElementById("leaderboard").style.opacity = 1;
         var data = JSON.parse(this.responseText);
-        document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
+        if(level==0){
+            document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">ADVANCED TOP 10 TIMES</p>';
+        }else{
+            document.getElementById("leaderboard").innerHTML += '<p class="leaderboardTitle">LEVEL '+level+' TOP 10 TIMES</p>';
+        }
         document.getElementById("leaderboard").innerHTML += '<p class="leaderboardRow"><span class="rank">#</span><span class="name">NAME</span><span class="time">TIME</span></p>';
         for(var i=0; i<data.length; i++){
             if(i<10){

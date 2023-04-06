@@ -264,7 +264,7 @@
         {
             "word": "air",
             "sentence": "There is too much air in that baloon.",
-            "regular": "false"
+            "regular": "true"
         },
         {
             "word": "well",
