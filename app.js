@@ -63,6 +63,7 @@ function showOptions() {
     document.getElementById("option1").style.display = "flex";
     document.getElementById("option2").style.display = "flex";
     document.getElementById("option3").style.display = "flex";
+    document.getElementById("option4").style.display = "flex";
     showBanner();
 }
 
@@ -84,6 +85,7 @@ function activitySelect(num) {
 
             document.getElementById("option2").innerHTML = '';
             document.getElementById("option3").innerHTML = '<p onClick="reset()">Reset</p>';
+            document.getElementById("option4").style.display = "none";
 
             activityOptions(1);
             break;
@@ -93,6 +95,7 @@ function activitySelect(num) {
 
             document.getElementById("option2").innerHTML = '';
             document.getElementById("option3").innerHTML = '<p onClick="reset()">Reset</p>';
+            document.getElementById("option4").style.display = "none";
 
             activityOptions(2);
             break;
@@ -102,8 +105,19 @@ function activitySelect(num) {
 
             document.getElementById("option2").innerHTML = '';
             document.getElementById("option3").innerHTML = '<p onClick="reset()">Reset</p>';
+            document.getElementById("option4").style.display = "none";
 
             activityOptions(3);
+            break;
+        case 4:
+            document.getElementById("option1").className = "selected";
+            document.getElementById("option1").innerHTML = '<p>Unscramble the Word</p>';
+
+            document.getElementById("option2").innerHTML = '';
+            document.getElementById("option3").innerHTML = '<p onClick="reset()">Reset</p>';
+            document.getElementById("option4").style.display = "none";
+
+            activityOptions(4);
             break;
         default:
             console.log("Activity OTHER");
@@ -120,6 +134,9 @@ function activityOptions(num) {
             document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         case 3:
+            document.getElementById("option2").innerHTML = levelSelection(5);
+            break;
+        case 4:
             document.getElementById("option2").innerHTML = levelSelection(5);
             break;
         default:
@@ -195,6 +212,13 @@ function startLevel() {
                 document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation '+level+'</h3>'; 
             }
             break;
+        case 4:
+            if(level==0){
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Unscramble the Word</h3>';  
+            }else{
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Unscramble the Word '+level+'</h3>'; 
+            }
+            break;
         default:
             console.log("Coming soon");
     }
@@ -224,6 +248,9 @@ function getLocalJson (file) {
             case 3:
                 conjugation(data);
                 break;
+            case 4:
+                unscrambleTheWord(data);
+                break;
             default:
                 console.log("Coming soon");
         }
@@ -248,6 +275,9 @@ function getJsonApi() {
                 break;
             case 3:
                 conjugation(data);
+                break;
+            case 4:
+                unscrambleTheWord(data);
                 break;
             default:
                 console.log("Coming soon");
@@ -365,13 +395,43 @@ function conjugation(data) {
     pickWord();
 }
 
+function unscrambleTheWord(data) {
+    console.log(data)
+    var indexPositions = [];
+    if(level<6 && level!=0){
+        while(indexPositions.length<10){
+            var randomNumber = Math.floor(Math.random() * data.words.length);
+            if(!indexPositions.includes(randomNumber)){
+                indexPositions.push(randomNumber);
+            }
+        }
+        for(var i=0; i<10; i++){
+            words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
+        }
+    }else{
+        indexPositions = [0,1,2,3,4,5,6,7,8,9];
+        for(var i=0; i<10; i++){
+            words.push({"word":data[indexPositions[i]].word,"sentence":data[indexPositions[i]].sentence})
+        }
+    }
+    document.getElementById("question").style.textAlign = 'center';
+    document.getElementById("activity").innerHTML += '<div id="unscramble"></div>';
+    document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining: '+wordMax+'/10</p>';
+    
+    getSentence();
+}
+
 document.addEventListener('keydown', (event) => {
     if(event.key.match("Enter")){
-        if(document.getElementById("preterite")==document.activeElement){
-            document.getElementById("pastParticiple").focus();
+        if(activityType==3){
+            if(document.getElementById("preterite")==document.activeElement){
+                document.getElementById("pastParticiple").focus();
+            }else{
+                checkConjugation();
+            } 
         }else{
-            checkConjugation()
-        } 
+            chooseWord(correctWord);
+        }
     }
 }, false);
 
@@ -441,23 +501,38 @@ function checkConjugation() {
 
 function chooseWord(word) {
     if(!activityOver){
-        if(word==correctWord){
-            var wordElement = document.getElementById(word);
-            wordElement.style.textDecoration = "line-through";
-            wordElement.style.cursor = "auto";
-            wordElement.style.color = "#AD8E70";
-            wordElement.style.borderColor = "#AD8E70";
-            wordElement.style.backgroundColor = "rgba(0,0,0,.25)";
-            wordElement.onclick = "";
-            words.splice(wordIndex, 1);
-            handleConfetti(wordElement);
+        if(activityType==1){
+            if(word==correctWord){
+                var wordElement = document.getElementById(word);
+                wordElement.style.textDecoration = "line-through";
+                wordElement.style.cursor = "auto";
+                wordElement.style.color = "#AD8E70";
+                wordElement.style.borderColor = "#AD8E70";
+                wordElement.style.backgroundColor = "rgba(0,0,0,.25)";
+                wordElement.onclick = "";
+                words.splice(wordIndex, 1);
+                handleConfetti(wordElement);
+            }else{
+                mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":word,"correct":correctWord});
+                console.log(mistakes)
+                penalty += 5;
+                document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+                document.getElementById("penalty").style.color = "red";
+            }
         }else{
-            mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":word,"correct":correctWord});
-            console.log(mistakes)
-            penalty += 5;
-            document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
-            document.getElementById("penalty").style.color = "red";
+            if(document.getElementById("unscrambledWord").value.trim().toLowerCase()==correctWord){
+                handleConfetti(document.getElementById("wordsRemaining"));
+            }else{
+                mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":document.getElementById("unscrambledWord").value.trim().toLowerCase(),"correct":correctWord});
+                penalty += 20;
+                document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
+                document.getElementById("penalty").style.color = "red";
+            }
+            words.splice(wordIndex, 1);
+            document.getElementById("wordsRemaining").innerHTML = '<p>Words Remaining:  '+words.length+'/10</p>';
+            document.getElementById("unscrambledWord").value = "";
         }
+        
         getSentence();
     }
 }
@@ -478,6 +553,25 @@ function getSentence() {
         correctWord = words[wordIndex].word;
         var sentence = words[wordIndex].sentence;
         document.getElementById("question").innerHTML = sentence.replace(correctWord, "_____");
+        if(activityType==4){
+            var scrambledChars = correctWord.split("")
+            var scrambledIndex = [];
+            while(scrambledIndex.length<scrambledChars.length){
+                var randomNumber = Math.floor(Math.random() * scrambledChars.length);
+                if(!scrambledIndex.includes(randomNumber)){
+                    scrambledIndex.push(randomNumber);
+                }
+            }
+            var scrambledWord = ''
+            console.log(scrambledChars)
+            console.log(scrambledIndex)
+            for(var i=0; i<scrambledChars.length; i++){
+                console.log(scrambledChars[scrambledIndex[i]])
+                scrambledWord += scrambledChars[scrambledIndex[i]]
+            }
+            document.getElementById("unscramble").innerHTML = '<span><input type="text" id="unscrambledWord" placeholder="\''+scrambledWord+'\'"></span><span id="submitBtn" onclick="chooseWord(\''+correctWord+'\')">Submit</span>';
+            document.getElementById("unscrambledWord").focus();
+        }     
     }else{
         clearInterval(timer);
         saveScore();
