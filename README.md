@@ -2,7 +2,7 @@
 
 ![Game Room Logo](/media/studyBg.png)
 
-Study Room is an open-source platform for students to improve their English vocabulary and grammar. There are currently three different activities to choose from; Fill in the Blanks, Regular & Irregular Verbs, and Conjugation. Each activity is broken down into ten levels, five of which are currently available.
+Study Room is an open-source platform for students to improve their English vocabulary and grammar. There are currently four different activities to choose from; Fill in the Blanks, Regular & Irregular Verbs, Conjugation, and Unscramble the Word. Each activity is broken down into ten levels, five of which are currently available.
 
 >You can see the website here: https://studyroom.tmdstudios.net
 

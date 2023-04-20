@@ -559,10 +559,7 @@ function getSentence() {
                 }
             }
             var scrambledWord = ''
-            console.log(scrambledChars)
-            console.log(scrambledIndex)
             for(var i=0; i<scrambledChars.length; i++){
-                console.log(scrambledChars[scrambledIndex[i]])
                 scrambledWord += scrambledChars[scrambledIndex[i]]
             }
             document.getElementById("unscramble").innerHTML = '<span><input type="text" id="unscrambledWord" placeholder="\''+scrambledWord+'\'"></span><span id="submitBtn" onclick="chooseWord(\''+correctWord+'\')">Submit</span>';
