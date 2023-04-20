@@ -179,7 +179,7 @@ select option {
     background-image: linear-gradient(to bottom right, #ff6f31, #D61C4E, #D61C4E, #D61C4E, #D61C4E, #ff6f31);
     color: #FFEBB7;
 }
-#regularIrregular, #conjugation {
+#regularIrregular, #conjugation, #unscramble {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -187,7 +187,7 @@ select option {
     margin-top: 4px;
     margin-bottom: 4px;
 }
-#regularIrregular span, #conjugation span {
+#regularIrregular span, #conjugation span, #unscramble span {
     flex: 1;
     text-align: center;
     background-color: #243763;
@@ -201,12 +201,12 @@ select option {
 #regularIrregular span:hover, #conjugation span:hover {
     cursor: pointer;
 }
-#conjugation span {
+#conjugation span, #unscramble span {
     display: block;
     padding: 0px;
     margin: 0px;
 }
-#preterite, #pastParticiple {
+#preterite, #pastParticiple, #unscrambledWord {
     width: 100%;
     padding: 8px 0px 8px 0px;
     background-color: rgba(0,0,0,0);
@@ -215,7 +215,7 @@ select option {
     border-radius: 4px;
     text-align: center;
 }
-#preterite:focus, #pastParticiple:focus {
+#preterite:focus, #pastParticiple:focus, #unscrambledWord:focus {
     outline: none !important;
     background-image: linear-gradient(to bottom, #FFEBB7, rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), rgba(0,0,0,.25), #FFEBB7);
 }
