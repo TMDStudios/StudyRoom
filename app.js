@@ -265,7 +265,6 @@ function getJsonApi() {
     xhttp.onload = function(){
         document.getElementById("overlay").style.display = "none";
         var data = JSON.parse(this.responseText);
-        console.log(data)
         switch(activityType) {
             case 1:
                 fillInTheBlanks(data);   
@@ -288,7 +287,6 @@ function getJsonApi() {
 
 function fillInTheBlanks(data) {
     var wordRow = '<p class="wordRow">';
-    console.log(data)
     var indexPositions = [];
     if(level<6 && level!=0){
         while(indexPositions.length<10){
@@ -396,7 +394,6 @@ function conjugation(data) {
 }
 
 function unscrambleTheWord(data) {
-    console.log(data)
     var indexPositions = [];
     if(level<6 && level!=0){
         while(indexPositions.length<10){
@@ -514,7 +511,6 @@ function chooseWord(word) {
                 handleConfetti(wordElement);
             }else{
                 mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":word,"correct":correctWord});
-                console.log(mistakes)
                 penalty += 5;
                 document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
                 document.getElementById("penalty").style.color = "red";
@@ -778,11 +774,17 @@ function nextMistake(){
                     recapWindow+='<p>Correct answer: Regular</p>';
                 }
                 break;
-            default:
+            case 3:
                 recapWindow+='<p style="color: #D61C4E;">Mistake '+(currentMistake+1)+' of '+mistakes.length+'</p>';
                 recapWindow+='<p>'+mistakes[currentMistake].word+'</p><hr>';
                 recapWindow+='<p style="color: #D61C4E;">Your answer: '+mistakes[currentMistake].guess+'</p>';
                 recapWindow+='<p>Correct conjugation: '+mistakes[currentMistake].correct+'</p>';
+                break;
+            default:
+                recapWindow+='<p style="color: #D61C4E;">Mistake '+(currentMistake+1)+' of '+mistakes.length+'</p>';
+                recapWindow+='<p>'+mistakes[currentMistake].sentence+'</p><hr>';
+                recapWindow+='<p style="color: #D61C4E;">Your answer: '+mistakes[currentMistake].guess+'</p>';
+                recapWindow+='<p>Correct answer: '+mistakes[currentMistake].correct+'</p>';
         }
         document.getElementById("recapBox").innerHTML = recapWindow;
         document.getElementById("recapBox").style.display = "flex";
