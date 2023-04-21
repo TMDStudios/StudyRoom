@@ -21,7 +21,7 @@ var screenSize = [0, 0];
 var resized = false;
 var currentBanner = "";
 var conjugationsCompleted = 0;
-// 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation
+// 1 - Fill in the blank, 2 - Regular/Irregular, 3 - Conjugation, 4 - Unscramble
 
 // Banners
 var banners = [
@@ -398,7 +398,7 @@ function unscrambleTheWord(data) {
     if(level<6 && level!=0){
         while(indexPositions.length<10){
             var randomNumber = Math.floor(Math.random() * data.words.length);
-            if(!indexPositions.includes(randomNumber)){
+            if(!indexPositions.includes(randomNumber) && data.words[randomNumber].word.length>3){
                 indexPositions.push(randomNumber);
             }
         }
@@ -570,6 +570,7 @@ function getSentence() {
         saveScore();
         document.getElementById("timer").innerHTML = '<p class="timer"><span>Time: </span><span id="totalTime">'+convertTime(totalTime+penalty*1000)+'</span></p>';
         document.getElementById("question").innerHTML = "Great job!\nYour total time was "+document.getElementById("totalTime").innerHTML;
+        document.getElementById("activity").innerHTML += '<div class="centerDiv"><p id="tryAgain" class="leaderboardRow" onClick="reset()">Try Again</p></div>';
     }
 }
 
