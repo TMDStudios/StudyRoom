@@ -127,6 +127,8 @@ select option {
 #timer, #penalty {
     color: #FF6E31;
     padding: 8px;
+    width: 50%;
+    margin: auto;
 }
 .timer, .penalty {
     text-align: center;
@@ -488,7 +490,7 @@ select option {
     background-color: #f8f8f8;
     cursor: pointer;
 }
-#correct {
+#correct, #incorrect {
     display: none;
     justify-content: center;
     align-items: center;
@@ -504,7 +506,7 @@ select option {
     padding: 24px;
     opacity: .85;
 }
-#correct span {
+#correct span, #incorrect span {
     flex: 1;
     text-align: center;
     width: 100px;
@@ -554,6 +556,9 @@ select option {
     }
     #mistakeForm {
         width: 80%;
+    }
+    #timer, #penalty {
+        width: 90%;
     }
 }
 

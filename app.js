@@ -460,6 +460,7 @@ function regOrNot(selection) {
             handleConfetti(document.getElementById("wordsRemaining"));
         }else{
             mistakes.push({"word":words[wordIndex].word,"guess":selection,"correct":words[wordIndex].regular});
+            handleWrongAnswer(document.getElementById("penalty"));
             penalty += 5;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
@@ -479,6 +480,7 @@ function checkConjugation() {
 
             var guess = document.getElementById("preterite").value.trim().toLowerCase() + " - " + document.getElementById("pastParticiple").value.trim().toLowerCase()
             mistakes.push({"word":words[wordIndex].word,"guess":guess,"correct":words[wordIndex].conjugation});
+            handleWrongAnswer(document.getElementById("penalty"));
             penalty += 10;
             document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
             document.getElementById("penalty").style.color = "red";
@@ -512,6 +514,7 @@ function chooseWord(word) {
             }else{
                 mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":word,"correct":correctWord});
                 penalty += 5;
+                handleWrongAnswer(document.getElementById("penalty"));
                 document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
                 document.getElementById("penalty").style.color = "red";
             }
@@ -520,6 +523,7 @@ function chooseWord(word) {
                 handleConfetti(document.getElementById("wordsRemaining"));
             }else{
                 mistakes.push({"sentence":words[wordIndex].sentence.replace(correctWord, "_____"),"guess":document.getElementById("unscrambledWord").value.trim().toLowerCase(),"correct":correctWord});
+                handleWrongAnswer(document.getElementById("penalty"));
                 penalty += 20;
                 document.getElementById("penalty").innerHTML = '<p class="penalty"><span>Penalty: </span><span id="totalTime">'+penalty+'</span> seconds</p>';
                 document.getElementById("penalty").style.color = "red";
@@ -535,12 +539,22 @@ function chooseWord(word) {
 
 function handleConfetti(wordElement){
     var correctElement = document.getElementById("correct");
-            correctElement.innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
-            correctElement.style.display = "flex";
-            checkTimer=totalTime;
-            var rect = wordElement.getBoundingClientRect();
-            correctElement.style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
-            correctElement.style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
+        correctElement.innerHTML = '<span><lottie-player src="media/confetti.json"  background="transparent"  speed="2"  style="width: 100px; height: 50px;"    autoplay></lottie-player></span>';
+        correctElement.style.display = "flex";
+        checkTimer=totalTime;
+        var rect = wordElement.getBoundingClientRect();
+        correctElement.style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
+        correctElement.style.left = ""+Math.floor(rect.right-(rect.width/2))+"px";
+}
+
+function handleWrongAnswer(wordElement){
+    var correctElement = document.getElementById("incorrect");
+        correctElement.innerHTML = '<span><lottie-player src="media/wrong.json"  background="transparent"  speed="2"  style="width: 64px; height: 64px;"    autoplay></lottie-player></span>';
+        correctElement.style.display = "flex";
+        checkTimer=totalTime;
+        var rect = wordElement.getBoundingClientRect();
+        correctElement.style.top = ""+Math.floor(rect.bottom-(rect.height*.75))+"px";
+        correctElement.style.left = ""+Math.floor(rect.right)+"px";
 }
 
 function getSentence() {
@@ -562,6 +576,7 @@ function getSentence() {
             for(var i=0; i<scrambledChars.length; i++){
                 scrambledWord += scrambledChars[scrambledIndex[i]]
             }
+            document.getElementById("question").innerHTML += '<br><br><p style="color: #243763;"><strong>'+scrambledWord+'</strong></p>'
             document.getElementById("unscramble").innerHTML = '<span><input type="text" id="unscrambledWord" placeholder="\''+scrambledWord+'\'"></span><span id="submitBtn" onclick="chooseWord(\''+correctWord+'\')">Submit</span>';
             document.getElementById("unscrambledWord").focus();
         }     
@@ -688,6 +703,8 @@ function startTimer() {
             if(count-checkTimer>1100){
                 document.getElementById("correct").innerHTML = '';
                 document.getElementById("correct").style.display = "none";
+                document.getElementById("incorrect").innerHTML = '';
+                document.getElementById("incorrect").style.display = "none";
                 checkTimer=0;
             }
         }
