@@ -730,9 +730,13 @@ function showInfo(){
                 infoWindow+='<h3>Regular & Irregular Verbs</h3>';
                 infoWindow+='<p>Identify the word as a regular or irregular verb.</p>';
                 break;
-            default:
+            case 3:
                 infoWindow+='<h3>Conjugation</h3>';
                 infoWindow+='<p>Conjugate the verb. You only need to provide the siple past and past participle form.</p>';
+                break;
+            default:
+                infoWindow+='<h3>Unscramble the Word</h3>';
+                infoWindow+='<p>Use the provided letters to complete the sentence.</p>';
         }
         infoWindow+='<hr>';
         infoWindow+='<span id="resetLink" onclick="resetAlert()">Click here to go back to the main menu.</span>';
