@@ -572,6 +572,11 @@ function getSentence() {
                     scrambledIndex.push(randomNumber);
                 }
             }
+            if(scrambledIndex[0]==0){
+                var temp = scrambledIndex[scrambledChars.length-1];
+                scrambledIndex[scrambledChars.length-1] = scrambledIndex[0];
+                scrambledIndex[0] = temp;
+            }
             var scrambledWord = ''
             for(var i=0; i<scrambledChars.length; i++){
                 scrambledWord += scrambledChars[scrambledIndex[i]]
