@@ -1,10 +1,12 @@
 # StudyRoom
 
-![Game Room Logo](/media/studyBg.png)
+![Railway Badge](https://img.shields.io/badge/deployment-railway-purple)
+
+![Study Room Logo](/media/studyBg.png)
 
 Study Room is an open-source platform for students to improve their English vocabulary and grammar. There are currently four different activities to choose from; Fill in the Blanks, Regular & Irregular Verbs, Conjugation, and Unscramble the Word. Each activity is broken down into ten levels, five of which are currently available.
 
->You can see the website here: https://studyroom.tmdstudios.net
+>You can see the website here: https://studyroom.up.railway.app
 
 ## You may also like...
 
@@ -16,4 +18,4 @@ Study Room is an open-source platform for students to improve their English voca
 
 [Game Room](https://github.com/TMDStudios/GameRoom 'Game Room') - A platform for educators to play games and/or review materials with their students
 
-[TMD Studios](https://tmdstudios.net 'TMD Studios') - A simple one-page website to showcase TMD Studios projects.
+[Indie Game Explorer](https://ige.up.railway.app 'Indie Game Explorer') - A simple one-page website to showcase indie games.
