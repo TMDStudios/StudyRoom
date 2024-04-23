@@ -27,14 +27,16 @@ var conjugationsCompleted = 0;
 var banners = [
     "media/plcLogo.png",
     "media/bitcoinbanner.png",
-    "media/shirtsEtc.png"
-]
+    "media/shirtsEtc.png",
+    "media/shirtsEtc2.png",
+];
 
 var links = [
     "https://play.google.com/store/apps/details?id=com.tmdstudios.python",
-	"https://freebitco.in/?r=15749838",
-	"https://www.redbubble.com/people/shirtsetcetera/shop"
-]
+    "https://freebitco.in/?r=15749838",
+    "https://www.redbubble.com/people/shirtsetcetera/shop",
+    "https://www.tostadora.com/shop/shirtsetceterashop/"
+];
 
 // Detect virtual keyboard
 window.onload = getWindowSize;
