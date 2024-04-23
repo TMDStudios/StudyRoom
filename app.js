@@ -150,10 +150,10 @@ function levelSelection(numOfLevels){
     var selectionString = '<select id="level" onchange="selectLevel()"><option value="0">Select Word Set</option>';
     var wordSet = 1;
     for(var i=1; i<numOfLevels+1; i++){
-        selectionString+='<option value="'+i+'">Words '+wordSet+' to '+(i*100)+'</option>'
+        selectionString+='<option value="'+i+'">Words '+wordSet+' to '+(i*100)+'</option>';
         wordSet+=100;
     }
-    selectionString+='<option value="0">Random (Advanced)</option>'
+    selectionString+='<option value="0">Random (Advanced)</option>';
     return selectionString+'</select>';
 }
 
@@ -170,13 +170,13 @@ function startLevel() {
     document.getElementById("banner").style.marginBottom = "0px";
     switch(level) {
         case 0:
-            getJsonApi(0);    
+            getJsonApi(0);
             break;
         case 1:
-            getLocalJson("level1.json");     
+            getLocalJson("level1.json");
             break;
         case 2:
-            getLocalJson("level2.json");   
+            getLocalJson("level2.json");
             break;
         case 3:
             getLocalJson("level3.json");
@@ -194,31 +194,31 @@ function startLevel() {
     switch(activityType) {
         case 1:
             if(level==0){
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks</h3>';  
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks</h3>';
             }else{
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks '+level+'</h3>';  
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Fill in the Blanks '+level+'</h3>';
             }  
             break;
         case 2:
             if(level==0){
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular</h3>';  
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular</h3>';
             }else{
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular '+level+'</h3>'; 
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Regular or Irregular '+level+'</h3>';
             }
             
             break;
         case 3:
             if(level==0){
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation</h3>';  
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation</h3>';
             }else{
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation '+level+'</h3>'; 
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Conjugation '+level+'</h3>';
             }
             break;
         case 4:
             if(level==0){
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Unscramble the Word</h3>';  
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Unscramble the Word</h3>';
             }else{
-                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Unscramble the Word '+level+'</h3>'; 
+                document.getElementById("menu").innerHTML = '<h3 id="openMenu">Unscramble the Word '+level+'</h3>';
             }
             break;
         default:
@@ -227,8 +227,8 @@ function startLevel() {
     console.log("Starting level "+level);
     
     document.getElementById("activity").style.transition = "opacity 2s ease-out";
-    document.getElementById("activity").style.opacity = 1;    
-    startTimer(); 
+    document.getElementById("activity").style.opacity = 1;
+    startTimer();
 }
 
 function reset() {
@@ -242,7 +242,7 @@ function getLocalJson (file) {
         var data = JSON.parse(this.responseText);
         switch(activityType) {
             case 1:
-                fillInTheBlanks(data);   
+                fillInTheBlanks(data);
                 break;
             case 2:
                 regularAndIrregularVerbs(data);
@@ -269,7 +269,7 @@ function getJsonApi() {
         var data = JSON.parse(this.responseText);
         switch(activityType) {
             case 1:
-                fillInTheBlanks(data);   
+                fillInTheBlanks(data);
                 break;
             case 2:
                 regularAndIrregularVerbs(data);
@@ -309,7 +309,7 @@ function fillInTheBlanks(data) {
     }else{
         indexPositions = [0,1,2,3,4,5,6,7,8,9];
         for(var i=0; i<10; i++){
-            words.push({"word":data[indexPositions[i]].word,"sentence":data[indexPositions[i]].sentence})
+            words.push({"word":data[indexPositions[i]].word,"sentence":data[indexPositions[i]].sentence});
             var word = data[indexPositions[i]].word;
             var wordSpan = '<span id="'+word+'" onclick="chooseWord(\''+word+'\')">'+word+'</span>';
             wordRow += wordSpan;
@@ -319,7 +319,7 @@ function fillInTheBlanks(data) {
         }
     }
     wordRow += '</p>';
-    document.getElementById("wordBank").innerHTML = wordRow;  
+    document.getElementById("wordBank").innerHTML = wordRow;
     
     getSentence();
 }
@@ -334,12 +334,12 @@ function regularAndIrregularVerbs(data) {
             }
         }
         for(var i=0; i<10; i++){
-            words.push({"word":data.words[indexPositions[i]].word,"regular":data.words[indexPositions[i]].regular})
+            words.push({"word":data.words[indexPositions[i]].word,"regular":data.words[indexPositions[i]].regular});
         }
     }else{
         indexPositions = [0,1,2,3,4,5,6,7,8,9];
         for(var i=0; i<10; i++){
-            words.push({"word":data[indexPositions[i]].word,"regular":data[indexPositions[i]].regular})
+            words.push({"word":data[indexPositions[i]].word,"regular":data[indexPositions[i]].regular});
         }
     }
 
@@ -368,7 +368,7 @@ function conjugation(data) {
         }
     
         for(var i=0; i<wordMax; i++){
-            words.push({"word":data.words[indexPositions[i]].word,"conjugation":data.words[indexPositions[i]].conjugation})
+            words.push({"word":data.words[indexPositions[i]].word,"conjugation":data.words[indexPositions[i]].conjugation});
         }
     }else{
         for(var i=0; i<data.length; i++){
@@ -384,7 +384,7 @@ function conjugation(data) {
         }
     
         for(var i=0; i<wordMax; i++){
-            words.push({"word":data[indexPositions[i]].word,"conjugation":data[indexPositions[i]].conjugation})
+            words.push({"word":data[indexPositions[i]].word,"conjugation":data[indexPositions[i]].conjugation});
         }
     }
 
@@ -405,12 +405,12 @@ function unscrambleTheWord(data) {
             }
         }
         for(var i=0; i<10; i++){
-            words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence})
+            words.push({"word":data.words[indexPositions[i]].word,"sentence":data.words[indexPositions[i]].sentence});
         }
     }else{
         indexPositions = [0,1,2,3,4,5,6,7,8,9];
         for(var i=0; i<10; i++){
-            words.push({"word":data[indexPositions[i]].word,"sentence":data[indexPositions[i]].sentence})
+            words.push({"word":data[indexPositions[i]].word,"sentence":data[indexPositions[i]].sentence});
         }
     }
     document.getElementById("question").style.textAlign = 'center';
@@ -581,7 +581,7 @@ function getSentence() {
             }
             var scrambledWord = ''
             for(var i=0; i<scrambledChars.length; i++){
-                scrambledWord += scrambledChars[scrambledIndex[i]]
+                scrambledWord += scrambledChars[scrambledIndex[i]];
             }
             document.getElementById("question").innerHTML += '<br><br><p style="color: #243763;"><strong>'+scrambledWord+'</strong></p>'
             document.getElementById("unscramble").innerHTML = '<span><input type="text" id="unscrambledWord" placeholder="\''+scrambledWord+'\'"></span><span id="submitBtn" onclick="chooseWord(\''+correctWord+'\')">Submit</span>';
@@ -847,7 +847,7 @@ function submitMistake(){
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", "https://devroboto.pythonanywhere.com/mistakes/add/");
         xhttp.onload = function(){
-            alert("Thank you! Your mistake has been reported.")
+            alert("Thank you! Your mistake has been reported.");
             hideInfo();
         }
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -857,7 +857,7 @@ function submitMistake(){
             xhttp.send("word="+document.getElementById('mistakeWord').value+"&issue="+document.getElementById('mistakeIssue').value+"&author="+document.getElementById('mistakeAuthor').value);
         }
     }else{
-        alert("The 'word' and 'issue' fields are required. Please resubmit the form.")
+        alert("The 'word' and 'issue' fields are required. Please resubmit the form.");
         hideInfo();
     }
 }
