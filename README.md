@@ -10,12 +10,12 @@ Study Room is an open-source platform for students to improve their English voca
 
 ## You may also like...
 
-[Py Learning Companion](https://play.google.com/store/apps/details?id=com.tmdstudios.python 'Py Learning Companion') - Python Study App
+[Ming Sec](https://github.com/TMDStudios/MingSec 'Ming Sec') - Open-source home security system
 
-[Mock Trader](https://github.com/TMDStudios/MockTrader 'Mock Trader') - Open-source Bitcoin trading game
+[Restaurtant Demo](https://github.com/TMDStudios/restaurant 'Restaurant Demo') - Modern and elegant website for small restaurants to boost their online presence.
 
-[Crypto Ledger](https://play.google.com/store/apps/details?id=com.tmdstudios.cryptoledgerkotlin 'Crypto Ledger') - Open-source app for tracking cryptocurrency trades
+[Portfolio](https://tmdstudios.github.io/ 'Portfolio') - A single-page applications showcasing some of my work
 
-[Game Room](https://github.com/TMDStudios/GameRoom 'Game Room') - A platform for educators to play games and/or review materials with their students
+[Py Learning Companion](https://www.amazon.com/dp/B08RLPC9LR 'Py Learning Companion') - Python Study App
 
-[Indie Game Explorer](https://ige.up.railway.app 'Indie Game Explorer') - A simple one-page website to showcase indie games.
+[Road to Rage Demo](https://github.com/TMDStudios/rtr 'Road to Rage Demo') - Open-source demo of Road to Rage (a vertical shmup)
